@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<SPCAFSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="SPCAFContrib.Experimental" Description="">
+  <Analyzers>
+    <Analyzer Name="CATNET" Disabled="true" />
+    <Analyzer Name="SPCAFContrib" Disabled="true" />
+    <Analyzer Name="CSSLint" Disabled="true" />
+    <Analyzer Name="SPDisposeCheck" Disabled="true" />
+    <Analyzer Name="FxCop" Disabled="true" />
+    <Analyzer Name="Metrics" Disabled="true" />
+    <Analyzer Name="JSHint" Disabled="true" />
+    <Analyzer Name="SPCop" Disabled="true" />
+    <Analyzer Name="SPDepend" Disabled="true" />
+    <Analyzer Name="SPInventory" Disabled="true" />
+    <Analyzer Name="SPMetrics" Disabled="true" />
+    <Analyzer Name="SPCAFContrib.Experimental">
+      <Properties>
+        <Property Key="IgnoredFiles" Value="Aspose.*.dll;Telerik.*.dll;Microsoft.SharePoint.*.dll;DocumentFormat.OpenXml.dll;ClosedXml.dll;AjaxControlToolkit.dll;*jquery*.js;*knockout*.js;*angular*.js;*tiny*.js" />
+      </Properties>
+    </Analyzer>
+  </Analyzers>
+</SPCAFSettings>

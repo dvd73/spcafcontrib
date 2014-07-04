@@ -1,0 +1,264 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_3rd part", "_3rd part", "{13391BF1-AB2A-4BC9-95DD-3F563B5B942A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharePoint", "SharePoint", "{1A3A4885-E07F-4D9E-A313-004304EA689E}"
+	ProjectSection(SolutionItems) = preProject
+		_3rd part\SharePoint\Microsoft.BusinessData.dll = _3rd part\SharePoint\Microsoft.BusinessData.dll
+		_3rd part\SharePoint\Microsoft.Office.SecureStoreService.dll = _3rd part\SharePoint\Microsoft.Office.SecureStoreService.dll
+		_3rd part\SharePoint\Microsoft.Office.Server.dll = _3rd part\SharePoint\Microsoft.Office.Server.dll
+		_3rd part\SharePoint\Microsoft.Office.Server.Search.Connector.dll = _3rd part\SharePoint\Microsoft.Office.Server.Search.Connector.dll
+		_3rd part\SharePoint\Microsoft.Office.Server.Search.dll = _3rd part\SharePoint\Microsoft.Office.Server.Search.dll
+		_3rd part\SharePoint\Microsoft.Office.Server.UserProfiles.dll = _3rd part\SharePoint\Microsoft.Office.Server.UserProfiles.dll
+		_3rd part\SharePoint\Microsoft.SharePoint.Client.dll = _3rd part\SharePoint\Microsoft.SharePoint.Client.dll
+		_3rd part\SharePoint\Microsoft.SharePoint.Client.Runtime.dll = _3rd part\SharePoint\Microsoft.SharePoint.Client.Runtime.dll
+		_3rd part\SharePoint\Microsoft.SharePoint.Client.ServerRuntime.dll = _3rd part\SharePoint\Microsoft.SharePoint.Client.ServerRuntime.dll
+		_3rd part\SharePoint\Microsoft.SharePoint.dll = _3rd part\SharePoint\Microsoft.SharePoint.dll
+		_3rd part\SharePoint\Microsoft.SharePoint.Linq.dll = _3rd part\SharePoint\Microsoft.SharePoint.Linq.dll
+		_3rd part\SharePoint\microsoft.sharepoint.portal.dll = _3rd part\SharePoint\microsoft.sharepoint.portal.dll
+		_3rd part\SharePoint\Microsoft.SharePoint.Publishing.dll = _3rd part\SharePoint\Microsoft.SharePoint.Publishing.dll
+		_3rd part\SharePoint\Microsoft.SharePoint.Security.dll = _3rd part\SharePoint\Microsoft.SharePoint.Security.dll
+		_3rd part\SharePoint\Microsoft.SharePoint.Taxonomy.dll = _3rd part\SharePoint\Microsoft.SharePoint.Taxonomy.dll
+		_3rd part\SharePoint\microsoft.sharepoint.WorkflowActions.dll = _3rd part\SharePoint\microsoft.sharepoint.WorkflowActions.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SPCAF", "SPCAF", "{CCA4B526-15CA-4DAC-9E84-1A62FEEC647D}"
+	ProjectSection(SolutionItems) = preProject
+		_3rd part\SPCAF\Mono.Cecil.dll = _3rd part\SPCAF\Mono.Cecil.dll
+		_3rd part\SPCAF\Mono.Cecil.Pdb.dll = _3rd part\SPCAF\Mono.Cecil.Pdb.dll
+		_3rd part\SPCAF\Mono.Cecil.Rocks.dll = _3rd part\SPCAF\Mono.Cecil.Rocks.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPCAFContrib", "SPCAFContrib\SPCAFContrib.csproj", "{9E9F3F33-DEA3-4EA1-9402-130EACE6AA9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPCAFContrib.Demo", "SPCAFContrib.Demo\SPCAFContrib.Demo.csproj", "{769CE911-EE7E-49E4-98D8-D711AD33163C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sandbox", "Sandbox", "{78FA0162-180B-499D-9B1C-7D0CCA2C2EA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPCAFContrib.Test", "SPCAFContrib.Test\SPCAFContrib.Test.csproj", "{040CE22E-5F2A-4C77-9D6A-15E252DEA7E6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_build", "_build", "{4C7533D8-3059-44EE-813F-3FC58BE882D0}"
+	ProjectSection(SolutionItems) = preProject
+		_build\OnBuild.ps1 = _build\OnBuild.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripting", "Scripting", "{B128D137-3D53-41B7-BCFD-9BBB3B5D4FC9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PowerShell", "PowerShell", "{8FFA6C5F-45D7-4CF7-944D-D2B98740D831}"
+	ProjectSection(SolutionItems) = preProject
+		_3rd part\Scripting\PowerShell\Microsoft.PowerShell.Commands.Management.dll = _3rd part\Scripting\PowerShell\Microsoft.PowerShell.Commands.Management.dll
+		_3rd part\Scripting\PowerShell\Microsoft.PowerShell.Commands.Utility.dll = _3rd part\Scripting\PowerShell\Microsoft.PowerShell.Commands.Utility.dll
+		_3rd part\Scripting\PowerShell\Microsoft.PowerShell.ConsoleHost.dll = _3rd part\Scripting\PowerShell\Microsoft.PowerShell.ConsoleHost.dll
+		_3rd part\Scripting\PowerShell\Microsoft.PowerShell.Security.dll = _3rd part\Scripting\PowerShell\Microsoft.PowerShell.Security.dll
+		_3rd part\Scripting\PowerShell\System.Management.Automation.dll = _3rd part\Scripting\PowerShell\System.Management.Automation.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.0.7.1026", "4.0.7.1026", "{AB6C319A-4F63-436E-A7BA-954769310976}"
+	ProjectSection(SolutionItems) = preProject
+		_3rd part\SPCAF\4.0.7.1026\Jurassic.dll = _3rd part\SPCAF\4.0.7.1026\Jurassic.dll
+		_3rd part\SPCAF\4.0.7.1026\log4net.dll = _3rd part\SPCAF\4.0.7.1026\log4net.dll
+		_3rd part\SPCAF\4.0.7.1026\SPCAF.Sdk.dll = _3rd part\SPCAF\4.0.7.1026\SPCAF.Sdk.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPCAFContrib.PSHostRules", "SPCAFContrib.PSHostRules\SPCAFContrib.PSHostRules.csproj", "{7D20D8F3-51E7-4585-8573-86D2F14C9AF4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{937FFB3E-B644-4DAA-BDD9-51CC8E96D7C7}"
+	ProjectSection(SolutionItems) = preProject
+		_3rd part\Web\AjaxControlToolkit.dll = _3rd part\Web\AjaxControlToolkit.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClosedXml", "ClosedXml", "{AC0FF794-A42D-41B9-B015-36669F233381}"
+	ProjectSection(SolutionItems) = preProject
+		_3rd part\ClosedXml\ClosedXML.dll = _3rd part\ClosedXml\ClosedXML.dll
+		_3rd part\ClosedXml\DocumentFormat.OpenXml.dll = _3rd part\ClosedXml\DocumentFormat.OpenXml.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPCAFContrib.Experimental", "SPCAFContrib.Experimental\SPCAFContrib.Experimental.csproj", "{306222D6-F9D9-4B36-ABC4-5D8AF8ED623D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Complimentary", "Complimentary", "{C75A5CF2-2D61-4A8D-A16F-3F2B4F562E51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPCAFContrib.RuleSets", "SPCAFContrib.RuleSets\SPCAFContrib.RuleSets.csproj", "{44359FD4-01AC-4DC4-9B3E-A08E1A733D48}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1.0", "4.1.0", "{2EE50683-61D6-453A-9127-1D89FEF49607}"
+	ProjectSection(SolutionItems) = preProject
+		_3rd part\SPCAF\4.1.0\Jurassic.dll = _3rd part\SPCAF\4.1.0\Jurassic.dll
+		_3rd part\SPCAF\4.1.0\log4net.dll = _3rd part\SPCAF\4.1.0\log4net.dll
+		_3rd part\SPCAF\4.1.0\Microsoft.Deployment.Compression.Cab.dll = _3rd part\SPCAF\4.1.0\Microsoft.Deployment.Compression.Cab.dll
+		_3rd part\SPCAF\4.1.0\Microsoft.Deployment.Compression.dll = _3rd part\SPCAF\4.1.0\Microsoft.Deployment.Compression.dll
+		_3rd part\SPCAF\4.1.0\Spark.dll = _3rd part\SPCAF\4.1.0\Spark.dll
+		_3rd part\SPCAF\4.1.0\SPCAF.Engine.dll = _3rd part\SPCAF\4.1.0\SPCAF.Engine.dll
+		_3rd part\SPCAF\4.1.0\SPCAF.Engine.PortableSerializer.dll = _3rd part\SPCAF\4.1.0\SPCAF.Engine.PortableSerializer.dll
+		_3rd part\SPCAF\4.1.0\SPCAF.Sdk.dll = _3rd part\SPCAF\4.1.0\SPCAF.Sdk.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1.1", "4.1.1", "{49D4A94B-0A72-407B-9FD7-BA002A28FD35}"
+	ProjectSection(SolutionItems) = preProject
+		_3rd part\SPCAF\4.1.1\Jurassic.dll = _3rd part\SPCAF\4.1.1\Jurassic.dll
+		_3rd part\SPCAF\4.1.1\log4net.dll = _3rd part\SPCAF\4.1.1\log4net.dll
+		_3rd part\SPCAF\4.1.1\Microsoft.Deployment.Compression.Cab.dll = _3rd part\SPCAF\4.1.1\Microsoft.Deployment.Compression.Cab.dll
+		_3rd part\SPCAF\4.1.1\Microsoft.Deployment.Compression.dll = _3rd part\SPCAF\4.1.1\Microsoft.Deployment.Compression.dll
+		_3rd part\SPCAF\4.1.1\Spark.dll = _3rd part\SPCAF\4.1.1\Spark.dll
+		_3rd part\SPCAF\4.1.1\SPCAF.Engine.dll = _3rd part\SPCAF\4.1.1\SPCAF.Engine.dll
+		_3rd part\SPCAF\4.1.1\SPCAF.Engine.PortableSerializer.dll = _3rd part\SPCAF\4.1.1\SPCAF.Engine.PortableSerializer.dll
+		_3rd part\SPCAF\4.1.1\SPCAF.Sdk.dll = _3rd part\SPCAF\4.1.1\SPCAF.Sdk.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ICSharpCode", "ICSharpCode", "{12C5AD21-9B95-44C0-96E8-D75935BE2E9D}"
+	ProjectSection(SolutionItems) = preProject
+		_3rd part\ICSharpCode\ICSharpCode.Decompiler.dll = _3rd part\ICSharpCode\ICSharpCode.Decompiler.dll
+		_3rd part\ICSharpCode\ICSharpCode.NRefactory.CSharp.dll = _3rd part\ICSharpCode\ICSharpCode.NRefactory.CSharp.dll
+		_3rd part\ICSharpCode\ICSharpCode.NRefactory.dll = _3rd part\ICSharpCode\ICSharpCode.NRefactory.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.3.5", "4.3.5", "{5A69044C-D7B7-46EB-9C62-AF85930069F1}"
+	ProjectSection(SolutionItems) = preProject
+		_3rd part\SPCAF\4.3.5\Jurassic.dll = _3rd part\SPCAF\4.3.5\Jurassic.dll
+		_3rd part\SPCAF\4.3.5\log4net.dll = _3rd part\SPCAF\4.3.5\log4net.dll
+		_3rd part\SPCAF\4.3.5\Microsoft.Deployment.Compression.Cab.dll = _3rd part\SPCAF\4.3.5\Microsoft.Deployment.Compression.Cab.dll
+		_3rd part\SPCAF\4.3.5\Microsoft.Deployment.Compression.dll = _3rd part\SPCAF\4.3.5\Microsoft.Deployment.Compression.dll
+		_3rd part\SPCAF\4.3.5\Spark.dll = _3rd part\SPCAF\4.3.5\Spark.dll
+		_3rd part\SPCAF\4.3.5\SPCAF.Engine.dll = _3rd part\SPCAF\4.3.5\SPCAF.Engine.dll
+		_3rd part\SPCAF\4.3.5\SPCAF.Engine.PortableSerializer.dll = _3rd part\SPCAF\4.3.5\SPCAF.Engine.PortableSerializer.dll
+		_3rd part\SPCAF\4.3.5\SPCAF.Sdk.dll = _3rd part\SPCAF\4.3.5\SPCAF.Sdk.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePoint.Common", "SharePoint.Common\SharePoint.Common.csproj", "{023C8B7E-09D5-435B-8467-74B61571CC8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOSS.Common", "MOSS2010.Common\MOSS.Common.csproj", "{A8E1BB4F-4728-401E-A484-62822FA76377}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Camlex.NET", "Camlex.NET", "{EC62D914-58F0-48BD-9A2E-1536568DF1D0}"
+	ProjectSection(SolutionItems) = preProject
+		_3rd part\Camlex.NET\Camlex.Client.dll = _3rd part\Camlex.NET\Camlex.Client.dll
+		_3rd part\Camlex.NET\Camlex.NET.dll = _3rd part\Camlex.NET\Camlex.NET.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserCode", "UserCode", "{357C254B-394C-4F62-834A-569B2BDCCA1E}"
+	ProjectSection(SolutionItems) = preProject
+		_3rd part\SharePoint\UserCode\Microsoft.SharePoint.dll = _3rd part\SharePoint\UserCode\Microsoft.SharePoint.dll
+		_3rd part\SharePoint\UserCode\Microsoft.SharePoint.SubsetProxy.dll = _3rd part\SharePoint\UserCode\Microsoft.SharePoint.SubsetProxy.dll
+		_3rd part\SharePoint\UserCode\Microsoft.SharePoint.UserCode.dll = _3rd part\SharePoint\UserCode\Microsoft.SharePoint.UserCode.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.5.2", "4.5.2", "{670AD221-19E0-44FE-AA9D-B68718403B06}"
+	ProjectSection(SolutionItems) = preProject
+		_3rd part\SPCAF\4.5.2\Jurassic.dll = _3rd part\SPCAF\4.5.2\Jurassic.dll
+		_3rd part\SPCAF\4.5.2\log4net.dll = _3rd part\SPCAF\4.5.2\log4net.dll
+		_3rd part\SPCAF\4.5.2\Microsoft.Deployment.Compression.Cab.dll = _3rd part\SPCAF\4.5.2\Microsoft.Deployment.Compression.Cab.dll
+		_3rd part\SPCAF\4.5.2\Microsoft.Deployment.Compression.dll = _3rd part\SPCAF\4.5.2\Microsoft.Deployment.Compression.dll
+		_3rd part\SPCAF\4.5.2\Spark.dll = _3rd part\SPCAF\4.5.2\Spark.dll
+		_3rd part\SPCAF\4.5.2\SPCAF.Engine.dll = _3rd part\SPCAF\4.5.2\SPCAF.Engine.dll
+		_3rd part\SPCAF\4.5.2\SPCAF.Engine.PortableSerializer.dll = _3rd part\SPCAF\4.5.2\SPCAF.Engine.PortableSerializer.dll
+		_3rd part\SPCAF\4.5.2\SPCAF.Sdk.dll = _3rd part\SPCAF\4.5.2\SPCAF.Sdk.dll
+		_3rd part\SPCAF\4.5.2\SPCAF.Sdk.XmlSerializers.dll = _3rd part\SPCAF\4.5.2\SPCAF.Sdk.XmlSerializers.dll
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs08
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SPCAFContrib.PSHostRules\\SPCAFContrib.PSHostRules.csproj
+		SccProjectTopLevelParentUniqueName1 = SPCAFContrib.sln
+		SccProjectName1 = SPCAFContrib.PSHostRules
+		SccLocalPath1 = SPCAFContrib.PSHostRules
+		SccProjectUniqueName2 = SPCAFContrib\\SPCAFContrib.csproj
+		SccProjectName2 = SPCAFContrib
+		SccLocalPath2 = SPCAFContrib
+		SccProjectUniqueName3 = SPCAFContrib.Demo\\SPCAFContrib.Demo.csproj
+		SccProjectTopLevelParentUniqueName3 = SPCAFContrib.sln
+		SccProjectName3 = SPCAFContrib.Demo
+		SccLocalPath3 = SPCAFContrib.Demo
+		SccProjectUniqueName4 = SPCAFContrib.Experimental\\SPCAFContrib.Experimental.csproj
+		SccProjectName4 = SPCAFContrib.Experimental
+		SccLocalPath4 = SPCAFContrib.Experimental
+		SccProjectUniqueName5 = SPCAFContrib.Test\\SPCAFContrib.Test.csproj
+		SccProjectTopLevelParentUniqueName5 = SPCAFContrib.sln
+		SccProjectName5 = SPCAFContrib.Test
+		SccLocalPath5 = SPCAFContrib.Test
+		SccProjectUniqueName6 = SPCAFContrib.RuleSets\\SPCAFContrib.RuleSets.csproj
+		SccProjectTopLevelParentUniqueName6 = SPCAFContrib.sln
+		SccProjectName6 = SPCAFContrib.RuleSets
+		SccLocalPath6 = SPCAFContrib.RuleSets
+		SccProjectUniqueName7 = SharePoint.Common\\SharePoint.Common.csproj
+		SccProjectTopLevelParentUniqueName7 = SPCAFContrib.sln
+		SccProjectName7 = SharePoint.Common
+		SccLocalPath7 = SharePoint.Common
+		SccProjectUniqueName8 = MOSS2010.Common\\MOSS.Common.csproj
+		SccProjectTopLevelParentUniqueName8 = SPCAFContrib.sln
+		SccProjectName8 = MOSS2010.Common
+		SccLocalPath8 = MOSS2010.Common
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E9F3F33-DEA3-4EA1-9402-130EACE6AA9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E9F3F33-DEA3-4EA1-9402-130EACE6AA9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E9F3F33-DEA3-4EA1-9402-130EACE6AA9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E9F3F33-DEA3-4EA1-9402-130EACE6AA9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{769CE911-EE7E-49E4-98D8-D711AD33163C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{769CE911-EE7E-49E4-98D8-D711AD33163C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{769CE911-EE7E-49E4-98D8-D711AD33163C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{769CE911-EE7E-49E4-98D8-D711AD33163C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{769CE911-EE7E-49E4-98D8-D711AD33163C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{769CE911-EE7E-49E4-98D8-D711AD33163C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{040CE22E-5F2A-4C77-9D6A-15E252DEA7E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{040CE22E-5F2A-4C77-9D6A-15E252DEA7E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{040CE22E-5F2A-4C77-9D6A-15E252DEA7E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{040CE22E-5F2A-4C77-9D6A-15E252DEA7E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D20D8F3-51E7-4585-8573-86D2F14C9AF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D20D8F3-51E7-4585-8573-86D2F14C9AF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D20D8F3-51E7-4585-8573-86D2F14C9AF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D20D8F3-51E7-4585-8573-86D2F14C9AF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{306222D6-F9D9-4B36-ABC4-5D8AF8ED623D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{306222D6-F9D9-4B36-ABC4-5D8AF8ED623D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{306222D6-F9D9-4B36-ABC4-5D8AF8ED623D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{306222D6-F9D9-4B36-ABC4-5D8AF8ED623D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44359FD4-01AC-4DC4-9B3E-A08E1A733D48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44359FD4-01AC-4DC4-9B3E-A08E1A733D48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44359FD4-01AC-4DC4-9B3E-A08E1A733D48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44359FD4-01AC-4DC4-9B3E-A08E1A733D48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{023C8B7E-09D5-435B-8467-74B61571CC8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{023C8B7E-09D5-435B-8467-74B61571CC8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{023C8B7E-09D5-435B-8467-74B61571CC8E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{023C8B7E-09D5-435B-8467-74B61571CC8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{023C8B7E-09D5-435B-8467-74B61571CC8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{023C8B7E-09D5-435B-8467-74B61571CC8E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A8E1BB4F-4728-401E-A484-62822FA76377}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8E1BB4F-4728-401E-A484-62822FA76377}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8E1BB4F-4728-401E-A484-62822FA76377}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A8E1BB4F-4728-401E-A484-62822FA76377}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8E1BB4F-4728-401E-A484-62822FA76377}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8E1BB4F-4728-401E-A484-62822FA76377}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1A3A4885-E07F-4D9E-A313-004304EA689E} = {13391BF1-AB2A-4BC9-95DD-3F563B5B942A}
+		{CCA4B526-15CA-4DAC-9E84-1A62FEEC647D} = {13391BF1-AB2A-4BC9-95DD-3F563B5B942A}
+		{B128D137-3D53-41B7-BCFD-9BBB3B5D4FC9} = {13391BF1-AB2A-4BC9-95DD-3F563B5B942A}
+		{937FFB3E-B644-4DAA-BDD9-51CC8E96D7C7} = {13391BF1-AB2A-4BC9-95DD-3F563B5B942A}
+		{AC0FF794-A42D-41B9-B015-36669F233381} = {13391BF1-AB2A-4BC9-95DD-3F563B5B942A}
+		{12C5AD21-9B95-44C0-96E8-D75935BE2E9D} = {13391BF1-AB2A-4BC9-95DD-3F563B5B942A}
+		{EC62D914-58F0-48BD-9A2E-1536568DF1D0} = {13391BF1-AB2A-4BC9-95DD-3F563B5B942A}
+		{357C254B-394C-4F62-834A-569B2BDCCA1E} = {1A3A4885-E07F-4D9E-A313-004304EA689E}
+		{AB6C319A-4F63-436E-A7BA-954769310976} = {CCA4B526-15CA-4DAC-9E84-1A62FEEC647D}
+		{2EE50683-61D6-453A-9127-1D89FEF49607} = {CCA4B526-15CA-4DAC-9E84-1A62FEEC647D}
+		{49D4A94B-0A72-407B-9FD7-BA002A28FD35} = {CCA4B526-15CA-4DAC-9E84-1A62FEEC647D}
+		{5A69044C-D7B7-46EB-9C62-AF85930069F1} = {CCA4B526-15CA-4DAC-9E84-1A62FEEC647D}
+		{670AD221-19E0-44FE-AA9D-B68718403B06} = {CCA4B526-15CA-4DAC-9E84-1A62FEEC647D}
+		{769CE911-EE7E-49E4-98D8-D711AD33163C} = {78FA0162-180B-499D-9B1C-7D0CCA2C2EA6}
+		{040CE22E-5F2A-4C77-9D6A-15E252DEA7E6} = {78FA0162-180B-499D-9B1C-7D0CCA2C2EA6}
+		{023C8B7E-09D5-435B-8467-74B61571CC8E} = {78FA0162-180B-499D-9B1C-7D0CCA2C2EA6}
+		{A8E1BB4F-4728-401E-A484-62822FA76377} = {78FA0162-180B-499D-9B1C-7D0CCA2C2EA6}
+		{8FFA6C5F-45D7-4CF7-944D-D2B98740D831} = {B128D137-3D53-41B7-BCFD-9BBB3B5D4FC9}
+		{7D20D8F3-51E7-4585-8573-86D2F14C9AF4} = {C75A5CF2-2D61-4A8D-A16F-3F2B4F562E51}
+		{44359FD4-01AC-4DC4-9B3E-A08E1A733D48} = {C75A5CF2-2D61-4A8D-A16F-3F2B4F562E51}
+	EndGlobalSection
+EndGlobal

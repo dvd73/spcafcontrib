@@ -1,0 +1,94 @@
+﻿/* table from DIV tags */
+div.table
+{
+	height:0;
+}
+
+div.tr{
+	height:0;
+}
+
+div.td
+{
+   height:100%; 
+   float: left;
+}
+
+/* not for IE */
+div.table[class] {height:auto; display: table;}
+div.tr[class] { height:auto; display: table-row;}
+div.td[class] {float:none; display: table-cell;}
+
+.table .tr, .table .td { position: relative;}
+
+.vmiddle {vertical-align:middle;}
+.vbottom {vertical-align:bottom;}
+
+table.regular_table
+{
+	border-collapse:collapse;    
+	border:0px;
+}
+
+table.regular_table td
+{
+	padding:0px;
+	/* vertical-align: top;    */
+}
+
+table.full_width_table
+{
+	border-collapse:collapse;    
+	border:0px;
+	width:100%;
+}
+
+table.full_width_table td
+{
+	padding:1px;
+	/* vertical-align: top; */
+}
+
+table.full_height_table
+{
+	border-collapse:collapse;    
+	border:0px;    
+	height:100%;
+	min-height:100%;
+}
+
+table.full_height_table td 
+{
+	padding:1px;
+	/* vertical-align: top; */
+}
+
+table.full_table
+{
+	border-collapse:collapse;    
+	border:0px;
+	width:100%;
+	height:100%;
+}
+
+table.full_table td
+{
+	padding:1px;
+	/* vertical-align: top;    */
+}
+
+.first_column 
+{
+	width:15%;
+}
+
+
+div.clear
+{
+	clear: both;
+}
+
+.noDisplay
+{
+	display:none;
+}

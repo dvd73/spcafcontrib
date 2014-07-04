@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{306222D6-F9D9-4B36-ABC4-5D8AF8ED623D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SPCAFContrib.Experimental</RootNamespace>
+    <AssemblyName>SPCAFContrib.Experimental</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.Decompiler">
+      <HintPath>..\_3rd part\ICSharpCode\ICSharpCode.Decompiler.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.NRefactory">
+      <HintPath>..\_3rd part\ICSharpCode\ICSharpCode.NRefactory.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.NRefactory.CSharp">
+      <HintPath>..\_3rd part\ICSharpCode\ICSharpCode.NRefactory.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Jurassic, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_3rd part\SPCAF\4.5.2\Jurassic.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.CommandUI, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\_3rd part\SPCAF\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="SPCAF.Sdk, Version=4.3.5.3756, Culture=neutral, PublicKeyToken=8295a2d5d4b559f9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_3rd part\SPCAF\4.5.2\SPCAF.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Inventory\SearchProperties.cs" />
+    <Compile Include="Inventory\UserProfileProperties.cs" />
+    <Compile Include="Metrics\Code\SPMonitoredScopeMetric.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rules\Code\AvoidHeavyOperationsInsideRepeaterItemEventHandlers.cs" />
+    <Compile Include="Rules\Code\AvoidInappropriateDataAccess.cs" />
+    <Compile Include="Rules\Code\AvoidInlineJavaScriptCode.cs" />
+    <Compile Include="Rules\Code\AvoidObsoleteWebServicesInCode.cs" />
+    <Compile Include="Rules\Code\AvoidObsoleteWebServicesInJavaScriptFiles.cs" />
+    <Compile Include="Rules\Code\AvoidSPObjectsInFields.cs" />
+    <Compile Include="Rules\Code\AvoidStringIndexerInSPViewCollection.cs" />
+    <Compile Include="Rules\Code\IncorrectDisposal.cs" />
+    <Compile Include="Rules\Code\SPWebEnsureUserMethodUsage.cs" />
+    <Compile Include="Rules\Code\SPWebRequestAccessEmailPropertyUsage.cs" />
+    <Compile Include="Rules\Code\AvoidXsltForSharePoint2013.cs" />
+    <Compile Include="Rules\Code\BetterSPFeatureReceiverDesign.cs" />
+    <Compile Include="Rules\Code\RepeatableMagicStringShouldNotBeUsed.cs" />
+    <Compile Include="Metrics\Code\SearchQueryIsUsed.cs" />
+    <Compile Include="Rules\Code\SPSiteFeatureShouldNotBeActivatedFromCode.cs" />
+    <Compile Include="Rules\Other\PowerShellHostAssemblyFileReferenceRule.cs" />
+    <Compile Include="Rules\Other\PowerShellHostBaseRule.cs" />
+    <Compile Include="Rules\Other\PowerShellHostFeatureDefinitionRule.cs" />
+    <Compile Include="Rules\Xml\AddClientSideTemplatesForSPView.cs" />
+    <Compile Include="Rules\Xml\AvoidDataRowsInListInstances.cs" />
+    <Compile Include="Rules\Xml\AvoidAllUsersWebPartInModules.cs" />
+    <Compile Include="Rules\Xml\CustomActionURLTypos.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+    <Folder Include="Metrics\Other\" />
+    <Folder Include="Metrics\Xml\" />
+    <Folder Include="Rules\Control\" />
+    <Folder Include="Rules\JavaScript\" />
+    <Folder Include="Rules\MasterPage\" />
+    <Folder Include="Rules\Page\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SPCAFContrib\SPCAFContrib.csproj">
+      <Project>{9e9f3f33-dea3-4ea1-9402-130eace6aa9e}</Project>
+      <Name>SPCAFContrib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>C:\WINDOWS\system32\windowspowershell\v1.0\powershell.exe -ExecutionPolicy unrestricted -NoLogo -NonInteractive -Command .'$(SolutionDir)_build\OnBuild.ps1' -SolutionDir:'$(SolutionDir)' -ProjectDir:'$(ProjectDir)' -ConfigurationName:'$(ConfigurationName)' -TargetDir:'$(TargetDir)' -TargetFileName:'$(TargetFileName)' -TargetName:'$(TargetName)'</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

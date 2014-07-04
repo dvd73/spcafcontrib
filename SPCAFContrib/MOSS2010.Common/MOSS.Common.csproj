@@ -1,0 +1,355 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A8E1BB4F-4728-401E-A484-62822FA76377}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MOSS.Common</RootNamespace>
+    <AssemblyName>MOSS.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BB1F664B-9266-4fd6-B973-E1E44974B511};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <ActiveDeploymentConfiguration>Upgrade Solution %28CKSDev%29</ActiveDeploymentConfiguration>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Camlex.NET, Version=3.5.0.0, Culture=neutral, PublicKeyToken=831792d54d5285b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_3rd part\Camlex.NET\Camlex.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.BusinessData, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_3rd part\SharePoint\Microsoft.BusinessData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.SecureStoreService">
+      <HintPath>..\_3rd part\SharePoint\Microsoft.Office.SecureStoreService.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Server">
+      <HintPath>..\_3rd part\SharePoint\Microsoft.Office.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Server.Search">
+      <HintPath>..\_3rd part\SharePoint\Microsoft.Office.Server.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Server.UserProfiles">
+      <HintPath>..\_3rd part\SharePoint\Microsoft.Office.Server.UserProfiles.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint">
+      <HintPath>..\_3rd part\SharePoint\Microsoft.SharePoint.dll</HintPath>
+    </Reference>
+    <Reference Include="microsoft.sharepoint.portal">
+      <HintPath>..\_3rd part\SharePoint\microsoft.sharepoint.portal.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Publishing">
+      <HintPath>..\_3rd part\SharePoint\Microsoft.SharePoint.Publishing.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Code\Consts.cs" />
+    <Compile Include="Code\Enums.cs" />
+    <Compile Include="Code\fielddisplayruleitem.cs" />
+    <Compile Include="Controls\baselistfielditerator.cs" />
+    <Compile Include="CONTROLTEMPLATES\MOSS.Common\IssueInformerUserControl.ascx.cs">
+      <DependentUpon>IssueInformerUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CONTROLTEMPLATES\MOSS.Common\IssueInformerUserControl.ascx.designer.cs">
+      <DependentUpon>IssueInformerUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CONTROLTEMPLATES\MOSS.Common\MixedBreadcrumbUserControl.ascx.cs">
+      <DependentUpon>MixedBreadcrumbUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CONTROLTEMPLATES\MOSS.Common\MixedBreadcrumbUserControl.ascx.designer.cs">
+      <DependentUpon>MixedBreadcrumbUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Logger\Logger.EventReceiver.cs">
+      <DependentUpon>Logger.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\ILHelper.cs" />
+    <Compile Include="Utilities\BCDHelper.cs" />
+    <Compile Include="Utilities\Extensions\SPWebServiceExtension.cs" />
+    <Compile Include="Utilities\LoggingService.cs" />
+    <Compile Include="Code\ScriptRequestEventArgs.cs" />
+    <Compile Include="Code\UploadedFile.cs" />
+    <Compile Include="CONTROLTEMPLATES\MOSS.Common\ScriptInjectorUserControl.ascx.cs">
+      <DependentUpon>ScriptInjectorUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CONTROLTEMPLATES\MOSS.Common\ScriptInjectorUserControl.ascx.designer.cs">
+      <DependentUpon>ScriptInjectorUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\MOSS.Common\Download.aspx.cs">
+      <DependentUpon>Download.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\MOSS.Common\Download.aspx.designer.cs">
+      <DependentUpon>Download.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\MOSS.Common\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\MOSS.Common\Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\MOSS.Common\Upload.aspx.cs">
+      <DependentUpon>Upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\MOSS.Common\Upload.aspx.designer.cs">
+      <DependentUpon>Upload.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BaseMasterPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\BasePageLayout.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Code\ICustomErrorPage.cs" />
+    <Compile Include="Code\ICustomScript.cs" />
+    <Compile Include="Pages\ScriptableLayoutsPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ScriptableUnsecuredLayoutsPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ScriptableWebPartPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Extensions\FormFieldExtension.cs" />
+    <Compile Include="Utilities\MOSSCommonListHelper.cs" />
+    <Compile Include="Utilities\Extensions\SPListExtension.cs" />
+    <Compile Include="Utilities\Extensions\SPWebApplicationExtension.cs" />
+    <Compile Include="Utilities\MOSSFeatureHelper.cs" />
+    <Compile Include="Utilities\MOSSLogger.cs" />
+    <Compile Include="Utilities\MailHelpers.cs" />
+    <Compile Include="Utilities\MOSSPermissionHelper.cs" />
+    <Compile Include="Utilities\MOSSPropertyBagHelper.cs" />
+    <Compile Include="Utilities\Extensions\SPFeatureReceiverPropertiesExtension.cs" />
+    <Compile Include="Utilities\MOSSWebPartHelper.cs" />
+    <Compile Include="Utilities\PeoplePickerHelper.cs" />
+    <Compile Include="Utilities\PublishingHelper.cs" />
+    <Compile Include="Utilities\SecureStoreHelper.cs" />
+    <Compile Include="Utilities\SecurityHelper.cs" />
+    <Compile Include="Utilities\WebApplicationHelper.cs" />
+    <Compile Include="Utilities\MOSSUserHelper.cs" />
+    <Compile Include="Utilities\Extensions\XmlExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CONTROLTEMPLATES\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b5694e82-4a99-4d8a-942b-7921fd9dc75d}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\Logger\Logger.feature">
+      <FeatureId>{2a657e25-4c20-41e3-98f2-c743d845d2dd}</FeatureId>
+    </None>
+    <None Include="Features\ScriptInjector\ScriptInjector.feature">
+      <FeatureId>{ae53b699-831b-4985-9c46-c0ee8a1c60f3}</FeatureId>
+    </None>
+    <None Include="Images\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a38446aa-09ba-46a6-9e88-aca343a11eac}</SharePointProjectItemId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Layouts\MOSS.Common\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Layouts\MOSS.Common\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="Layouts\MOSS.Common\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Layouts\MOSS.Common\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Layouts\MOSS.Common\Flowplayer\LICENSE.md" />
+    <None Include="Layouts\MOSS.Common\Scripts\jquery-1.10.2.min.map" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{07b684ff-eaed-4b3b-9747-c1489750e3e0}</SharePointProjectItemId>
+    </None>
+    <None Include="Modules\ScriptInjector\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{5e6e236b-fd5e-4681-9aea-c7ac16793e1d}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{13538161-5c5c-4810-afd4-fb8d62b98be5}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Layouts\MOSS.Common\Flowplayer\skin\img\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CONTROLTEMPLATES\MOSS.Common\IssueInformerUserControl.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="CONTROLTEMPLATES\MOSS.Common\MixedBreadcrumbUserControl.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="CONTROLTEMPLATES\MOSS.Common\ScriptInjectorUserControl.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Features\Logger\Logger.Template.xml">
+      <DependentUpon>Logger.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\ScriptInjector\ScriptInjector.Template.xml">
+      <DependentUpon>ScriptInjector.feature</DependentUpon>
+    </Content>
+    <Content Include="Images\MOSS.Common\bread_crops_narrow.png" />
+    <Content Include="Images\MOSS.Common\add.gif" />
+    <Content Include="Images\MOSS.Common\addressbook_gray.gif" />
+    <Content Include="Images\MOSS.Common\arrow-down.gif" />
+    <Content Include="Images\MOSS.Common\arrow-up.gif" />
+    <Content Include="Images\MOSS.Common\calendar.png" />
+    <Content Include="Images\MOSS.Common\cancel.gif" />
+    <Content Include="Images\MOSS.Common\CheckNames_gray.png" />
+    <Content Include="Images\MOSS.Common\delete.gif" />
+    <Content Include="Images\MOSS.Common\edit.gif" />
+    <Content Include="Images\MOSS.Common\error.gif" />
+    <Content Include="Images\MOSS.Common\fileIcon.gif" />
+    <Content Include="Images\MOSS.Common\ICPDF.GIF" />
+    <Content Include="Images\MOSS.Common\loadinganimation.gif" />
+    <Content Include="Images\MOSS.Common\lt.gif" />
+    <Content Include="Images\MOSS.Common\rt.gif" />
+    <Content Include="Images\MOSS.Common\feature_icon.png" />
+    <Content Include="Images\MOSS.Common\update.gif" />
+    <Content Include="Layouts\MOSS.Common\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Layouts\MOSS.Common\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Layouts\MOSS.Common\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Layouts\MOSS.Common\Download.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\MOSS.Common\Error.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\MOSS.Common\dynatree\jquery.dynatree.min.js" />
+    <Content Include="Layouts\MOSS.Common\dynatree\skin-vista\icons.gif" />
+    <Content Include="Layouts\MOSS.Common\dynatree\skin-vista\loading.gif" />
+    <Content Include="Layouts\MOSS.Common\dynatree\skin-vista\ui.dynatree.css" />
+    <Content Include="Layouts\MOSS.Common\dynatree\skin\icons-rtl.gif" />
+    <Content Include="Layouts\MOSS.Common\dynatree\skin\icons.gif" />
+    <Content Include="Layouts\MOSS.Common\dynatree\skin\loading.gif" />
+    <Content Include="Layouts\MOSS.Common\dynatree\skin\ui.dynatree.css" />
+    <Content Include="Layouts\MOSS.Common\dynatree\skin\vline-rtl.gif" />
+    <Content Include="Layouts\MOSS.Common\dynatree\skin\vline.gif" />
+    <Content Include="Layouts\MOSS.Common\Scripts\expand.js" />
+    <Content Include="Layouts\MOSS.Common\Scripts\hide.ribbon.dlg.js" />
+    <Content Include="Layouts\MOSS.Common\Scripts\hoverIntent.js" />
+    <Content Include="Layouts\MOSS.Common\Scripts\jquery-migrate.min.js" />
+    <Content Include="Layouts\MOSS.Common\Scripts\jquery-ui.custom.min.js" />
+    <Content Include="Layouts\MOSS.Common\Scripts\jquery.cookie.js" />
+    <Content Include="Layouts\MOSS.Common\Scripts\jquery.hotkeys.js" />
+    <Content Include="Layouts\MOSS.Common\Scripts\jQuery.LISP.quicklaunch.min.js" />
+    <Content Include="Layouts\MOSS.Common\jsTree\jquery.jstree.js" />
+    <Content Include="Layouts\MOSS.Common\Scripts\jquery.min.js" />
+    <Content Include="Layouts\MOSS.Common\Scripts\jquery.query.js" />
+    <Content Include="Layouts\MOSS.Common\Scripts\jquery.SPServices.min.js" />
+    <Content Include="Layouts\MOSS.Common\Scripts\jquery.ui.datepicker-ru.js" />
+    <Content Include="Layouts\MOSS.Common\Scripts\jquery.ui.timepicker-ru.js" />
+    <Content Include="Layouts\MOSS.Common\Scripts\jquery.ui.timepicker.js" />
+    <Content Include="Layouts\MOSS.Common\jsTree\themes\apple\bg.jpg" />
+    <Content Include="Layouts\MOSS.Common\jsTree\themes\apple\d.png" />
+    <Content Include="Layouts\MOSS.Common\jsTree\themes\apple\dot_for_ie.gif" />
+    <Content Include="Layouts\MOSS.Common\jsTree\themes\apple\style.css" />
+    <Content Include="Layouts\MOSS.Common\jsTree\themes\apple\throbber.gif" />
+    <Content Include="Layouts\MOSS.Common\jsTree\themes\classic\d.gif" />
+    <Content Include="Layouts\MOSS.Common\jsTree\themes\classic\d.png" />
+    <Content Include="Layouts\MOSS.Common\jsTree\themes\classic\dot_for_ie.gif" />
+    <Content Include="Layouts\MOSS.Common\jsTree\themes\classic\style.css" />
+    <Content Include="Layouts\MOSS.Common\jsTree\themes\classic\throbber.gif" />
+    <Content Include="Layouts\MOSS.Common\jsTree\themes\default-rtl\d.gif" />
+    <Content Include="Layouts\MOSS.Common\jsTree\themes\default-rtl\d.png" />
+    <Content Include="Layouts\MOSS.Common\jsTree\themes\default-rtl\dots.gif" />
+    <Content Include="Layouts\MOSS.Common\jsTree\themes\default-rtl\style.css" />
+    <Content Include="Layouts\MOSS.Common\jsTree\themes\default-rtl\throbber.gif" />
+    <Content Include="Layouts\MOSS.Common\jsTree\themes\default\d.gif" />
+    <Content Include="Layouts\MOSS.Common\jsTree\themes\default\d.png" />
+    <Content Include="Layouts\MOSS.Common\jsTree\themes\default\style.css" />
+    <Content Include="Layouts\MOSS.Common\jsTree\themes\default\throbber.gif" />
+    <Content Include="Layouts\MOSS.Common\Scripts\jquery.validate.min.js" />
+    <Content Include="Layouts\MOSS.Common\Scripts\ListAttachments.js" />
+    <Content Include="Layouts\MOSS.Common\Scripts\resize_iframe.js" />
+    <Content Include="Layouts\MOSS.Common\Scripts\set_ribbon_read_tab.js" />
+    <Content Include="Layouts\MOSS.Common\Scripts\superfish.js" />
+    <Content Include="Layouts\MOSS.Common\Scripts\supersubs.js" />
+    <Content Include="Layouts\MOSS.Common\Styles\smoothness\images\animated-overlay.gif" />
+    <Content Include="Layouts\MOSS.Common\Styles\smoothness\jquery-ui.custom.min.css" />
+    <Content Include="Layouts\MOSS.Common\swfobject\expressInstall.swf" />
+    <Content Include="Layouts\MOSS.Common\swfobject\swfobject.js" />
+    <Content Include="Layouts\MOSS.Common\Flowplayer\flowplayer.min.js" />
+    <Content Include="Layouts\MOSS.Common\Flowplayer\flowplayer.swf" />
+    <Content Include="Layouts\MOSS.Common\Flowplayer\skin\all-skins.css" />
+    <Content Include="Layouts\MOSS.Common\Flowplayer\skin\functional.css" />
+    <Content Include="Layouts\MOSS.Common\Flowplayer\skin\minimalist.css" />
+    <Content Include="Layouts\MOSS.Common\Flowplayer\skin\playful.css" />
+    <Content Include="Layouts\MOSS.Common\Styles\common.css" />
+    <Content Include="Layouts\MOSS.Common\Styles\error_page.css" />
+    <Content Include="Layouts\MOSS.Common\Styles\jquery.ui.timepicker.css" />
+    <Content Include="Layouts\MOSS.Common\Styles\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Layouts\MOSS.Common\Styles\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Layouts\MOSS.Common\Styles\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Layouts\MOSS.Common\Styles\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Layouts\MOSS.Common\Styles\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Layouts\MOSS.Common\Styles\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Layouts\MOSS.Common\Styles\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Layouts\MOSS.Common\Styles\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Layouts\MOSS.Common\Styles\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Layouts\MOSS.Common\Styles\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Layouts\MOSS.Common\Styles\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="Layouts\MOSS.Common\Styles\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="Layouts\MOSS.Common\Styles\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Layouts\MOSS.Common\Styles\superfish.css" />
+    <Content Include="Layouts\MOSS.Common\Upload.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Modules\ScriptInjector\Elements.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SharePoint.Common\SharePoint.Common.csproj">
+      <Project>{023c8b7e-09d5-435b-8467-74b61571cc8e}</Project>
+      <Name>SharePoint.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="false" />
+</Project>

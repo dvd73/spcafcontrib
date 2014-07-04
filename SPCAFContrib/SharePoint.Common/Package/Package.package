@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="c8b8f575-d323-4140-a58f-47ca0f33c877" solutionId="c8b8f575-d323-4140-a58f-47ca0f33c877" resetWebServer="false" resetWebServerModeOnUpgrade="Recycle" name="SharePoint.Common" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" />

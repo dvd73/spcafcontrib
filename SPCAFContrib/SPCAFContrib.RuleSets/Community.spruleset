@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<SPCAFSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Community rules" Description="Custom set for most critical problems in your code for which Code Analysis is the most accurate.">
+  <Analyzers>
+    <Analyzer Name="SPCAFContrib.Experimental" Disabled="true" />
+    <Analyzer Name="SPCop">
+      <RuleGroups>
+        <RuleGroup Name="SPCAF.Rules.SharePointSupportabilityGroup">
+          <Rules>
+            <Rule Name="SPC030202" Disabled="true" />
+            <Rule Name="SPC030203" Disabled="true" />
+          </Rules>
+        </RuleGroup>
+        <RuleGroup Name="SPCAF.Rules.LocalizationGroup" Disabled="true" />
+        <RuleGroup Name="SPCAF.Rules.NamingGroup" Disabled="true" />
+        <RuleGroup Name="SPCAF.Rules.CustomizationPolicyGroup" Disabled="true" />
+        <RuleGroup Name="SPCAF.Rules.SandboxedCompatibilityGroup" Disabled="true" />
+        <RuleGroup Name="SPCAF.Rules.SP12CompatibilityGroup" Disabled="true" />
+        <RuleGroup Name="SPCAF.Rules.SP14CompatibilityGroup" Disabled="true" />
+        <RuleGroup Name="SPCAF.Rules.SP15CompatibilityGroup" Disabled="true" />
+      </RuleGroups>
+    </Analyzer>
+    <Analyzer Name="SPCAFContrib">
+	<Properties>
+        <Property Key="IgnoredFiles" Value="Aspose.*.dll;Telerik.*.dll;Microsoft.SharePoint.*.dll;DocumentFormat.OpenXml.dll;ClosedXml.dll;NVelocity.dll;Camlex.NET.dll;AjaxControlToolkit.dll;*jquery*.js;*knockout*.js;*angular*.js;*tiny*.js" />
+      </Properties>
+      <RuleGroups>
+        <RuleGroup Name="SPCAFContrib.Consts.ContribSandboxedCompatibilityGroup" Disabled="true" />
+      </RuleGroups>
+    </Analyzer>
+  </Analyzers>
+</SPCAFSettings>

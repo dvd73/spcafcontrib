@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9E9F3F33-DEA3-4EA1-9402-130EACE6AA9E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SPCAFContrib</RootNamespace>
+    <AssemblyName>SPCAFContrib</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.Decompiler, Version=2.1.0.0, Culture=neutral, PublicKeyToken=d4bfe873e7598c49, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_3rd part\ICSharpCode\ICSharpCode.Decompiler.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.NRefactory, Version=5.0.0.0, Culture=neutral, PublicKeyToken=d4bfe873e7598c49, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_3rd part\ICSharpCode\ICSharpCode.NRefactory.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.NRefactory.CSharp, Version=5.0.0.0, Culture=neutral, PublicKeyToken=d4bfe873e7598c49, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_3rd part\ICSharpCode\ICSharpCode.NRefactory.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Jurassic, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_3rd part\SPCAF\4.5.2\Jurassic.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\_3rd part\SPCAF\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="SPCAF.Sdk, Version=4.3.5.3756, Culture=neutral, PublicKeyToken=8295a2d5d4b559f9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_3rd part\SPCAF\4.5.2\SPCAF.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management.Automation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_3rd part\Scripting\PowerShell\System.Management.Automation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Collectors\Base\CollectorBase.cs" />
+    <Compile Include="Collectors\SPPersistedObjectCollector.cs" />
+    <Compile Include="Collectors\IteratorCollector.cs" />
+    <Compile Include="Collectors\LoggingCollector.cs" />
+    <Compile Include="Common\SingletoneHelper.cs" />
+    <Compile Include="Common\Statistics\SPPersistedObjectStatistic.cs" />
+    <Compile Include="Common\Statistics\IteratorStatistic.cs" />
+    <Compile Include="Consts\CheckIDs.cs" />
+    <Compile Include="Consts\ContribInventoryGroup.cs" />
+    <Compile Include="Consts\ContribRecommendationsGroup.cs" />
+    <Compile Include="Consts\ContribBestPracticesGroup.cs" />
+    <Compile Include="Consts\ContribMetricsGroup.cs" />
+    <Compile Include="Consts\ContribCorrectnessGroup.cs" />
+    <Compile Include="Consts\ContribSandboxedCompatibilityGroup.cs" />
+    <Compile Include="Consts\HelpSite.cs" />
+    <Compile Include="Consts\InspectedSPElement.cs" />
+    <Compile Include="Common\Statistics\Base\StatisticBase.cs" />
+    <Compile Include="Common\Statistics\LoggingStatistic.cs" />
+    <Compile Include="Common\MultiValueDictionary.cs" />
+    <Compile Include="Common\Wildcard.cs" />
+    <Compile Include="Consts\ExcludedLibraries.cs" />
+    <Compile Include="Consts\SharePointOOBListInstances.cs" />
+    <Compile Include="Consts\SharePointTimerJobs.cs" />
+    <Compile Include="Consts\SharePointWebControls.cs" />
+    <Compile Include="Consts\SharePointWorkflowActivities.cs" />
+    <Compile Include="Consts\SP2010UserProfileProperties.cs" />
+    <Compile Include="Consts\SPPersistedObjectTypes.cs" />
+    <Compile Include="Consts\TypeKeys.cs" />
+    <Compile Include="Consts\SP2013ManagedProperties.cs" />
+    <Compile Include="Consts\SPEventReceivers.cs" />
+    <Compile Include="Consts\SP2007WebServices.cs" />
+    <Compile Include="Consts\SP2010WebServices.cs" />
+    <Compile Include="Extensions\AssemblyFileReferenceExtensions.cs" />
+    <Compile Include="Extensions\BooleanVisitor.cs" />
+    <Compile Include="Extensions\CachedOperationExtensions.cs" />
+    <Compile Include="Extensions\CecilCacheExtensions.cs" />
+    <Compile Include="Extensions\DecompilationExtensions.cs" />
+    <Compile Include="Extensions\FeatureDefinitionExtensions.cs" />
+    <Compile Include="Extensions\ParsableFileExtensions.cs" />
+    <Compile Include="Extensions\MethodDefinitionExtensions.cs" />
+    <Compile Include="Extensions\FileDefinitionExtensions.cs" />
+    <Compile Include="Extensions\ModuleDefinitionExtensions.cs" />
+    <Compile Include="Extensions\MonitoredScopeExtensions.cs" />
+    <Compile Include="Extensions\TypeDefinitionExtensions.cs" />
+    <Compile Include="Extensions\WebPartFileExtensions.cs" />
+    <Compile Include="Inventory\Base\SearchMethodInventoryBase.cs" />
+    <Compile Include="Inventory\Base\SearchPropertyInventoryBase.cs" />
+    <Compile Include="Inventory\CustomMasterPages.cs" />
+    <Compile Include="Inventory\ListOfConsts.cs" />
+    <Compile Include="Inventory\ListOfStrings.cs" />
+    <Compile Include="Inventory\DelegateControls.cs" />
+    <Compile Include="Inventory\PropertyBagUsage.cs" />
+    <Compile Include="Inventory\HttpRequestCollectionsUsage.cs" />
+    <Compile Include="Metrics\Code\Base\SearchMethodMetricBase.cs" />
+    <Compile Include="Metrics\Code\Base\SearchPropertyMetricBase.cs" />
+    <Compile Include="Metrics\Code\NumberOfBreakInheritance.cs" />
+    <Compile Include="Rules\Code\AvoidDollarGlobalVariableInCode.cs" />
+    <Compile Include="Rules\Code\AvoidJQueryDocumentReadyInCode.cs" />
+    <Compile Include="Rules\Code\AvoidSPObjectNameStringComparison.cs" />
+    <Compile Include="Rules\Code\AvoidStaicSPObjectsInFields.cs" />
+    <Compile Include="Rules\Code\AvoidUnsafeUrlConcatenations.cs" />
+    <Compile Include="Rules\Code\AvoidUsingAjaxControlToolkit.cs" />
+    <Compile Include="Rules\Code\AvoidUsingListFieldIterator.cs" />
+    <Compile Include="Rules\Code\AvoidUsingSPContextOutsideOfWebContext.cs" />
+    <Compile Include="Rules\Code\AvoidUsingSPListItemFile.cs" />
+    <Compile Include="Rules\Code\Base\SearchMethodRuleBase.cs" />
+    <Compile Include="Rules\Code\Base\SearchPropertyRuleBase.cs" />
+    <Compile Include="Rules\Code\CamlexQueryDoubleWhere.cs" />
+    <Compile Include="Rules\Code\DoNotChangeSPPersistedObject.cs" />
+    <Compile Include="Rules\Code\DoNotDisposePersonalSiteWeb.cs" />
+    <Compile Include="Rules\Code\DoNotUseDirectorySearcher.cs" />
+    <Compile Include="Rules\Code\DoNotUsePortalLog.cs" />
+    <Compile Include="Rules\Code\DoNotUseSPWebProperties.cs" />
+    <Compile Include="Rules\Code\DoNotUseUnsafeTypeConversionOnSPListItem.cs" />
+    <Compile Include="Rules\Code\DoNotSuppressExceptions.cs" />
+    <Compile Include="Rules\Code\GetPublishingPagesNoParams.cs" />
+    <Compile Include="Rules\Code\InappropriateUsageOfTaxonomyGroupCollection.cs" />
+    <Compile Include="Rules\Code\ListModificationFromJob.cs" />
+    <Compile Include="Rules\Code\LoadJavaScriptWithinSandbox.cs" />
+    <Compile Include="Rules\Code\NoCustomLogging.cs" />
+    <Compile Include="Rules\Code\OutOfContextRWEP.cs" />
+    <Compile Include="Rules\Code\SPDataSourceScopeDoesNotDefined.cs" />
+    <Compile Include="Rules\Code\SpecifySPZoneInSPSite.cs" />
+    <Compile Include="Rules\Code\SPMonitoredScopeShouldBeUsed.cs" />
+    <Compile Include="Rules\Code\AvoidEnumeratingAllUserProfiles.cs" />
+    <Compile Include="Rules\Code\ConfigurationManagerShouldNotBeUsed.cs" />
+    <Compile Include="Rules\Code\MagicStringShouldNotBeUsed.cs" />
+    <Compile Include="Rules\Code\SPQueryScopeDoesNotDefined.cs" />
+    <Compile Include="Rules\Code\SPViewScopeDoesNotDefined.cs" />
+    <Compile Include="Rules\Code\ULSLoggingInCatchBlock.cs" />
+    <Compile Include="Rules\Code\ULSLoggingShouldBeUsed.cs" />
+    <Compile Include="Rules\Code\UniqueListInstanceUrl.cs" />
+    <Compile Include="Rules\Code\UseSecureStoreService.cs" />
+    <Compile Include="Common\MagicStringsHelper.cs" />
+    <Compile Include="Rules\Code\WrongSPViewUpdate.cs" />
+    <Compile Include="Rules\Control\AvoidDollarGlobalVariableInControl.cs" />
+    <Compile Include="Rules\Control\AvoidJQueryDocumentReadyInControl.cs" />
+    <Compile Include="Rules\Control\AvoidUsingRenderingTemplate.cs" />
+    <Compile Include="Rules\Control\SPDataSourceScopeDoesNotDefinedInControl.cs" />
+    <Compile Include="Rules\JavaScript\AvoidDollarGlobalVariableInJSFile.cs" />
+    <Compile Include="Rules\JavaScript\AvoidJQueryDocumentReadyInJSFile.cs" />
+    <Compile Include="Rules\MasterPage\AvoidDollarGlobalVariableInMasterPage.cs" />
+    <Compile Include="Rules\MasterPage\AvoidJQueryDocumentReadyInMasterPage.cs" />
+    <Compile Include="Rules\MasterPage\SPDataSourceScopeDoesNotDefinedInMasterPage.cs" />
+    <Compile Include="Rules\Other\AvoidInfoPathForms.cs" />
+    <Compile Include="Rules\Other\UnresolvedTokenAssemblyFullName.cs" />
+    <Compile Include="Rules\Page\AvoidDollarGlobalVariableInPage.cs" />
+    <Compile Include="Rules\Page\AvoidJQueryDocumentReadyInPage.cs" />
+    <Compile Include="Rules\Page\SPDataSourceScopeDoesNotDefinedInPage.cs" />
+    <Compile Include="Rules\Xml\AvoidDollarGlobalVariableInWebPart.cs" />
+    <Compile Include="Rules\Xml\AvoidJQueryDocumentReadyInWebPart.cs" />
+    <Compile Include="Rules\Xml\AvoidListContentTypes.cs" />
+    <Compile Include="Rules\Xml\ConsiderHiddenListTemplates.cs" />
+    <Compile Include="Rules\Xml\DeployContentTypesCorrectly.cs" />
+    <Compile Include="Rules\Xml\ConsiderOverwriteAttributeForContentType.cs" />
+    <Compile Include="Rules\Xml\ConsiderOverwriteAttributeForFields.cs" />
+    <Compile Include="Rules\Xml\DeclareEmptyFieldsElement.cs" />
+    <Compile Include="Rules\Xml\DeployFieldsCorrectly.cs" />
+    <Compile Include="Rules\Xml\DeployTaxonomyFieldsCorrectly.cs" />
+    <Compile Include="Rules\Xml\DoNotAllowDeletionForField.cs" />
+    <Compile Include="Rules\Xml\DoNotAllowDeletionForList.cs" />
+    <Compile Include="Rules\Xml\DoNotDeployTaxonomyFieldsInList.cs" />
+    <Compile Include="Rules\Xml\DoNotUseSystemListNames.cs" />
+    <Compile Include="Rules\Xml\EnsureFolderContentTypeInListDef.cs" />
+    <Compile Include="Rules\Xml\FeatureAlwaysForceInstall.cs" />
+    <Compile Include="Rules\Xml\MagicStringShouldNotBeUsed.cs" />
+    <Compile Include="Rules\Xml\NameWithPictureForUserField.cs" />
+    <Compile Include="Rules\Xml\WebPartDefinitionMightBeImproved.cs" />
+    <Compile Include="Rules\Xml\DoNotDefineMultipleFieldGroupInOneElementFile.cs" />
+    <Compile Include="Rules\Xml\DoNotDefineMultipleContentTypeGroupInOneElementFile.cs" />
+    <Compile Include="Rules\Xml\ImproveWebPartGroupProperty.cs" />
+    <Compile Include="Rules\Xml\FieldIDShouldBeUppercase.cs" />
+    <Compile Include="Metrics\Other\NumberOfControlTemplates.cs" />
+    <Compile Include="Metrics\Code\NumberOfExternalDlls.cs" />
+    <Compile Include="Metrics\Other\NumberOfLayoutsPages.cs" />
+    <Compile Include="Metrics\Other\NumberOfMasterPages.cs" />
+    <Compile Include="Metrics\Other\NumberOfXsltFiles.cs" />
+    <Compile Include="Rules\Code\InappropriateUsageOfSPListCollection.cs" />
+    <Compile Include="Rules\Xml\FeatureShouldHaveNotEmptyImageUrl.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rules\Code\ThreadSleepShouldNotBeUsed.cs" />
+    <Compile Include="Scripting\CompileContext.cs" />
+    <Compile Include="Scripting\CompileResult.cs" />
+    <Compile Include="Scripting\ExecutionContext.cs" />
+    <Compile Include="Scripting\ExecutionResult.cs" />
+    <Compile Include="Scripting\PowerShellScriptingHost.cs" />
+    <Compile Include="Scripting\ResolveStartEntriesContext.cs" />
+    <Compile Include="Scripting\ResolveStartEntriesResult.cs" />
+    <Compile Include="Scripting\ScriptingRuntimeException.cs" />
+    <Compile Include="Scripting\ScriptMethodParameter.cs" />
+    <Compile Include="Utils\MonitoredScope.cs" />
+    <Compile Include="Utils\XmlSerializerUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Metrics\Xml\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>C:\WINDOWS\system32\windowspowershell\v1.0\powershell.exe -ExecutionPolicy unrestricted -NoLogo -NonInteractive -Command .'$(SolutionDir)_build\OnBuild.ps1' -SolutionDir:'$(SolutionDir)' -ProjectDir:'$(ProjectDir)' -ConfigurationName:'$(ConfigurationName)' -TargetDir:'$(TargetDir)' -TargetFileName:'$(TargetFileName)' -TargetName:'$(TargetName)'</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

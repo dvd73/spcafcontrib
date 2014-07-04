@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="13538161-5c5c-4810-afd4-fb8d62b98be5" solutionId="13538161-5c5c-4810-afd4-fb8d62b98be5" resetWebServer="false" resetWebServerModeOnUpgrade="Recycle" name="MOSS2010.Common" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <projectOutputAssembly location="SharePoint.Common.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\SharePoint.Common\SharePoint.Common.csproj" />
+    <customAssembly location="Camlex.NET.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\_3rd part\Camlex.NET\Camlex.NET.dll" />
+  </assemblies>
+  <features>
+    <featureReference itemId="ae53b699-831b-4985-9c46-c0ee8a1c60f3" />
+    <featureReference itemId="2a657e25-4c20-41e3-98f2-c743d845d2dd" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="b5694e82-4a99-4d8a-942b-7921fd9dc75d" />
+    <projectItemReference itemId="07b684ff-eaed-4b3b-9747-c1489750e3e0" />
+    <projectItemReference itemId="a38446aa-09ba-46a6-9e88-aca343a11eac" />
+  </projectItems>
+</package>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<SPCAFSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="SPCAFControb.Experimental.StringTest" Description="SPCAFControb.Experimental.StringTest">
+  <Analyzers>
+    <Analyzer Name="SPDepend" Disabled="true" />
+    <Analyzer Name="SPInventory" Disabled="true" />
+    <Analyzer Name="SPCop" Disabled="true" />
+    <Analyzer Name="SPMetrics" Disabled="true" />
+    <Analyzer Name="CSSLint" Disabled="true" />
+    <Analyzer Name="JSHint" Disabled="true" />
+    <Analyzer Name="FxCop" Disabled="true" />
+    <Analyzer Name="Metrics" Disabled="true" />
+    <Analyzer Name="SPDisposeCheck" Disabled="true" />
+    <Analyzer Name="CATNET" Disabled="true" />
+    <Analyzer Name="SPCAFContrib.Experimental">
+      <RuleGroups>
+        <RuleGroup Name="SPCAFContrib.Common.ContribBestPracticesGroup">
+          <Rules>
+            <Rule Name="CSC510001" Disabled="true" />
+            <Rule Name="CSC510002" Disabled="true" />
+            <Rule Name="CSC510203" Disabled="true" />
+            <Rule Name="CSC510205" Disabled="true" />
+            <Rule Name="CSC510206" Disabled="true" />
+            <Rule Name="CSC510207" Disabled="true" />
+            <Rule Name="CSC510208" Disabled="true" />
+            <Rule Name="CSC510216" Disabled="true" />
+            <Rule Name="CSC510217" Disabled="true" />
+            <Rule Name="CSC510222" Disabled="true" />
+            <Rule Name="CSC510223" Disabled="true" />
+            <Rule Name="CSC510226" Disabled="true" />
+            <Rule Name="CSC510228" Disabled="true" />
+            <Rule Name="CSC510229" Disabled="true" />
+            <Rule Name="CSC512104" Disabled="true" />
+            <Rule Name="CSC515401" Disabled="true" />
+            <Rule Name="CSC516901" Disabled="true" />
+          </Rules>
+        </RuleGroup>
+        <RuleGroup Name="SPCAFContrib.Common.ContribInventoryGroup" Disabled="true" />
+        <RuleGroup Name="SPCAFContrib.Common.ContribMetricsGroup" Disabled="true" />
+      </RuleGroups>
+    </Analyzer>
+    <Analyzer Name="SPCAFContrib" Disabled="true" />
+  </Analyzers>
+</SPCAFSettings>
