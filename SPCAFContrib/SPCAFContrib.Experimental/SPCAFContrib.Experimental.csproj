@@ -50,7 +50,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\_3rd part\SPCAF\4.5.2\Jurassic.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Web.CommandUI, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
     <Reference Include="Mono.Cecil">
       <HintPath>..\_3rd part\SPCAF\Mono.Cecil.dll</HintPath>
     </Reference>
@@ -73,16 +72,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rules\Code\AvoidHeavyOperationsInsideRepeaterItemEventHandlers.cs" />
     <Compile Include="Rules\Code\AvoidInappropriateDataAccess.cs" />
-    <Compile Include="Rules\Code\AvoidInlineJavaScriptCode.cs" />
     <Compile Include="Rules\Code\AvoidObsoleteWebServicesInCode.cs" />
     <Compile Include="Rules\Code\AvoidObsoleteWebServicesInJavaScriptFiles.cs" />
     <Compile Include="Rules\Code\AvoidSPObjectsInFields.cs" />
-    <Compile Include="Rules\Code\AvoidStringIndexerInSPViewCollection.cs" />
     <Compile Include="Rules\Code\IncorrectDisposal.cs" />
     <Compile Include="Rules\Code\SPWebEnsureUserMethodUsage.cs" />
     <Compile Include="Rules\Code\SPWebRequestAccessEmailPropertyUsage.cs" />
     <Compile Include="Rules\Code\AvoidXsltForSharePoint2013.cs" />
-    <Compile Include="Rules\Code\BetterSPFeatureReceiverDesign.cs" />
     <Compile Include="Rules\Code\RepeatableMagicStringShouldNotBeUsed.cs" />
     <Compile Include="Metrics\Code\SearchQueryIsUsed.cs" />
     <Compile Include="Rules\Code\SPSiteFeatureShouldNotBeActivatedFromCode.cs" />
@@ -104,6 +100,10 @@
     <Folder Include="Rules\Page\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SPCAFContrib.Entities\SPCAFContrib.Entities.csproj">
+      <Project>{2870606f-0cfa-4c6d-8933-ad07d024a8f8}</Project>
+      <Name>SPCAFContrib.Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SPCAFContrib\SPCAFContrib.csproj">
       <Project>{9e9f3f33-dea3-4ea1-9402-130eace6aa9e}</Project>
       <Name>SPCAFContrib</Name>

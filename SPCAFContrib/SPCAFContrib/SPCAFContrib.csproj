@@ -85,34 +85,20 @@
     <Compile Include="Collectors\SPPersistedObjectCollector.cs" />
     <Compile Include="Collectors\IteratorCollector.cs" />
     <Compile Include="Collectors\LoggingCollector.cs" />
+    <Compile Include="Common\CommonHelper.cs" />
     <Compile Include="Common\SingletoneHelper.cs" />
     <Compile Include="Common\Statistics\SPPersistedObjectStatistic.cs" />
     <Compile Include="Common\Statistics\IteratorStatistic.cs" />
-    <Compile Include="Consts\CheckIDs.cs" />
-    <Compile Include="Consts\ContribInventoryGroup.cs" />
-    <Compile Include="Consts\ContribRecommendationsGroup.cs" />
-    <Compile Include="Consts\ContribBestPracticesGroup.cs" />
-    <Compile Include="Consts\ContribMetricsGroup.cs" />
-    <Compile Include="Consts\ContribCorrectnessGroup.cs" />
-    <Compile Include="Consts\ContribSandboxedCompatibilityGroup.cs" />
-    <Compile Include="Consts\HelpSite.cs" />
-    <Compile Include="Consts\InspectedSPElement.cs" />
+    <Compile Include="Groups\ContribInventoryGroup.cs" />
+    <Compile Include="Groups\ContribRecommendationsGroup.cs" />
+    <Compile Include="Groups\ContribBestPracticesGroup.cs" />
+    <Compile Include="Groups\ContribMetricsGroup.cs" />
+    <Compile Include="Groups\ContribCorrectnessGroup.cs" />
+    <Compile Include="Groups\ContribSandboxedCompatibilityGroup.cs" />
     <Compile Include="Common\Statistics\Base\StatisticBase.cs" />
     <Compile Include="Common\Statistics\LoggingStatistic.cs" />
     <Compile Include="Common\MultiValueDictionary.cs" />
     <Compile Include="Common\Wildcard.cs" />
-    <Compile Include="Consts\ExcludedLibraries.cs" />
-    <Compile Include="Consts\SharePointOOBListInstances.cs" />
-    <Compile Include="Consts\SharePointTimerJobs.cs" />
-    <Compile Include="Consts\SharePointWebControls.cs" />
-    <Compile Include="Consts\SharePointWorkflowActivities.cs" />
-    <Compile Include="Consts\SP2010UserProfileProperties.cs" />
-    <Compile Include="Consts\SPPersistedObjectTypes.cs" />
-    <Compile Include="Consts\TypeKeys.cs" />
-    <Compile Include="Consts\SP2013ManagedProperties.cs" />
-    <Compile Include="Consts\SPEventReceivers.cs" />
-    <Compile Include="Consts\SP2007WebServices.cs" />
-    <Compile Include="Consts\SP2010WebServices.cs" />
     <Compile Include="Extensions\AssemblyFileReferenceExtensions.cs" />
     <Compile Include="Extensions\BooleanVisitor.cs" />
     <Compile Include="Extensions\CachedOperationExtensions.cs" />
@@ -146,10 +132,12 @@
     <Compile Include="Rules\Code\AvoidUsingListFieldIterator.cs" />
     <Compile Include="Rules\Code\AvoidUsingSPContextOutsideOfWebContext.cs" />
     <Compile Include="Rules\Code\AvoidUsingSPListItemFile.cs" />
+    <Compile Include="Rules\Code\AvoidUsingUpdatePanel.cs" />
     <Compile Include="Rules\Code\Base\SearchMethodRuleBase.cs" />
     <Compile Include="Rules\Code\Base\SearchPropertyRuleBase.cs" />
     <Compile Include="Rules\Code\CamlexQueryDoubleWhere.cs" />
     <Compile Include="Rules\Code\DoNotChangeSPPersistedObject.cs" />
+    <Compile Include="Rules\Code\DoNotDeleteUserProfile.cs" />
     <Compile Include="Rules\Code\DoNotDisposePersonalSiteWeb.cs" />
     <Compile Include="Rules\Code\DoNotUseDirectorySearcher.cs" />
     <Compile Include="Rules\Code\DoNotUsePortalLog.cs" />
@@ -161,6 +149,7 @@
     <Compile Include="Rules\Code\ListModificationFromJob.cs" />
     <Compile Include="Rules\Code\LoadJavaScriptWithinSandbox.cs" />
     <Compile Include="Rules\Code\NoCustomLogging.cs" />
+    <Compile Include="Rules\Code\OutOfContextSPWebPartManager.cs" />
     <Compile Include="Rules\Code\OutOfContextRWEP.cs" />
     <Compile Include="Rules\Code\SPDataSourceScopeDoesNotDefined.cs" />
     <Compile Include="Rules\Code\SpecifySPZoneInSPSite.cs" />
@@ -172,9 +161,13 @@
     <Compile Include="Rules\Code\SPViewScopeDoesNotDefined.cs" />
     <Compile Include="Rules\Code\ULSLoggingInCatchBlock.cs" />
     <Compile Include="Rules\Code\ULSLoggingShouldBeUsed.cs" />
-    <Compile Include="Rules\Code\UniqueListInstanceUrl.cs" />
+    <Compile Include="Rules\Control\AvoidUsingUpdatePanelInControl.cs" />
+    <Compile Include="Rules\MasterPage\AvoidUsingUpdatePanelInMasterPage.cs" />
+    <Compile Include="Rules\Page\AvoidUsingUpdatePanelInPage.cs" />
+    <Compile Include="Rules\Xml\UniqueListInstanceUrl.cs" />
     <Compile Include="Rules\Code\UseSecureStoreService.cs" />
     <Compile Include="Common\MagicStringsHelper.cs" />
+    <Compile Include="Rules\Code\UsingSPWebGetFilePreferable.cs" />
     <Compile Include="Rules\Code\WrongSPViewUpdate.cs" />
     <Compile Include="Rules\Control\AvoidDollarGlobalVariableInControl.cs" />
     <Compile Include="Rules\Control\AvoidJQueryDocumentReadyInControl.cs" />
@@ -196,7 +189,7 @@
     <Compile Include="Rules\Xml\ConsiderHiddenListTemplates.cs" />
     <Compile Include="Rules\Xml\DeployContentTypesCorrectly.cs" />
     <Compile Include="Rules\Xml\ConsiderOverwriteAttributeForContentType.cs" />
-    <Compile Include="Rules\Xml\ConsiderOverwriteAttributeForFields.cs" />
+    <Compile Include="Rules\Xml\ConsiderOverwriteAttributeForField.cs" />
     <Compile Include="Rules\Xml\DeclareEmptyFieldsElement.cs" />
     <Compile Include="Rules\Xml\DeployFieldsCorrectly.cs" />
     <Compile Include="Rules\Xml\DeployTaxonomyFieldsCorrectly.cs" />
@@ -236,6 +229,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Metrics\Xml\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SPCAFContrib.Entities\SPCAFContrib.Entities.csproj">
+      <Project>{2870606f-0cfa-4c6d-8933-ad07d024a8f8}</Project>
+      <Name>SPCAFContrib.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

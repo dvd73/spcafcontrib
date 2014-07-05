@@ -2,8 +2,9 @@
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Rules;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Control
 {
@@ -11,8 +12,8 @@ namespace SPCAFContrib.Rules.Control
      CheckId = CheckIDs.Rules.ASCXFile.SPDataSourceScopeDoesNotDefinedInControl,
      Help = CheckIDs.Rules.General.SPDataSourceScopeDoesNotDefined_HelpUrl,
 
+     Message = "SPDataSource scope is not defined in the user contol [{0}].",
      DisplayName = "SPDataSource scope is not defined in user control.",
-     Message = "SPDataSource scope is not defined in user control.",
      Description = "All SPViewScope enumeration values are covered all possible developer's intentions. If not specified SharePoint will use Default value.",
      Resolution = "Specify Scope property for SPDataSource object.",
 

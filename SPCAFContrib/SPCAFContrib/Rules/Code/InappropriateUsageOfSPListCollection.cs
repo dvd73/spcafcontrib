@@ -6,10 +6,9 @@ using SPCAF.Sdk.Rules;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
 using SPCAFContrib.Common;
-using SPCAFContrib.Consts;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
-using SPCAFContrib.Rules.Code.Base;
+using SPCAFContrib.Groups;
 using MethodDefinition = Mono.Cecil.MethodDefinition;
 
 namespace SPCAFContrib.Rules.Code
@@ -18,10 +17,10 @@ namespace SPCAFContrib.Rules.Code
      CheckId = CheckIDs.Rules.Assembly.InappropriateUsageOfSPListCollection,
      Help = CheckIDs.Rules.Assembly.InappropriateUsageOfSPListCollection_HelpUrl,
 
-     DisplayName = "Inappropriate SPList collection usage.",
-     Message = "Inappropriate SPList collection usage.",
-     Description = "Avoid enumeration, LINQ enumeration or string based index call on SPListItem collection.",
-     Resolution = "Consider fetching list instance with SPWeb.GetList(listUrl) method",
+     Message = "Inappropriate SPListCollection usage.",
+     DisplayName = "Inappropriate SPListCollection usage.",
+     Description = "Avoid enumeration, LINQ enumeration or string based index call on SPListCollection. Avoid using TryGetList method.",
+     Resolution = "Consider fetching list instance with SPWeb.GetList(listUrl) method.",
 
      DefaultSeverity = Severity.Error,
      SharePointVersion = new[] { "12", "14", "15" },
@@ -74,7 +73,7 @@ namespace SPCAFContrib.Rules.Code
             });
         }
 
-        private void CheckEnumeratorCalls(AssemblyFileReference assembly, Mono.Cecil.MethodDefinition method, NotificationCollection notifications)
+        private void CheckEnumeratorCalls(AssemblyFileReference assembly, MethodDefinition method, NotificationCollection notifications)
         {
             foreach (Instruction call in method.GetSPListCollectionEnumeratorCalls())
             {
@@ -85,7 +84,7 @@ namespace SPCAFContrib.Rules.Code
             }
         }
 
-        private void CheckLinqCalls(AssemblyFileReference assembly, Mono.Cecil.MethodDefinition method, NotificationCollection notifications)
+        private void CheckLinqCalls(AssemblyFileReference assembly, MethodDefinition method, NotificationCollection notifications)
         {
             foreach (Instruction call in method.GetSPListCollectionEnumeratorLinqCastCall())
             {
@@ -104,7 +103,7 @@ namespace SPCAFContrib.Rules.Code
             }
         }
 
-        private void CheckStringIndexCalls(AssemblyFileReference assembly, Mono.Cecil.MethodDefinition method, NotificationCollection notifications)
+        private void CheckStringIndexCalls(AssemblyFileReference assembly, MethodDefinition method, NotificationCollection notifications)
         {
             foreach (Instruction call in method.GetSPListCollectionStringIndexCall())
             {

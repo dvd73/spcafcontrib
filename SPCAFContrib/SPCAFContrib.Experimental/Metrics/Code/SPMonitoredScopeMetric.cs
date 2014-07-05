@@ -4,8 +4,9 @@ using SPCAF.Sdk;
 using SPCAF.Sdk.Metrics;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 using MethodDefinition = Mono.Cecil.MethodDefinition;
 
 namespace SPCAFContrib.Experimental.Metrics.Code

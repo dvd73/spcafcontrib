@@ -1,11 +1,9 @@
-﻿using System;
-using System.Linq;
-using SPCAF.Sdk;
-using SPCAF.Sdk.Helpers;
+﻿using SPCAF.Sdk;
 using SPCAF.Sdk.Rules;
-using SPCAFContrib.Consts;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Xml
 {
@@ -13,9 +11,9 @@ namespace SPCAFContrib.Rules.Xml
      CheckId = CheckIDs.Rules.ContentType.ConsiderOverwriteAttributeForContentType,
      Help = CheckIDs.Rules.ContentType.ConsiderOverwriteAttributeForContentType_HelpUrl,
 
-     DisplayName = "Consider Overwrite=\"TRUE\" for ContentTypes.",
-     Message = "Consider Overwrite=\"TRUE\" for ContentType '{0}' ({1}).",
-     Description = "ContentTypes with Overwrite=\"TRUE\" are deployed directly to Content Database and not subject to ghosting issues.",
+     Message = "Consider Overwrite=\"TRUE\" for content type [{0}] ({1}).",
+     DisplayName = "Consider Overwrite=\"TRUE\" for content types.",
+     Description = "Content types with Overwrite=\"TRUE\" are deployed directly to Content Database and not subject to ghosting issues.",
      Resolution = "Add Overwrite=\"TRUE\" attribute.",
 
      DefaultSeverity = Severity.CriticalWarning,

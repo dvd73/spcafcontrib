@@ -4,11 +4,11 @@ using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Rules;
 using SPCAF.Sdk.Model.Extensions;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
-using SPCAFContrib.Consts;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Experimental.Rules.Code
 {

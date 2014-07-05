@@ -47,7 +47,7 @@ namespace SPCAFContrib.Demo.ControlTemplates
                     SPSite site = SPContext.Current.Site;
                     SPSecurity.RunWithElevatedPrivileges(delegate
                     {
-                        //using (SPSite site = new SPSite(ConfigurationManager.AppSettings["QuestionsListWebUrl"]))                        
+                        //using (SPSite site1 = new SPSite(ConfigurationManager.AppSettings["QuestionsListWebUrl"]))                        
                         using (SPWeb web = site.OpenWeb())
                         {
                             web.AllowUnsafeUpdates = true;

@@ -3,7 +3,8 @@ using System.Linq;
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Rules;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Xml
 {
@@ -11,8 +12,8 @@ namespace SPCAFContrib.Rules.Xml
       CheckId = CheckIDs.Rules.FieldTemplate.DoNotDefineMultipleFieldGroupInOneElementFile,
       Help = CheckIDs.Rules.FieldTemplate.DoNotDefineMultipleFieldGroupInOneElementFile_HelpUrl,
 
-      DisplayName = "Do not define multiple field groups in one element file.",
       Message = "Do not define multiple field groups in one element file.",
+      DisplayName = "Do not define multiple field groups in one element file.",
       Description = "Do not define multiple field groups in one element file.",
       Resolution = "Split up field definitions into different elements.xml per every field group.",
 

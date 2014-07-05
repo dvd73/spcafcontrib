@@ -3,7 +3,8 @@ using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Rules;
 using System.Linq;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Xml
 {
@@ -11,8 +12,8 @@ namespace SPCAFContrib.Rules.Xml
      CheckId = CheckIDs.Rules.ContentType.AvoidListContentTypes,
      Help = CheckIDs.Rules.ContentType.AvoidListContentTypes_HelpUrl,
 
+     Message = "Change list content type [{0}] to ContentTypeRef.",
      DisplayName = "Avoid list content types.",
-     Message = "Change list content type '{0}' to ContentTypeRef.",
      Description = "Avoid using list content type in List Templates use ContentTypeRef instead.",
      Resolution = "Change list content type  to ContentTypeRef.",
 

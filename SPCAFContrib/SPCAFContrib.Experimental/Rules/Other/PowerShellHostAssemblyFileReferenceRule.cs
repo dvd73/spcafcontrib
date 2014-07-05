@@ -1,6 +1,7 @@
 ﻿using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Experimental.Rules.Other
 {

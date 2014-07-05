@@ -1,8 +1,9 @@
 ﻿using System;
 using SPCAF.Sdk.Rules;
 using SPCAF.Sdk;
-using SPCAFContrib.Consts;
 using SPCAF.Sdk.Model;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Xml
 {
@@ -10,14 +11,13 @@ namespace SPCAFContrib.Rules.Xml
       CheckId = CheckIDs.Rules.Feature.FeatureShouldHaveNotEmptyImageUrl,
       Help = CheckIDs.Rules.Feature.FeatureShouldHaveNotEmptyImageUrl_HelpUrl,
 
-      DisplayName = "Feature should specify ImageUrl attribute.",
       Message = "Feature [{0}] should specify the ImageUrl attribute.",
+      DisplayName = "Feature should specify ImageUrl attribute.",
       Description = "Feature should have not empty ImageUrl attribute and reference a custom feature image.",
       Resolution = "Add custom image to Image folder and reference with ImageUrl attribute.",
 
       DefaultSeverity = Severity.Warning,
       SharePointVersion = new[] { "12", "14", "15" },
-
       Links = new[]
         {
             "Feature Element (Feature)",

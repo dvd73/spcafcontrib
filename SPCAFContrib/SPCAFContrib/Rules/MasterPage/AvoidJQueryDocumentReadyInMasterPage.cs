@@ -2,8 +2,9 @@
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Rules;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Control
 {
@@ -11,10 +12,10 @@ namespace SPCAFContrib.Rules.Control
      CheckId = CheckIDs.Rules.ASPXMasterPage.AvoidJQueryDocumentReadyInMasterPage,
      Help = CheckIDs.Rules.General.AvoidJQueryDocumentReady_HelpUrl,
 
+     Message = "jQuery(document).ready is used in the master page [{0}].",
      DisplayName = "Avoid using jQuery(document).ready in master page.",
      Description = "Due to specific SharePoint client side initialization life cycle, it is recommended to avoid using jQuery(document).ready call.",
-     Message = "jQuery(document).ready is used in master page [{0}].",
-     Resolution = "Use _spBodyOnLoadFunctions.push function or mQuery for SP2013.",
+     Resolution = "Use _spBodyOnLoadFunctions.push function or SP.SOD.",
 
      DefaultSeverity = Severity.Warning,
      SharePointVersion = new[] { "12", "14", "15" })]

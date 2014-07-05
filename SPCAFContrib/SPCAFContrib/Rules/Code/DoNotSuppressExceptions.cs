@@ -7,9 +7,10 @@ using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
 using SPCAF.Sdk.Rules;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
 using System;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Rules.Code.Base;
 using MethodDefinition = Mono.Cecil.MethodDefinition;
 
@@ -18,12 +19,15 @@ namespace SPCAFContrib.Rules.Code
     [RuleMetadata(typeof(ContribCorrectnessGroup),
      CheckId = CheckIDs.Rules.Assembly.DoNotSuppressExceptions,
      Help = CheckIDs.Rules.Assembly.DoNotSuppressExceptions_HelpUrl,
+
+     Message = "Do not suppress general exceptions. Method: [{0}], Class:[{1}]",
      DisplayName = "Do not suppress general exceptions.",
      Description = "Rethrow exception in catch(Exception) block using throw or catch specific exception.",
+     Resolution = "Rethrow exception in catch(Exception) block using throw or catch specific exception.",
+
      DefaultSeverity = SPCAF.Sdk.Severity.Error,
-     SharePointVersion = new[] { "12", "14", "15" },
-     Message = "Do not suppress general exceptions. Method: [{0}], Class:[{1}]",
-     Resolution = "Rethrow exception in catch(Exception) block using throw or catch specific exception.")]
+     SharePointVersion = new[] { "12", "14", "15" }
+     )]
     public class DoNotSuppressExceptions : Rule<AssemblyFileReference>
     {
         private class EmptyCatchExceptionVisitor : BooleanOrVisitor<Action<AstNode>>

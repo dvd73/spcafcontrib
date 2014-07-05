@@ -8,17 +8,20 @@ using SPCAF.Sdk.Inventory;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
 using SPCAFContrib.Common;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Inventory
 {
     [InventoryMetadata(typeof(ContribInventoryGroup),
         CheckId = CheckIDs.Inventory.Assembly.ListOfStrings,
         Help = CheckIDs.Inventory.Assembly.ListOfStrings_HelpUrl,
+
+        Message = "Added methods string [{0}] to inventory",
         DisplayName = "Method strings",
         Description = "Provides information about all strings in the solution methods.",
-        Message = "Added methods string '{0}' to inventory",
+        
         SharePointVersion = new string[] { "12", "14", "15" })]
     public class ListOfStrings : Inventory<AssemblyFileReference>
     {

@@ -1,12 +1,9 @@
 ﻿using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
-using SPCAF.Sdk.Model.Extensions;
 using SPCAF.Sdk.Rules;
 using System;
-using System.Linq;
-using SPCAFContrib.Consts;
-using SPCAFContrib.Extensions;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Xml
 {
@@ -14,14 +11,13 @@ namespace SPCAFContrib.Rules.Xml
        CheckId = CheckIDs.Rules.ListInstance.DoNotUseSystemListNames,
        Help = CheckIDs.Rules.ListInstance.DoNotUseSystemListNames_HelpUrl,
 
-       DisplayName = "Avoid system list names for the custom list instances.",
        Message = "Avoid system list names for the custom list instances. Tittle: {0}, Url: {1}.",
-       Description = "Avoid system list names for the custom list instances.",
-       Resolution = @"Do not use out of the box list names.",
+       DisplayName = "Avoid system list names for the custom list instances.",
+       Description = "Potential issue as you feature would not work on particular sites.",
+       Resolution = "Do not use out of the box list names.",
 
        DefaultSeverity = Severity.CriticalWarning,
        SharePointVersion = new[] { "12", "14", "15" },
-
        Links = new[]
        {
            "List Instances",

@@ -3,9 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using Microsoft.Office.Server.UserProfiles;
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.Utilities;
 using Microsoft.SharePoint.WebControls;
+using Microsoft.SharePoint.WebPartPages;
+using WebPart = Microsoft.SharePoint.WebPartPages.WebPart;
 
 namespace SPCAFContrib.Demo.Receivers
 {
@@ -185,6 +189,8 @@ namespace SPCAFContrib.Demo.Receivers
                     view = list.DefaultView;
                     view.Paged = true;
                     view.Update();
+
+                    DeleteUserProfiles(site);
                 }
             }
         }
@@ -254,6 +260,30 @@ namespace SPCAFContrib.Demo.Receivers
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        public void DeleteUserProfiles(SPSite _site)
+        {
+            using (SPSite site = new SPSite(_site.ID))
+            {
+                SPServiceContext serviceContext = SPServiceContext.GetContext(site.WebApplication.ServiceApplicationProxyGroup, SPSiteSubscriptionIdentifier.Default);
+                UserProfileManager profileManager = new UserProfileManager(serviceContext);
+
+                foreach (UserProfile up in profileManager)
+                {
+                    profileManager.RemoveUserProfile(up.ID);
+                }
+            }
+        }
+
+        private void EnsureWebPartForEdit(SPWebPartManager wpManager, WebZone zone, bool p)
+        {
+            foreach (var wp in wpManager.WebParts)
+            {
+                var webPart = wp as WebPart;
+                if (webPart.Zone.Equals(zone))
+                    webPart.AllowEdit = p;
             }
         }
         #endregion

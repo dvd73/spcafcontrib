@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using SPCAF.Sdk;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Rules.Code.Base;
 
 namespace SPCAFContrib.Experimental.Rules.Code
@@ -9,8 +10,8 @@ namespace SPCAFContrib.Experimental.Rules.Code
        CheckId = CheckIDs.Rules.Assembly.SPWebEnsureUserMethodUsage,
        Help = CheckIDs.Rules.Assembly.SPWebEnsureUserMethodUsage_HelpUrl,
 
-       DisplayName = "SPWeb.EnsureUser() method usage.",
        Message = "Tend to reduce SPWeb.EnsureUser() method usage.",
+       DisplayName = "SPWeb.EnsureUser() method usage.",
        Description = "Tend to reduce SPWeb.EnsureUser() method usage as it is quite costly operation.",
        Resolution = "Tend to reduce SPWeb.EnsureUser() method usage as it is quite costly operation.",
 

@@ -6,8 +6,9 @@ using SPCAF.Sdk.Model.Extensions;
 using SPCAF.Sdk.Utilities;
 using SPCAFContrib.Collectors;
 using SPCAFContrib.Common.Statistics;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Rules.Code.Base;
 
 namespace SPCAFContrib.Rules.Code
@@ -16,8 +17,8 @@ namespace SPCAFContrib.Rules.Code
      CheckId = CheckIDs.Rules.Assembly.DoNotChangeSPPersistedObject,
      Help = CheckIDs.Rules.Assembly.DoNotChangeSPPersistedObject_HelpUrl,
 
-     DisplayName = "Do not change SPPersistedObject in the content web application.",
      Message = "Do not change SPPersistedObject in the content web application.",
+     DisplayName = "Do not change SPPersistedObject in the content web application.",
      Description = "SharePoint 2010+ has security feature to all objects inheriting from SPPersistedObject. This feature explicitly disallows modification of SPPersistedObject objects from content web applications.",
      Resolution = "Put your logic into the feature with WebApplication or Farm scope.",
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using SPCAF.Sdk;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Rules.Code.Base;
 
 namespace SPCAFContrib.Experimental.Rules.Code
@@ -9,8 +10,8 @@ namespace SPCAFContrib.Experimental.Rules.Code
        CheckId = CheckIDs.Rules.Assembly.SPWebRequestAccessEmailPropertyUsage,
        Help = CheckIDs.Rules.Assembly.SPWebRequestAccessEmailPropertyUsage_HelpUrl,
 
-       DisplayName = "SPWeb.RequestAccessEmail() method usage.",
        Message = "SPWeb.RequestAccessEmail() method usage.",
+       DisplayName = "SPWeb.RequestAccessEmail() method usage.",
        Description = "SPWeb.RequestAccessEmail() method requires a proper 'Outgoing Email' farm settings. Ensure these configuration on the target farm.",
        Resolution = "SPWeb.RequestAccessEmail() method requires a proper 'Outgoing Email' farm settings. Ensure these configuration on the target farm.",
 

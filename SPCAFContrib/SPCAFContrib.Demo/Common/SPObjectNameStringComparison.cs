@@ -15,13 +15,15 @@ namespace SPCAFContrib.Demo.Common
     {
         public void WrongCases()
         {
+            string teststring = "some text";
+
             SPWeb MyWeb = new SPSite("http://<Server>/sites/Team%20Site/default.aspx").OpenWeb();
 
             bool r = String.Equals(MyWeb.Name, "Test", StringComparison.CurrentCultureIgnoreCase);
 
             UserProfileWatcherJob jd = new UserProfileWatcherJob();
             if (jd.Name == "some_name") ;
-            
+
             SPContentType DocTypes = MyWeb.AvailableContentTypes["Document"];
             SPContentType MyType = new SPContentType(DocTypes, MyWeb.ContentTypes, "Test");
             if (MyType.Name.CompareTo("Test") > 0)
@@ -37,11 +39,16 @@ namespace SPCAFContrib.Demo.Common
             Group group = termStore.Groups["Departments"];
             TermSet termSet = group.TermSets["HR"];
             Term term = termSet.Terms["HR specialist"];
-            if (group.Name != term.Name);
+
+            if (termSet.Name != teststring) ;
+            if (group.Name != teststring);
+            if (term.Name != teststring) ;
 
             SPList list = MyWeb.GetList("/Lists/Documents");
-            if ("Test" != list.Items[0].Name) ;
-            
+            if (teststring != list.Items[0].Name) ;
+
+            if (SPContext.Current.Web.CurrentUser.Name != teststring) ;
+
         }
     }
 }

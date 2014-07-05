@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
 using SPCAF.Sdk.Rules;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Common;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 using ModuleDefinition = Mono.Cecil.ModuleDefinition;
 
 namespace SPCAFContrib.Rules.Code
@@ -15,10 +18,10 @@ namespace SPCAFContrib.Rules.Code
     [RuleMetadata(typeof(ContribCorrectnessGroup),
      CheckId = CheckIDs.Rules.Assembly.AvoidDollarGlobalVariableInCode,
      Help = CheckIDs.Rules.General.AvoidDollarGlobalVariable_HelpUrl,
-     
-     DisplayName = "Avoid using $ for jQuery in C# code.",
-     Description = "Avoid global $-var as it conflict with assert picker and cmssitemanager.js.",
+
      Message = "jQuery $ variable is used in method [{0}].",
+     DisplayName = "Avoid using $ as jQuery reference in C# code.",
+     Description = "Avoid global $-var as it conflict with assert picker and cmssitemanager.js.",
      Resolution = "Use jQuery global variable instead of $.",
 
      DefaultSeverity = Severity.Warning,

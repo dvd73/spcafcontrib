@@ -1,8 +1,9 @@
 ﻿using System;
 using SPCAF.Sdk;
 using SPCAF.Sdk.Rules;
-using SPCAFContrib.Consts;
 using SPCAF.Sdk.Model;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Xml
 {
@@ -10,14 +11,13 @@ namespace SPCAFContrib.Rules.Xml
        CheckId = CheckIDs.Rules.FieldTemplate.DoNotAllowDeletionForField,
        Help = CheckIDs.Rules.FieldTemplate.DoNotAllowDeletionForField_HelpUrl,
 
-       DisplayName = "Prevent SharePoint field from deletion.",
        Message = "Add attribute AllowDeletion=\"FALSE\" to the [{0}] field template.",
+       DisplayName = "Prevent SharePoint field from deletion.",
        Description = "If we don't want to let the users to delete the field in SharePoint provide template with attribute AllowDeletion=\"FALSE\".",
        Resolution = "Add attribute AllowDeletion=\"FALSE\" to the field template.",
 
        DefaultSeverity = Severity.Information,
        SharePointVersion = new[] { "12", "14", "15" },
-
        Links = new[] 
        { 
            "Field Element (Field)",

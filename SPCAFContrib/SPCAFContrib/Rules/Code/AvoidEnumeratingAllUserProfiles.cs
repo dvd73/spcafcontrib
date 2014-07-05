@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
-using SPCAFContrib.Consts;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Rules.Code.Base;
 
 namespace SPCAFContrib.Rules.Code
@@ -14,8 +14,8 @@ namespace SPCAFContrib.Rules.Code
      CheckId = CheckIDs.Rules.Assembly.AvoidEnumeratingAllUserProfiles,
      Help = CheckIDs.Rules.Assembly.AvoidEnumeratingAllUserProfiles_HelpUrl,
 
+     Message = "Avoid enumerating all user profiles.",
      DisplayName = "Avoid enumerating all user profiles.",
-     Message = "Avoid enumerating all the user profiles.",
      Description = "Some recommended practices regarding UserProfileManager class utilization.",
      Resolution = "Consider utilizing search to get user profiles you are interested in. After that, retrieve  needed user profiles by \"logic\" look up.",
 

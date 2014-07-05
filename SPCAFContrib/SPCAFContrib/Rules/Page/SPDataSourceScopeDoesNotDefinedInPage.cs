@@ -2,8 +2,9 @@
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Rules;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Page
 {
@@ -11,8 +12,8 @@ namespace SPCAFContrib.Rules.Page
      CheckId = CheckIDs.Rules.ASPXPage.SPDataSourceScopeDoesNotDefinedInPage,
      Help = CheckIDs.Rules.General.SPDataSourceScopeDoesNotDefined_HelpUrl,
 
+     Message = "SPDataSource scope is not defined in the page [{0}].",
      DisplayName = "SPDataSource scope is not defined in page.",
-     Message = "SPDataSource scope is not defined in page.",
      Description = "All SPViewScope enumeration values are covered all possible developer's intentions. If not specified SharePoint will use Default value.",
      Resolution = "Specify Scope property for SPDataSource object.",
 

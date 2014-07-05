@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Rules;
 using System.Linq;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Xml
 {
@@ -11,9 +13,9 @@ namespace SPCAFContrib.Rules.Xml
       CheckId = CheckIDs.Rules.ListTemplate.DeclareEmptyFieldsElement,
       Help = CheckIDs.Rules.ListTemplate.DeclareEmptyFieldsElement_HelpUrl,
 
-      DisplayName = "Declare empty Fields element.",
-      Message = "Declare empty Fields element.",
-      Description = "Declare empty Fields element when using ContentTypeRefs. Fields automatically populated from content types.",
+      Message = "Declare empty Fields element in list schema [{0}].",
+      DisplayName = "Declare empty Fields element in list schema.",
+      Description = "Declare empty Fields element when using only ContentTypeRefs. Fields automatically populated from content types.",
       Resolution = "Declare empty Fields element.",
 
       DefaultSeverity = Severity.Warning,
@@ -38,14 +40,15 @@ namespace SPCAFContrib.Rules.Xml
             }
 
             IEnumerable<ContentTypeDefinition> contentTypes = target.ListDefinition.MetaData.ContentTypes.Items.OfType<ContentTypeDefinition>();
+            IEnumerable<ContentTypeReference> contentTypeReferences = target.ListDefinition.MetaData.ContentTypes.Items.OfType<ContentTypeReference>();
 
-            if (!contentTypes.Any())
+            if (!contentTypes.Any() && contentTypeReferences.Any())
             {
                 FieldDefinitions fields = target.ListDefinition.MetaData.Fields;
 
                 if (fields == null || (fields.Field != null && fields.Field.Length > 0))
                 {
-                    this.Notify(target, this.MessageTemplate(), notifications);
+                    this.Notify(target, String.Format(this.MessageTemplate(), target.ListDefinition.Title), notifications);
                 }
             }
         }

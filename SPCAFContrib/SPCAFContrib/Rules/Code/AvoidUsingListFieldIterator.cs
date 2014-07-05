@@ -6,8 +6,9 @@ using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
 using SPCAFContrib.Collectors;
 using SPCAFContrib.Common.Statistics;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Rules.Code.Base;
 
 namespace SPCAFContrib.Rules.Code
@@ -16,8 +17,8 @@ namespace SPCAFContrib.Rules.Code
      CheckId = CheckIDs.Rules.Assembly.AvoidUsingListFieldIterator,
      Help = CheckIDs.Rules.Assembly.AvoidUsingListFieldIterator_HelpUrl,
 
-     DisplayName = "ListFieldIterator is used.",
      Message = "ListFieldIterator is used.",
+     DisplayName = "ListFieldIterator is used.",
      Description = "Using ListFieldIterator is a too strong list form customization.",
      Resolution = "In many cases to change list form UI the DataFormWebPart (instead of ListFormWebPart) + JavaScript are enough.",
 

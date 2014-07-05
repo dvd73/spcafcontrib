@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Mono.Cecil;
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
-using SPCAFContrib.Consts;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Rules.Code.Base;
-using MethodDefinition = Mono.Cecil.MethodDefinition;
 using ParameterDefinition = Mono.Cecil.ParameterDefinition;
 
 namespace SPCAFContrib.Rules.Code
@@ -18,17 +14,20 @@ namespace SPCAFContrib.Rules.Code
     [RuleMetadata(typeof(ContribCorrectnessGroup),
      CheckId = CheckIDs.Rules.Assembly.SpecifySPZoneInSPSite,
      Help = CheckIDs.Rules.Assembly.SpecifySPZoneInSPSite_HelpUrl,
+
+     Message = "Missing SPUrlZone parameter in SPSite constructor.",
      DisplayName = "Missing SPUrlZone parameter in SPSite constructor.",
      Description = "Constructor would take default SPUrlZone so that you may have issues with the *.Url properties.",
+     Resolution = "You have to specify SPUrlZone while creating new instance of the SPSite via new SPSite(Guid, ...) constructor. Constructor would take default SPUrlZone so that you may have issues with the *.Url properties.",
+
      DefaultSeverity = Severity.CriticalWarning,
      SharePointVersion = new[] { "12", "14", "15" },
-     Message = "Missing SPUrlZone parameter in SPSite constructor.",
      Links = new[]
      {
          "SPSite constructor",
          "http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.spsite.spsite.aspx"
-     },
-     Resolution = "You have to specify SPUrlZone while creating new instance of the SPSite via new SPSite(Guid, ...) constructor. Constructor would take default SPUrlZone so that you may have issues with the *.Url properties.")]
+     }
+     )]
     public class SpecifySPZoneInSPSite : SearchMethodRuleBase
     {
         #region methods

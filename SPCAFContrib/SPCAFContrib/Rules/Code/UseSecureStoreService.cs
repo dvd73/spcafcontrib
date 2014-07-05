@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Rules.Code.Base;
 
 namespace SPCAFContrib.Rules.Code
@@ -13,12 +13,14 @@ namespace SPCAFContrib.Rules.Code
     [RuleMetadata(typeof(ContribBestPracticesGroup),
      CheckId = CheckIDs.Rules.Assembly.UseSecureStoreService,
      Help = CheckIDs.Rules.Assembly.UseSecureStoreService_HelpUrl,
-     DisplayName = "Consider Secure Store Service instead of direct db connection.",
+
+     Message = "Consider use Secure Store Service instead of direct connection.",
+     DisplayName = "Consider use Secure Store Service instead of direct db connection.",
      Description = "At some point, it is better to use Secure Store Provider to store credentials/connection strins intead of saving them into web.config, property bags or lists.",
-     DefaultSeverity = Severity.Information,
-     SharePointVersion = new[] { "12", "14", "15" },
-     Message = "Consider Secure Store Service instead of direct connection.",
      Resolution = "Conside Security Store Service as a safe storage for the credentials and connection strings.",
+
+     DefaultSeverity = Severity.Information,
+     SharePointVersion = new[] {"14", "15" },
      Links = new []
      {
          "How to use Secure Store Id for Impersonation programmatically",

@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\JetBrains.ReSharper.SDK.8.2.1158\build\JetBrains.ReSharper.SDK.Props" Condition="Exists('..\..\packages\JetBrains.ReSharper.SDK.8.2.1158\build\JetBrains.ReSharper.SDK.Props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DE9661D0-527D-46CD-8F9E-C5DCAB9D46D9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SPCAFContrib.ReSharper</RootNamespace>
+    <AssemblyName>SPCAFContrib.ReSharper</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>JET_MODE_ASSERT;DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartAction>Program</StartAction>
+    <StartProgram>$(VsInstallDir)devenv.exe</StartProgram>
+    <StartArguments>/ReSharper.Plugin $(AssemblyName).dll /ReSharper.Internal</StartArguments>
+    <StartWorkingDirectory>$(MSBuildProjectDirectory)\$(OutputPath)</StartWorkingDirectory>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Attributes\ApplicabilityAttribute.cs" />
+    <Compile Include="Common\CodeAnalysis\MethodSpecification.cs" />
+    <Compile Include="Common\CodeAnalysis\ParameterCriteria.cs" />
+    <Compile Include="Common\CommonHelper.cs" />
+    <Compile Include="Common\DataCache\FieldCache.cs" />
+    <Compile Include="Common\DataCache\ContentTypeCache.cs" />
+    <Compile Include="Common\DataCache\FeatureCache.cs" />
+    <Compile Include="Common\DataCache\WebPartCache.cs" />
+    <Compile Include="Common\DataCache\ListTemplateCache.cs" />
+    <Compile Include="Common\DataCache\SPXmlEntityCache.cs" />
+    <Compile Include="Common\DataCache\ListInstanceCache.cs" />
+    <Compile Include="Common\Extensions\AspElementFactoryExtension.cs" />
+    <Compile Include="Common\Extensions\IAspTagExtension.cs" />
+    <Compile Include="Common\Extensions\ICSharpArgumentExtension.cs" />
+    <Compile Include="Common\Extensions\ICSharpArgumentInfoExtension.cs" />
+    <Compile Include="Common\Extensions\ICSharpTreeNodeExtension.cs" />
+    <Compile Include="Common\Extensions\ICSharpTypeMemberDeclarationExtension.cs" />
+    <Compile Include="Common\Extensions\IExpressionExtension.cs" />
+    <Compile Include="Common\Extensions\IExpressionStatementExtension.cs" />
+    <Compile Include="Common\Extensions\IMethodExtension.cs" />
+    <Compile Include="Common\Extensions\IParameterExtension.cs" />
+    <Compile Include="Common\Extensions\IReferenceExtension.cs" />
+    <Compile Include="Common\Extensions\IXmlTagExtension.cs" />
+    <Compile Include="Common\Extensions\StringExtension.cs" />
+    <Compile Include="Common\MagicStringsHelper.cs" />
+    <Compile Include="Common\QuickFix\BulkQuickFixInFileWithCommonPsiTransaction.cs" />
+    <Compile Include="Common\Enums.cs" />
+    <Compile Include="Common\Extensions\XmlDocumentExtensions.cs" />
+    <Compile Include="Common\DataCache\SandboxedSolutionProvider.cs" />
+    <Compile Include="Common\Wildcard.cs" />
+    <Compile Include="Common\Shell\SPFileTypeDefinitionExtensionMapping.cs" />
+    <Compile Include="Common\XmlAnalysis\SPWebPartFileTagProblemAnalysis.cs" />
+    <Compile Include="Common\XmlAnalysis\SPXmlFilePropertiesProvider.cs" />
+    <Compile Include="Inspection\Code\AvoidJQueryDocumentReadyInCode.cs" />
+    <Compile Include="Inspection\Code\AvoidEnumeratingAllUserProfiles.cs" />
+    <Compile Include="Inspection\Code\AvoidSPObjectNameStringComparison2.cs" />
+    <Compile Include="Inspection\Code\AvoidSPObjectNameStringComparison.cs" />
+    <Compile Include="Inspection\Code\AvoidStaicSPObjectsInFields.cs" />
+    <Compile Include="Inspection\Code\AvoidUnsafeUrlConcatenations.cs" />
+    <Compile Include="Inspection\Code\AvoidUsingSPContextOutsideOfWebContext.cs" />
+    <Compile Include="Inspection\Code\DoNotChangeSPPersistedObject.cs" />
+    <Compile Include="Inspection\Code\DoNotSuppressExceptions.cs" />
+    <Compile Include="Inspection\Code\DoNotUsePortalLog.cs" />
+    <Compile Include="Inspection\Code\ConfigurationManagerShouldNotBeUsed.cs" />
+    <Compile Include="Inspection\Code\DoNotUseDirectorySearcher.cs" />
+    <Compile Include="Inspection\Code\AvoidUsingSPListItemFile.cs" />
+    <Compile Include="Inspection\Code\DoNotUseSPWebProperties.cs" />
+    <Compile Include="Inspection\Code\InappropriateUsageOfTaxonomyGroupCollection.cs" />
+    <Compile Include="Inspection\Code\AvoidDollarGlobalVariableInCode.cs" />
+    <Compile Include="Inspection\Code\MagicStringShouldNotBeUsed.cs" />
+    <Compile Include="Inspection\Code\GetPublishingPagesNoParams.cs" />
+    <Compile Include="Inspection\Code\NoCustomLogging.cs" />
+    <Compile Include="Inspection\Code\OutOfContextRWEP.cs" />
+    <Compile Include="Inspection\Code\OutOfContextSPWebPartManager.cs" />
+    <Compile Include="Inspection\Code\SPMonitoredScopeShouldBeUsed.cs" />
+    <Compile Include="Inspection\Code\SPSiteFeatureShouldNotBeActivatedFromCode.cs" />
+    <Compile Include="Inspection\Code\ThreadSleepShouldNotBeUsed.cs" />
+    <Compile Include="Inspection\Code\SPViewScopeDoesNotDefined.cs" />
+    <Compile Include="Inspection\Code\SPQueryScopeDoesNotDefined.cs" />
+    <Compile Include="Inspection\Code\SPDataSourceScopeDoesNotDefined.cs" />
+    <Compile Include="Inspection\Code\ULSLoggingInCatchBlock.cs" />
+    <Compile Include="Inspection\Code\UseSecureStoreService.cs" />
+    <Compile Include="Inspection\Code\WrongSPViewUpdate.cs" />
+    <Compile Include="Inspection\Page\SPDataSourceScopeDoesNotDefinedInPage.cs" />
+    <Compile Include="Inspection\Xml\AvoidListContentTypes.cs" />
+    <Compile Include="Inspection\Xml\ConsiderHiddenListTemplates.cs" />
+    <Compile Include="Inspection\Xml\ConsiderOverwriteAttributeForContentType.cs" />
+    <Compile Include="Inspection\Xml\ConsiderOverwriteAttributeForField.cs" />
+    <Compile Include="Inspection\Xml\DeclareEmptyFieldsElement.cs" />
+    <Compile Include="Inspection\Xml\DeployFieldsCorrectly.cs" />
+    <Compile Include="Inspection\Xml\DeployTaxonomyFieldsCorrectly.cs" />
+    <Compile Include="Inspection\Xml\DoNotAllowDeletionForField.cs" />
+    <Compile Include="Inspection\Xml\DoNotAllowDeletionForList.cs" />
+    <Compile Include="Inspection\Xml\DoNotDefineMultipleContentTypeGroupInOneElementFile.cs" />
+    <Compile Include="Inspection\Xml\DoNotDefineMultipleFieldGroupInOneElementFile.cs" />
+    <Compile Include="Inspection\Xml\DoNotDeployTaxonomyFieldsInListDefinition.cs" />
+    <Compile Include="Inspection\Xml\DoNotUseSystemListNames.cs" />
+    <Compile Include="Inspection\Xml\EnsureFolderContentTypeInListDefinition.cs" />
+    <Compile Include="Inspection\Xml\FieldIdShouldBeUppercase.cs" />
+    <Compile Include="Inspection\Xml\NameWithPictureForUserField.cs" />
+    <Compile Include="Inspection\Xml\UniqueFieldStaticName.cs" />
+    <Compile Include="Inspection\Xml\UniqueFieldName.cs" />
+    <Compile Include="Inspection\Xml\UniqueFieldID.cs" />
+    <Compile Include="Inspection\Xml\UniqueListInstanceTitle.cs" />
+    <Compile Include="Inspection\Xml\UniqueContentTypeID.cs" />
+    <Compile Include="Inspection\Xml\UniqueListInstanceUrl.cs" />
+    <Compile Include="Inspection\Xml\WebPartDefinitionMightBeImproved.cs" />
+    <Compile Include="Inspection\Xml\WebPartModuleDefinitionMightbeImproved.cs" />
+    <Compile Include="Options\SPCAFContribSettingsKey.cs" />
+    <Compile Include="Consts\ExcludedFiles.cs" />
+    <Compile Include="Common\Extensions\IProjectExtension.cs" />
+    <Compile Include="Common\Extensions\IPsiSourceFileExtension.cs" />
+    <Compile Include="Options\SPCAFContribSettingsSettingsAccessor.cs" />
+    <Compile Include="Common\XmlAnalysis\SPXmlFileTagProblemAnalysisBase.cs" />
+    <Compile Include="Common\XmlAnalysis\SPElementsFileTagProblemAnalysis.cs" />
+    <Compile Include="Common\XmlAnalysis\SPXmlSyntaxAnalysisProvider.cs" />
+    <Compile Include="Common\XmlAnalysis\XmlTagProblemAnalyzer.cs" />
+    <Compile Include="Inspection\Code\DoNotUseUnsafeTypeConversionOnSPListItem.cs" />
+    <Compile Include="Inspection\Code\SpecifySPZoneInSPSite.cs" />
+    <Compile Include="Inspection\JavaScript\JQueryRelated.cs" />
+    <Compile Include="Inspection\Page\Examples.cs" />
+    <Compile Include="Inspection\Xml\DeployContentTypesCorrectly.cs" />
+    <Compile Include="Common\HelpLink\CodeInspectionHelpLinkProvider.cs" />
+    <Compile Include="Common\Shell\CodeInspectionHelpLinkDataProvider.cs" />
+    <Compile Include="Common\HelpLink\CodeInspectionHelpLinkResources.cs" />
+    <Compile Include="Consts\Consts.cs" />
+    <Compile Include="Inspection\Code\InappropriateUsageOfSPListCollection.cs" />
+    <Compile Include="Consts\CltTypeKeys.cs" />
+    <Compile Include="Common\XmlAnalysis\SPListSchemaFileTagProblemAnalysis.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AboutAction.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Shell\PredefinedSPCAFContribSettings.cs" />
+    <Compile Include="UI\SPCAFContribSettingsOptionPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Options\PredefinedSPCAFContribSettings.xml" />
+    <None Include="UpdatePackage.cmd" />
+    <None Include="packages.config" />
+    <None Include="ReadMe.txt" />
+    <None Include="SPCAFContrib.ReSharper.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Actions.xml" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SPCAFContrib.Entities\SPCAFContrib.Entities.csproj">
+      <Project>{2870606f-0cfa-4c6d-8933-ad07d024a8f8}</Project>
+      <Name>SPCAFContrib.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\packages\JetBrains.ReSharper.SDK.8.2.1158\build\JetBrains.ReSharper.SDK.Targets" Condition="Exists('..\..\packages\JetBrains.ReSharper.SDK.8.2.1158\build\JetBrains.ReSharper.SDK.Targets')" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

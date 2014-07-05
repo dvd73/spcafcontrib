@@ -7,7 +7,7 @@ using SPCAF.Sdk.Model.Extensions;
 using SPCAFContrib.Collectors.Base;
 using SPCAFContrib.Common.Statistics;
 using SPCAFContrib.Common.Statistics.Base;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
 
 namespace SPCAFContrib.Collectors

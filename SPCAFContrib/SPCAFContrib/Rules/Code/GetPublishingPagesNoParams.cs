@@ -4,8 +4,8 @@ using Mono.Cecil;
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
-using SPCAFContrib.Consts;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Rules.Code.Base;
 
 namespace SPCAFContrib.Rules.Code
@@ -14,8 +14,8 @@ namespace SPCAFContrib.Rules.Code
      CheckId = CheckIDs.Rules.Assembly.GetPublishingPages,
      Help = CheckIDs.Rules.Assembly.GetPublishingPages_HelpUrl,
 
-     DisplayName = "Avoid enumerating all PublishingPage objects.",
      Message = "Avoid enumerating all PublishingPage objects.",
+     DisplayName = "Avoid enumerating all PublishingPage objects.",
      Description = "Some recommended practices regarding GetPublishingPages method utilization.",
      Resolution = "It might be better to use GetPublishingPages(SPQuery query) method instead.",
 

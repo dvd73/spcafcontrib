@@ -2,7 +2,8 @@
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Metrics;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Metrics.Other
 {
@@ -10,9 +11,9 @@ namespace SPCAFContrib.Metrics.Other
          CheckId = CheckIDs.Metrics.Assembly.NumberOfControlTemplates,
          Help = CheckIDs.Metrics.Assembly.NumberOfControlTemplates_HelpUrl,
 
+         Message = "Solution [{0}] contains {1} control templates.",
          DisplayName = "Control templates count.",
          ShortName = "Control templates count.",
-         Message = "Solution '{0}' contains {1} control templates.",
          Description = "Counts the number of control templates with in wsp package.",
 
          DefaultSeverity = Severity.Information,

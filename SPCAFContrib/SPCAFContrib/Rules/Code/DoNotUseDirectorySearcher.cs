@@ -1,10 +1,7 @@
 ﻿using System.Collections.Generic;
 using SPCAF.Sdk;
-using SPCAF.Sdk.Model;
-using SPCAF.Sdk.Model.Extensions;
-using SPCAF.Sdk.Rules;
-using SPCAFContrib.Consts;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Rules.Code.Base;
 
 namespace SPCAFContrib.Rules.Code
@@ -13,8 +10,8 @@ namespace SPCAFContrib.Rules.Code
      CheckId = CheckIDs.Rules.Assembly.DoNotUseDirectorySearcher,
      Help = CheckIDs.Rules.Assembly.DoNotUseDirectorySearcher_HelpUrl,
 
-     DisplayName = "Do not use DirectorySearcher class to query ActiveDirectory.",
      Message = "Consider SPUtility.GetPrincipalsInGroup to get things done.",
+     DisplayName = "Do not use DirectorySearcher class to query ActiveDirectory.",
      Description = "DirectorySearcher might not work well across multiple domains and required additional security configuration.",
      Resolution = "Consider SPUtility.GetPrincipalsInGroup method to perform necessary queries.",
 

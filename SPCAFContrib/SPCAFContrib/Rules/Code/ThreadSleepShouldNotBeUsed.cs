@@ -1,9 +1,6 @@
 ﻿using SPCAF.Sdk;
-using SPCAF.Sdk.Rules;
-using SPCAF.Sdk.Model;
-using SPCAF.Sdk.Model.Extensions;
-using SPCAFContrib.Consts;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Rules.Code.Base;
 using System.Collections.Generic;
 
@@ -13,8 +10,8 @@ namespace SPCAFContrib.Rules.Code
         CheckId = CheckIDs.Rules.Assembly.ThreadSleepShouldNotBeUsed,
         Help = CheckIDs.Rules.Assembly.ThreadSleepShouldNotBeUsed_HelpUrl,
 
-        DisplayName = "Thread.Sleep() method should not be used.",
         Message = "Thread.Sleep() method should not be used.",
+        DisplayName = "Thread.Sleep() method should not be used.",
         Description = "Usually, Thread.Sleep() indicates lack of the general design or misunderstanding of SharePoint API.",
         Resolution = "Review the code, it might require additional attention or redesign.",
 

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="CodeInspectionHelpLink">
+		<xs:complexType>
+		<xs:sequence>
+			<xs:element name="Item" minOccurs="0" maxOccurs="unbounded" nillable="true" form="unqualified">
+				<xs:complexType>
+					<xs:attribute name="Id" type="xs:string"/>
+					<xs:attribute name="Url" type="xs:string"/>
+				</xs:complexType>
+			</xs:element> 
+		</xs:sequence>
+		</xs:complexType>
+	</xs:element> 
+</xs:schema>

@@ -304,6 +304,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
+    <None Include="Artifacts\Content Types\CT.OrderItem\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{db5a2b1a-361f-45db-bcb4-1a52fb0ba424}</SharePointProjectItemId>
+    </None>
+    <None Include="Artifacts\Content Types\CT.OrderLog\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b8e8b10b-4491-4f84-9f67-9614250836b7}</SharePointProjectItemId>
+    </None>
+    <None Include="Artifacts\Content Types\CT.Order\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{94e6ceab-3f7f-4494-a750-0e15717cd6ca}</SharePointProjectItemId>
+    </None>
+    <None Include="Artifacts\Content Types\CT.StoreItemNotStd\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{8742e2f0-25b9-4537-96aa-6cf3c91e636f}</SharePointProjectItemId>
+    </None>
+    <None Include="Artifacts\Content Types\CT.StoreItem\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{3842cba7-96ad-437a-9206-d7f0c029e4f8}</SharePointProjectItemId>
+    </None>
     <None Include="Artifacts\Fields\FinanceFields\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{d4783860-1d16-4e88-8c2e-376de6964d7a}</SharePointProjectItemId>
     </None>
@@ -451,8 +466,15 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Artifacts\Content Types\CT.OrderItem\Elements.xml" />
+    <Content Include="Artifacts\Content Types\CT.OrderLog\Elements.xml" />
+    <Content Include="Artifacts\Content Types\CT.Order\Elements.xml" />
+    <Content Include="Artifacts\Content Types\CT.StoreItemNotStd\Elements.xml" />
+    <Content Include="Artifacts\Content Types\CT.StoreItem\Elements.xml" />
     <Content Include="Artifacts\Fields\FinanceFields\Elements.xml" />
-    <Content Include="Artifacts\Fields\TestFields\Elements.xml" />
+    <Content Include="Artifacts\Fields\TestFields\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Artifacts\List\Departments\Elements.xml" />
     <Content Include="Artifacts\List\Divisions\Elements.xml" />
     <Content Include="Artifacts\Modules\AspxPages\Elements.xml" />
@@ -510,7 +532,9 @@
       <DependentUpon>GoodFeatureWithImageUrl.feature</DependentUpon>
     </Content>
     <Content Include="Artifacts\List\LD.WrongFieldID\Elements.xml" />
-    <Content Include="Artifacts\List\LD.WrongFieldID\Schema.xml" />
+    <Content Include="Artifacts\List\LD.WrongFieldID\Schema.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Artifacts\Modules\XsltStuff\Elements.xml" />
     <Content Include="Artifacts\Modules\XsltStuff\Sample.xslt">
       <SubType>Designer</SubType>

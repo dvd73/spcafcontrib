@@ -1,21 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SPCAF.Sdk;
 using SPCAF.Sdk.Inventory;
 using SPCAF.Sdk.Model;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Inventory
 {
     [InventoryMetadata(typeof(ContribInventoryGroup),
         CheckId = CheckIDs.Inventory.Controls.DelegateControls,
         Help = CheckIDs.Inventory.Controls.DelegateControls_HelpUrl,
+
+        Message = "Added delegate control [{0}] to inventory",
         DisplayName = "Delegate controls",
         Description = "Provides information about delegate controls.",
-        Message = "Added delegate control '{0}' to inventory",
+        
         SharePointVersion = new string[] { "12", "14", "15" })]
     public class DelegateControls : Inventory<DelegateControlDefinition>
     {

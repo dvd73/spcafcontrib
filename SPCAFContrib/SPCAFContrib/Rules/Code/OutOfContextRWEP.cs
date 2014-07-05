@@ -6,7 +6,8 @@ using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
 using SPCAFContrib.Common;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Rules.Code.Base;
 using SPCAFContrib.Extensions;
 
@@ -16,9 +17,9 @@ namespace SPCAFContrib.Rules.Code
      CheckId = CheckIDs.Rules.Assembly.OutOfContextRWEP,
      Help = CheckIDs.Rules.Assembly.OutOfContextRWEP_HelpUrl,
 
+     Message = "Do not impersonate with RunWithElevatedPrivileges when HTTPContext is null.",
      DisplayName = "Do not impersonate with RunWithElevatedPrivileges when HTTPContext is null.",
      Description = "You can't elevate privileges when using RunWithElevatedPrivileges in Workflow, Timer Job, Feature Receivers or Event handlers (asynchronous or not initiated by a request in browser). This rule is an addition for rule SPC020206.",
-     Message = "Do not impersonate with RunWithElevatedPrivileges when HTTPContext is null.",
      Resolution = "Store credentials in SSS and use Win32 API to impersonate user.",
 
      DefaultSeverity = Severity.Warning,

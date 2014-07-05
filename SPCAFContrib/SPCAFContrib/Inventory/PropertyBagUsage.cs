@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Mono.Cecil;
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
-using SPCAFContrib.Consts;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Inventory.Base;
 
 namespace SPCAFContrib.Inventory
@@ -16,9 +13,11 @@ namespace SPCAFContrib.Inventory
     [InventoryMetadata(typeof(ContribInventoryGroup),
         CheckId = CheckIDs.Inventory.Assembly.PropertyBagUsage,
         Help = CheckIDs.Inventory.Assembly.PropertyBagUsage_HelpUrl,
+
+        Message = "Added property bag instruction [{0}] to inventory",
         DisplayName = "Property bag stores custom value",
         Description = "Provides information about Property bag usage as values storage.",
-        Message = "Added property bag instruction '{0}' to inventory",
+        
         SharePointVersion = new string[] { "12", "14", "15" })]
     public class PropertyBagUsage: SearchMethodInventoryBase
     {

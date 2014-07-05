@@ -7,8 +7,9 @@ using SPCAF.Sdk.Model.Extensions;
 using SPCAFContrib.Collectors;
 using SPCAFContrib.Common;
 using SPCAFContrib.Common.Statistics;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Rules.Code.Base;
 using MethodDefinition = Mono.Cecil.MethodDefinition;
 using Severity = SPCAF.Sdk.Severity;
@@ -18,12 +19,14 @@ namespace SPCAFContrib.Rules.Code
     [RuleMetadata(typeof(ContribBestPracticesGroup),
      CheckId = CheckIDs.Rules.Assembly.ULSLoggingShouldBeUsed,
      Help = CheckIDs.Rules.Assembly.ULSLoggingShouldBeUsed_HelpUrl,
+
+     Message = "ULS logging should be used in assembly [{0}]",
      DisplayName = "Assembly does not contains ULS logging.",
      Description = "ULS logging should be used in the SharePoint assembly",
+     Resolution = "Use SPDiagnosticsService class to log.",
+
      DefaultSeverity = Severity.Information,
      SharePointVersion = new[] { "12", "14", "15" },
-     Message = "ULS logging should be used in assembly [{0}]",
-     Resolution = "Use SPDiagnosticsService class to log.",
      Links = new []
      {
          "SPDiagnosticsService class",

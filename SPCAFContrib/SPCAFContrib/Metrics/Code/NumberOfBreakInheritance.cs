@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 using SPCAF.Sdk;
 using SPCAF.Sdk.Metrics;
 using SPCAF.Sdk.Model;
-using SPCAFContrib.Consts;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Metrics.Code.Base;
 
 namespace SPCAFContrib.Metrics.Code
@@ -16,9 +16,9 @@ namespace SPCAFContrib.Metrics.Code
         CheckId = CheckIDs.Metrics.Assembly.NumberOfBreakInheritances,
         Help = CheckIDs.Metrics.Assembly.NumberOfBreakInheritances_HelpUrl,
 
+        Message = "Solution [{0}] contains {1} BreakInheritance/ResetRoleInheritance calls within wsp package.",
         DisplayName = "BreakInheritance/ResetRoleInheritance call count.",
         ShortName = "BreakInheritance/ResetRoleInheritance calls.",
-        Message = "Solution '{0}' contains {1} BreakInheritance/ResetRoleInheritance calls within wsp package.",
         Description = "Count of BreakInheritance/ResetRoleInheritance calls in the solution.",
 
         DefaultSeverity = Severity.Information,

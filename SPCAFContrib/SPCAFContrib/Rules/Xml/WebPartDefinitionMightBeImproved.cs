@@ -2,9 +2,9 @@
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Rules;
-using SPCAFContrib.Consts;
-
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Xml
 {
@@ -12,14 +12,13 @@ namespace SPCAFContrib.Rules.Xml
         CheckId = CheckIDs.Rules.WebPart.WebPartDefinitionMightBeImproved,
         Help = CheckIDs.Rules.WebPart.WebPartDefinitionMightBeImproved_HelpUrl,
 
-        DisplayName = "Web part description might be improved.",
         Message = "Web part description might be improved.",
+        DisplayName = "Web part description might be improved.",
         Description = "Web part description might be improved.",
         Resolution = "Review and improve default web part descriptions.",
 
         DefaultSeverity = Severity.Information,
         SharePointVersion = new[] { "12", "14", "15" },
-
         Links = new []
         {
             "Creating Web Parts for SharePoint",
@@ -33,7 +32,7 @@ namespace SPCAFContrib.Rules.Xml
         private const string CatalogIconImageUrlPropertyName = "CatalogIconImageUrl";
         private const string TitleIconImageUrlPropertyName = "TitleIconImageUrl";
 
-        private readonly List<string> RestrictedDescriptions = new List<string>(new[] { "My WebPart", "My Visual WebPart" });
+        private readonly List<string> RestrictedDescriptions = new List<string>(new[] { "My Web Part", "My Visual Web Part" });
 
         private string _restrictedDescriptionsString;
 

@@ -5,7 +5,8 @@ using SPCAF.Sdk.Model.Extensions;
 using SPCAF.Sdk.Rules;
 using System;
 using System.Linq;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Xml
 {
@@ -13,8 +14,8 @@ namespace SPCAFContrib.Rules.Xml
         CheckId = CheckIDs.Rules.FieldTemplate.DeployTaxonomyFieldsCorrectly,
         Help = CheckIDs.Rules.FieldTemplate.DeployTaxonomyFieldsCorrectly_HelpUrl,
 
+        Message = "Do not specify TextField property [{0}] for TaxonomyField [{1}]",
         DisplayName = "Deploy Taxonomy fields correctly.",
-        Message = "Do not deploy taxonomy field '{0}' in list definition.",
         Description = "Checks Taxonomy fields definitions.",
         Resolution = "Deploy Taxonomy fields correctly.",
 
@@ -45,7 +46,7 @@ namespace SPCAFContrib.Rules.Xml
 
             if (target.Type == "TaxonomyFieldTypeMulti" && (!target.MultSpecified || !target.Mult.IsTrue()))
             {
-                Notify<FieldDefinition, TRUEFALSE>(target, "Add Multi=\"TRUE\" attribute", notifications, f => f.Mult);
+                Notify<FieldDefinition, TRUEFALSE>(target, "Add Mult=\"TRUE\" attribute", notifications, f => f.Mult);
             }
 
             if (target.Customization != null && target.Customization.ArrayOfProperty != null)
@@ -59,14 +60,13 @@ namespace SPCAFContrib.Rules.Xml
                                     select new Guid(nodes[1].InnerText)
                                     ).ToList();
 
-                IEnumerable<FieldDefinition> fields = from field in target.ParentSolution.ChildsOfType<FieldDefinition>()
+                IEnumerable<FieldDefinition> fieldDefinitions = from field in target.ParentSolution.ChildsOfType<FieldDefinition>()
                              where textFieldIds.Contains(new Guid(field.ID))
                              select field;
 
-                foreach (FieldDefinition textField in fields)
+                foreach (FieldDefinition textField in fieldDefinitions)
                 {
-                    string message = string.Format("Do not deploy TextField '{0}' for TaxonomyField '{1}'", textField.Name, target.Name);
-                    Notify(target, message, textField.GetSummary(), notifications);
+                    Notify(target, String.Format(this.MessageTemplate(), textField.Name, target.Name), textField.GetSummary(), notifications);
                 }
             }
         }

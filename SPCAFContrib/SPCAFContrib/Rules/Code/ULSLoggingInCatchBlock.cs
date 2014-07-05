@@ -14,8 +14,9 @@ using SPCAF.Sdk.Model.Extensions;
 using SPCAFContrib.Collectors;
 using SPCAFContrib.Common;
 using SPCAFContrib.Common.Statistics;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Rules.Code.Base;
 using MethodDefinition = Mono.Cecil.MethodDefinition;
 using Severity = SPCAF.Sdk.Severity;
@@ -25,12 +26,14 @@ namespace SPCAFContrib.Rules.Code
     [RuleMetadata(typeof(ContribBestPracticesGroup),
      CheckId = CheckIDs.Rules.Assembly.ULSLoggingInCatchBlock,
      Help = CheckIDs.Rules.Assembly.ULSLoggingInCatchBlock_HelpUrl,
+
+     Message = "Catch block should include ULS logging output or re-throw in Method [{0}]  Class [{1})].",
      DisplayName = "Not logged exception found.",
      Description = "Catch block should include ULS logging output or re-throw",
+     Resolution = "Log exception to ULS.",
+
      DefaultSeverity = Severity.Warning,
      SharePointVersion = new[] { "12", "14", "15" },
-     Message = "Catch block should include ULS logging output or re-throw in Method [{0}]  Class [{1})].",
-     Resolution = "Log exception to ULS.",
      Links = new []
      {
          "SPDiagnosticsService class",

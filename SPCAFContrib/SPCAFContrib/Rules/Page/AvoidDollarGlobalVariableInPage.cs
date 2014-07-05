@@ -2,18 +2,19 @@
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Rules;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Page
 {
     [RuleMetadata(typeof(ContribCorrectnessGroup),
      CheckId = CheckIDs.Rules.ASPXPage.AvoidDollarGlobalVariableInPage,
      Help = CheckIDs.Rules.General.AvoidDollarGlobalVariable_HelpUrl,
-     
-     DisplayName = "Avoid using $ for jQuery in ASPX page.",
+
+     Message = "jQuery $ variable is used in the page [{0}].",
+     DisplayName = "Avoid using $ as jQuery reference in ASPX page.",
      Description = "Avoid global $-var as it conflict with assert picker and cmssitemanager.js.",
-     Message = "jQuery $ variable is used in page [{0}].",
      Resolution = "Use jQuery global variable instead of $.",
 
      DefaultSeverity = Severity.Warning,

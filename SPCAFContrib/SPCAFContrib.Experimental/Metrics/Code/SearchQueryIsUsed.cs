@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using SPCAF.Sdk;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Metrics.Code.Base;
 
 namespace SPCAFContrib.Experimental.Metrics.Code

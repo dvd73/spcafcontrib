@@ -6,8 +6,9 @@ using Mono.Cecil;
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Rules.Code.Base;
 using MethodDefinition = Mono.Cecil.MethodDefinition;
 
@@ -17,8 +18,8 @@ namespace SPCAFContrib.Rules.Code
      CheckId = CheckIDs.Rules.Assembly.DoNotDisposePersonalSiteWeb,
      Help = CheckIDs.Rules.Assembly.DoNotDisposePersonalSiteWeb_HelpUrl,
 
-     DisplayName = "Do not dispose PersonalSite or PersonalWeb.",
      Message = "Do not dispose PersonalSite or PersonalWeb.",
+     DisplayName = "Do not dispose PersonalSite or PersonalWeb.",
      Description = "My Site pages, which implement IPersonalPage, implement these properties as shared instances that should not be disposed of by controls that use them.",
      Resolution = "",
 

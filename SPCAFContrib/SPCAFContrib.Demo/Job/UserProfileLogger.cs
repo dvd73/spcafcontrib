@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web.Configuration;
 using Microsoft.Office.Server.UserProfiles;
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.Administration;
@@ -20,6 +21,7 @@ namespace SPCAFContrib.Demo.Job
             _mySitesHost = mySitesHost;
             _changeAge = changeAge;
             _site = site;
+            Guid folderTypeId = new Guid(WebConfigurationManager.AppSettings["FolderTypeID"]);
         }
 
         internal void RetrieveUserProfileChanges()

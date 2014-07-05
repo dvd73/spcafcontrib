@@ -394,30 +394,30 @@ namespace SPCAFContrib.Demo.Common
             bool result = false;
 
             SPQuery query = new SPQuery();
-            query.ViewFields = string.Concat("<FieldRef Name='ID' />", "<FieldRef Name='Novartis_StatOrd_OrderItemOrder' />", "<FieldRef Name='Novartis_StatOrd_OrderLogDate' />");
+            query.ViewFields = string.Concat("<FieldRef Name='ID' />", "<FieldRef Name='Demo_OrderItemOrder' />", "<FieldRef Name='Demo_OrderLogDate' />");
             query.ViewFieldsOnly = true;
             query.RowLimit = 1;
             query.Query = @"   <Where>
                                      <And>
                                         <Eq>
-                                           <FieldRef Name='Novartis_StatOrd_OrderItemOrder' LookupId='True' />
+                                           <FieldRef Name='Demo_OrderItemOrder' LookupId='True' />
                                            <Value Type='Lookup'>" + orderId.ToString() + @"</Value>
                                         </Eq>
                                         <Eq>
-                                           <FieldRef Name='Novartis_StatOrd_OrderStatus' LookupId='True' />
+                                           <FieldRef Name='Demo_OrderStatus' LookupId='True' />
                                            <Value Type='Lookup'>" + statusId.ToString() + @"</Value>
                                         </Eq>
                                      </And>
-                               </Where><OrderBy><FieldRef Name=""Novartis_StatOrd_OrderLogDate"" Ascending=""False"" /></OrderBy>";
+                               </Where><OrderBy><FieldRef Name=""Demo_OrderLogDate"" Ascending=""False"" /></OrderBy>";
 
             web.TryUsingList(Consts.ListUrl.ORDERLOG, (listOrderLog) =>
             {
                 SPListItemCollection orderLogItems = listOrderLog.GetItems(query);
-                SPField fldNovartis_StatOrd_OrderLogDate = listOrderLog.Fields.GetFieldByInternalName(Consts.OrderLogListFields.EventDate);
+                SPField fldDemo_OrderLogDate = listOrderLog.Fields.GetFieldByInternalName(Consts.OrderLogListFields.EventDate);
 
-                if (orderLogItems.Count > 0 && orderLogItems[0][fldNovartis_StatOrd_OrderLogDate.Id] != null)
+                if (orderLogItems.Count > 0 && orderLogItems[0][fldDemo_OrderLogDate.Id] != null)
                 {
-                    DateTime orderLogDate = DateTimeHelper.CheckForNull(orderLogItems[0][fldNovartis_StatOrd_OrderLogDate.Id], DateTime.MinValue);
+                    DateTime orderLogDate = DateTimeHelper.CheckForNull(orderLogItems[0][fldDemo_OrderLogDate.Id], DateTime.MinValue);
                     DateTime date = orderLogDate;
                     int count = 0;
                     while (date < DateTime.Now)
@@ -766,6 +766,13 @@ namespace SPCAFContrib.Demo.Common
                     return web;
                 }
             }
+        }
+
+        public static SPList GetListByListTemplateId(SPWeb web, int listTemplateId)
+        {
+            SPListTemplate listTemplateCustomer = web.ListTemplates.OfType<SPListTemplate>().Where(template => template.Type_Client == listTemplateId).FirstOrDefault();
+            if (listTemplateCustomer == null) return null;
+            return web.Lists.Cast<SPList>().Where(lst => lst.BaseTemplate.Equals(listTemplateCustomer.Type)).FirstOrDefault();
         }
     }
 }

@@ -3,7 +3,8 @@ using System.Linq;
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Rules;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Xml
 {
@@ -11,12 +12,12 @@ namespace SPCAFContrib.Rules.Xml
       CheckId = CheckIDs.Rules.ContentType.DoNotDefineMultipleContentTypeGroupInOneElementFile,
       Help = CheckIDs.Rules.ContentType.DoNotDefineMultipleContentTypeGroupInOneElementFile_HelpUrl,
 
-      DisplayName = "Do not define multiple content type groups in one element file.",
       Message = "Do not define multiple content type groups in one element file.",
+      DisplayName = "Do not define multiple content type groups in one element file.",
       Description = "Do not define multiple content type groups in one element file.",
       Resolution = "Split up content type definitions into different elements.xml per every content type group.",
 
-      DefaultSeverity = Severity.Warning,
+      DefaultSeverity = Severity.Information,
       SharePointVersion = new[] { "12", "14", "15" },
       Links=new []
       {

@@ -5,8 +5,9 @@ using ICSharpCode.NRefactory.CSharp;
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Rules.Code.Base;
 using Severity = SPCAF.Sdk.Severity;
 
@@ -15,9 +16,9 @@ namespace SPCAFContrib.Rules.Code
     [RuleMetadata(typeof(ContribCorrectnessGroup),
      CheckId = CheckIDs.Rules.Assembly.SPViewScopeDoesNotDefined,
      Help = CheckIDs.Rules.Assembly.SPViewScopeDoesNotDefined_HelpUrl,
-     
-     DisplayName = "SPView scope is not defined.",
+
      Message = "SPView scope is not defined.",
+     DisplayName = "SPView scope is not defined.",
      Description = "All SPViewScope enumeration values are covered all possible developer's intentions. If not specified SharePoint will use Default value.",
      Resolution = "Specify Scope property for SPView object.",
 

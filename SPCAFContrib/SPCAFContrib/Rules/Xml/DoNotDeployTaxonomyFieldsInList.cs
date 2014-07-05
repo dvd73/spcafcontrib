@@ -1,7 +1,8 @@
 ﻿using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Rules;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Xml
 {
@@ -9,10 +10,10 @@ namespace SPCAFContrib.Rules.Xml
       CheckId = CheckIDs.Rules.ListTemplate.DoNotDeployTaxonomyFieldsInList,
       Help = CheckIDs.Rules.ListTemplate.DoNotDeployTaxonomyFieldsInList_HelpUrl,
 
-      DisplayName = "Do not deploy Taxonomy fields using List Definitions.",
-      Message = "Do not deploy taxonomy field '{0}' using list definition.",
-      Description = "Taxonomy fields should be deployed by Content Types.",
-      Resolution = "Create site column, add it to Content Type, then add ContentTpeRef to list definition.",
+      Message = "Do not deploy taxonomy field [{0}] using list definition.",
+      DisplayName = "Do not deploy Taxonomy fields using list definitions.",
+      Description = "Taxonomy fields should be deployed by content types.",
+      Resolution = "Create site column, add it to content type, then add ContentTpeRef to list definition.",
 
       DefaultSeverity = Severity.CriticalError,
       SharePointVersion = new[] { "14", "15" },

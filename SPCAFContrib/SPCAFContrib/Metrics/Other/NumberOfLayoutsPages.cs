@@ -2,7 +2,8 @@
 using SPCAF.Sdk;
 using SPCAF.Sdk.Metrics;
 using SPCAF.Sdk.Model;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Metrics.Other
 {
@@ -10,9 +11,9 @@ namespace SPCAFContrib.Metrics.Other
          CheckId = CheckIDs.Metrics.Assembly.NumberOfLayoutsPages,
          Help = CheckIDs.Metrics.Assembly.NumberOfLayoutsPages_HelpUrl,
 
+         Message = "Solution [{0}] contains {1} layouts pages.",
          DisplayName = "Layouts pages count.",
          ShortName = "Layouts pages count.",
-         Message = "Solution '{0}' contains {1} layouts pages.",
          Description = "Counts the number of the layouts pages within wsp package.",
 
          DefaultSeverity = Severity.Information,

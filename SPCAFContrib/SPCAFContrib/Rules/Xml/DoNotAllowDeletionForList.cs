@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Rules;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Xml
 {
@@ -14,14 +11,13 @@ namespace SPCAFContrib.Rules.Xml
        CheckId = CheckIDs.Rules.ListTemplate.DoNotAllowDeletionForList,
        Help = CheckIDs.Rules.ListTemplate.DoNotAllowDeletionForList_HelpUrl,
 
-       DisplayName = "Prevent SharePoint list from deletion.",
        Message = "Add attribute AllowDeletion=\"FALSE\" to the [{0}] list template.",
+       DisplayName = "Prevent SharePoint list from deletion.",
        Description = "If we don't want to let the users to delete the configuration list in SharePoint provide template with attribute AllowDeletion=\"FALSE\".",
        Resolution = "Add attribute AllowDeletion=\"FALSE\" to the list template.",
 
        DefaultSeverity = Severity.Information,
        SharePointVersion = new[] { "12", "14", "15" },
-
        Links = new[] 
        { 
            "ListTemplate Element (List Template)",

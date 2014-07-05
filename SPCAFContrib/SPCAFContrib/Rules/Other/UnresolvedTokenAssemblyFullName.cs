@@ -2,7 +2,8 @@
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Rules;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Other
 {
@@ -10,8 +11,8 @@ namespace SPCAFContrib.Rules.Other
      CheckId = CheckIDs.Rules.TemplateFiles.UnresolvedTokenAssemblyFullName,
      Help = CheckIDs.Rules.TemplateFiles.UnresolvedTokenAssemblyFullName_HelpUrl,
 
-     DisplayName = "Unresolved token $SharePoint.Project.AssemblyFullName$.",
      Message = "Unresolved token $SharePoint.Project.AssemblyFullName$ in file [{0}].",
+     DisplayName = "Unresolved token $SharePoint.Project.AssemblyFullName$.",
      Description = "Token $SharePoint.Project.AssemblyFullName$ have to be replaced to strong name of the containing project’s output assembly. For Visual Studio project it is handled automatically depends on file extension.",
      Resolution = "Add required extension to the either .csproj project file or Microsoft.VisualStudio.SharePoint.targets file.",
 

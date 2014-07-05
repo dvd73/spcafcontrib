@@ -2,20 +2,24 @@
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Rules;
 using SPCAFContrib.Common;
-using SPCAFContrib.Consts;
 using SPCAF.Sdk;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Xml
 {
     [RuleMetadata(typeof(ContribCorrectnessGroup),
         CheckId = CheckIDs.Rules.Feature.MagicStringShouldNotBeUsed,
         Help = CheckIDs.Rules.Feature.MagicStringShouldNotBeUsed_HelpUrl,
+
+        Message = "Hardcoded {1} is detected \"{0}\".",
         DisplayName = "Do not use hardcoded urls, pathes, emails and account names in xml.",
         Description = "Consider a configuration for solution.",
+        Resolution = "Consider a configuration for solution.",
+
         DefaultSeverity = Severity.Warning,
-        SharePointVersion = new[] { "12", "14", "15" },
-        Message = "Hardcoded {1} is detected \"{0}\".",
-        Resolution = "Consider a configuration for solution.")]
+        SharePointVersion = new[] { "12", "14", "15" }
+        )]
     public class MagicStringShouldNotBeUsed : Rule<FeatureDefinition>
     {
         #region methods

@@ -4,7 +4,8 @@ using Mono.Cecil;
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Rules.Code.Base;
 
 namespace SPCAFContrib.Rules.Code
@@ -12,12 +13,14 @@ namespace SPCAFContrib.Rules.Code
     [RuleMetadata(typeof(ContribSandboxedCompatibilityGroup),
         CheckId = CheckIDs.Rules.Assembly.LoadJavaScriptWithinSandbox,
         Help = CheckIDs.Rules.Assembly.LoadJavaScriptWithinSandbox_HelpUrl,
+
+        Message = "Avoid using [{0}].",
         DisplayName = "Avoid using ClientScriptManager/ScriptManager.",
         Description = "There is no access to the ClientScriptManager/ScriptManager from within Sandbox.",
+        Resolution = "Read Waldek Mastykarz article \"Dynamically loading JavaScript from within Sandbox\"",
+
         DefaultSeverity = Severity.Information,
         SharePointVersion = new[] {"14", "15"},
-        Message = "Avoid using [{0}].",
-        Resolution = "Read Waldek Mastykarz article \"Dynamically loading JavaScript from within Sandbox\"",
         Links = new[]
         {
             "Dynamically loading JavaScript from within Sandbox",

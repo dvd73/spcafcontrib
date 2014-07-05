@@ -2,11 +2,13 @@
 using Mono.Cecil;
 using Mono.Cecil.Cil;
 using SPCAF.Sdk;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Common;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
 using SPCAF.Sdk.Rules;
+using SPCAFContrib.Groups;
 using MethodDefinition = Mono.Cecil.MethodDefinition;
 
 namespace SPCAFContrib.Rules.Code
@@ -15,8 +17,8 @@ namespace SPCAFContrib.Rules.Code
      CheckId = CheckIDs.Rules.Assembly.DoNotUseUnsafeTypeConversionOnSPListItem,
      Help = CheckIDs.Rules.Assembly.DoNotUseUnsafeTypeConversionOnSPListItem_HelpUrl,
 
-     DisplayName = "Do not use unsafe casts on SPListItem.",
      Message = "Do not use unsafe casts on SPListItem.",
+     DisplayName = "Do not use unsafe casts on SPListItem.",
      Description = "SPListItem is untyped entity, so null reference exceptions on nullable types or wrong type conversion exception might arise.",
      Resolution = "Consider Convert.ToXXX method or manual conversion to handle wrong/nullable types.",
 
@@ -47,11 +49,11 @@ namespace SPCAFContrib.Rules.Code
                 {
                     IEnumerable<Instruction> unsafeSPListItemCasts = method.GetUnsafeSPListItemCastInstructions();
 
-                    foreach (Instruction unsafeCast in unsafeSPListItemCasts)
+                    foreach (Instruction instruction in unsafeSPListItemCasts)
                     {
                         Notify(assembly,
                                "Do not use unsafe casts on SPListItem.",
-                               new CodeInstruction(method, unsafeCast).ImproveSummary(assembly.GetSummary()),
+                               new CodeInstruction(method, instruction).ImproveSummary(assembly.GetSummary()),
                                notifications);
                     }
                 }

@@ -2,7 +2,8 @@
 using SPCAF.Sdk;
 using SPCAF.Sdk.Rules;
 using SPCAF.Sdk.Model;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Xml
 {
@@ -10,14 +11,13 @@ namespace SPCAFContrib.Rules.Xml
      CheckId = CheckIDs.Rules.FieldTemplate.FieldIdShouldBeUppercase,
      Help = CheckIDs.Rules.FieldTemplate.FieldIdShouldBeUppercase_HelpUrl,
 
+     Message = "Definition of field [{0}]. ID attribute must be in capital letters.",
      DisplayName = "Field ID attribute must be upper-case.",
-     Message = "Definition of field '{0}'. ID attribute must be in capital letters.",
      Description = "List scoped field MUST HAVE \"ID\" (not \"Id\") attribute.",
      Resolution = "Ensure ID attribute (not \"Id\").",
 
      DefaultSeverity = Severity.Error,
      SharePointVersion = new[] { "12", "14", "15" },
-
      Links = new[]
      {
          "Field Element (Field)",

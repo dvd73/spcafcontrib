@@ -2,17 +2,18 @@
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Rules;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.MasterPage
 {
     [RuleMetadata(typeof(ContribCorrectnessGroup),
      CheckId = CheckIDs.Rules.ASPXMasterPage.SPDataSourceScopeDoesNotDefinedInMasterPage,
      Help = CheckIDs.Rules.General.SPDataSourceScopeDoesNotDefined_HelpUrl,
-     
+
+     Message = "SPDataSource scope is not defined in the master page [{0}].",
      DisplayName = "SPDataSource scope is not defined in master page.",
-     Message = "SPDataSource scope is not defined in master page.",
      Description = "All SPViewScope enumeration values are covered all possible developer's intentions. If not specified SharePoint will use Default value.",
      Resolution = "Specify Scope property for SPDataSource object.",
 
@@ -39,7 +40,7 @@ namespace SPCAFContrib.Rules.MasterPage
                     internalSourceFile.FindControl("SPDataSource", (controlDeclaration, lineNumber, linePosition) =>
                     {
                         if (controlDeclaration.IndexOf(" Scope=", StringComparison.InvariantCultureIgnoreCase) == -1)
-                            Notify(target, this.MessageTemplate(),
+                            Notify(target, String.Format(this.MessageTemplate(), target.ReadableElementName),
                                 internalSourceFile.GetSummaryWithLineInfo(lineNumber, linePosition),
                                 notifications);
                     });

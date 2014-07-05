@@ -7,8 +7,8 @@ using Mono.Cecil.Cil;
 using Mono.Collections.Generic;
 using SPCAF.Sdk.Model.Extensions;
 using SPCAFContrib.Common;
-using SPCAFContrib.Consts;
 using SPCAF.Sdk.Logging;
+using SPCAFContrib.Entities.Consts;
 
 namespace SPCAFContrib.Extensions
 {
@@ -386,6 +386,31 @@ namespace SPCAFContrib.Extensions
                                                         i.Operand.ToString().Contains("get_Item(System.String)")));
         }
 
+        public static IEnumerable<Instruction> GetUnsafeTaxonomyTermStoreStringIndexCall(this MethodDefinition method)
+        {
+            if (!method.HasBody)
+                return Enumerable.Empty<Instruction>();
+
+            return method.Body.Instructions
+                                          .Where(i => (i.OpCode == OpCodes.Call || i.OpCode == OpCodes.Calli || i.OpCode == OpCodes.Callvirt) &&
+                                                       (i.OpCode != null) &&
+                                                       (i.Operand.ToString().Contains("Microsoft.SharePoint.Taxonomy.Generic.IndexedCollection") &&
+                                                        i.Operand.ToString().Contains("Microsoft.SharePoint.Taxonomy.TermStore") &&
+                                                        i.Operand.ToString().Contains("get_Item(System.String)")));
+        }
+
+        public static IEnumerable<Instruction> GetUnsafeTaxonomyTermCollectionStringIndexCall(this MethodDefinition method)
+        {
+            if (!method.HasBody)
+                return Enumerable.Empty<Instruction>();
+
+            return method.Body.Instructions
+                                          .Where(i => (i.OpCode == OpCodes.Call || i.OpCode == OpCodes.Calli || i.OpCode == OpCodes.Callvirt) &&
+                                                       (i.OpCode != null) &&
+                                                       (i.Operand.ToString().Contains("Microsoft.SharePoint.Taxonomy.Generic.IndexedCollection") &&
+                                                        i.Operand.ToString().Contains("Microsoft.SharePoint.Taxonomy.Term") &&
+                                                        i.Operand.ToString().Contains("get_Item(System.String)")));
+        }
         #endregion
 
         #region SPLIstCollection methods

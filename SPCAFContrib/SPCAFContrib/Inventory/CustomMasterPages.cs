@@ -1,27 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
 using SPCAF.Sdk;
-using SPCAF.Sdk.Inventory;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
-using SPCAFContrib.Consts;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Inventory.Base;
-using MethodDefinition = SPCAF.Sdk.Model.MethodDefinition;
 
 namespace SPCAFContrib.Inventory
 {
     [InventoryMetadata(typeof(ContribInventoryGroup),
         CheckId = CheckIDs.Inventory.Assembly.CustomMasterPages,
         Help = CheckIDs.Inventory.Assembly.CustomMasterPages_HelpUrl,
+
+        Message = "Added custom master page assigment [{0}] to inventory",
         DisplayName = "Custom master pages",
         Description = "Provides information about code-assigned custom master pages.",
-        Message = "Added custom master page assigment '{0}' to inventory",
+        
         SharePointVersion = new string[] { "12", "14", "15" })]
     public class CustomMasterPages : SearchPropertyInventoryBase
     {

@@ -1,8 +1,13 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
+using System.Web.UI.WebControls.WebParts;
 using Microsoft.SharePoint;
+using Microsoft.SharePoint.Administration;
+using Microsoft.SharePoint.WebPartPages;
 using MOSS.Common.Utilities;
+using SharePoint.Common.Utilities.Extensions;
+using WebPart = Microsoft.SharePoint.WebPartPages.WebPart;
 
 namespace MOSS.Common.Features.Logger
 {
@@ -34,6 +39,15 @@ namespace MOSS.Common.Features.Logger
             }
         }
 
+        private void EnsureWebPartForEdit(SPWebPartManager wpManager, WebZone zone, bool p)
+        {
+            foreach (var wp in wpManager.WebParts)
+            {
+                var webPart = wp as WebPart;
+                if (webPart.Zone.Equals(zone))
+                    webPart.AllowEdit = p;
+            }
+        }
 
         // Uncomment the method below to handle the event raised after a feature has been installed.
 

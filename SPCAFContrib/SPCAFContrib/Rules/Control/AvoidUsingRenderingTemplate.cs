@@ -5,8 +5,9 @@ using System.Text;
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Rules;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Control
 {
@@ -14,8 +15,8 @@ namespace SPCAFContrib.Rules.Control
      CheckId = CheckIDs.Rules.ASCXFile.AvoidUsingRenderingTemplate,
      Help = CheckIDs.Rules.ASCXFile.AvoidUsingRenderingTemplate_HelpUrl,
 
+     Message = "RenderingTemplate is used in the user contol [{0}].",
      DisplayName = "RenderingTemplate is used.",
-     Message = "RenderingTemplate is used.",
      Description = "Using RenderingTemplate is a too strong list form customization.",
      Resolution = "In many cases to change list form UI the DataFormWebPart (instead of ListFormWebPart) + JavaScript are enough.",
 

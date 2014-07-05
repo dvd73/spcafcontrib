@@ -5,7 +5,8 @@ using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
 using SPCAFContrib.Common;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Rules.Code.Base;
 using SPCAFContrib.Extensions;
 
@@ -14,12 +15,14 @@ namespace SPCAFContrib.Rules.Code
     [RuleMetadata(typeof(ContribBestPracticesGroup),
      CheckId = CheckIDs.Rules.Assembly.ListModificationFromJob,
      Help = CheckIDs.Rules.Assembly.ListModificationFromJob_HelpUrl,
+
+     Message = "Workflow does not start if list modified from timer job.",
      DisplayName = "Workflow does not start if list modified from timer job.",
-     Description = "When you perform list insert/update/delete operation from timer job it does not raise related workflows because job works under pool (system) account.",
+     Description = "When you perform list item Create/Update/Detele operation from timer job it does not raise related workflows because job works under pool (system) account.",
+     Resolution = "It is required to start workflows from code in the list receiver.",
+
      DefaultSeverity = Severity.Information,
      SharePointVersion = new[] { "12", "14", "15" },
-     Message = "Workflow does not start if list modified from timer job.",
-     Resolution = "It is required to start workflows from code in the list receiver.",
      Links = new []
      {
          "SPWorkflowManager class",

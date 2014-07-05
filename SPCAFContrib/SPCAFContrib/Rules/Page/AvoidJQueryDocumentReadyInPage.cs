@@ -2,8 +2,9 @@
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Rules;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Control
 {
@@ -11,10 +12,10 @@ namespace SPCAFContrib.Rules.Control
      CheckId = CheckIDs.Rules.ASPXPage.AvoidJQueryDocumentReadyInPage,
      Help = CheckIDs.Rules.General.AvoidJQueryDocumentReady_HelpUrl,
 
+     Message = "jQuery(document).ready is used in the page [{0}].",
      DisplayName = "Avoid using jQuery(document).ready in page.",
      Description = "Due to specific SharePoint client side initialization life cycle, it is recommended to avoid using jQuery(document).ready call.",
-     Message = "jQuery(document).ready is used in page [{0}].",
-     Resolution = "Use _spBodyOnLoadFunctions.push function or mQuery for SP2013.",
+     Resolution = "Use _spBodyOnLoadFunctions.push function or SP.SOD.",
 
      DefaultSeverity = Severity.Warning,
      SharePointVersion = new[] { "12", "14", "15" })]
@@ -25,8 +26,8 @@ namespace SPCAFContrib.Rules.Control
         public override void Visit(ASPXFile target, NotificationCollection notifications)
         {
             target.FindJScript(true,
-                (s) => { return s.FindJQueryDocumentReadyByIndexOf(); },
-                (s) => { return s.FindJQueryDocumentReadyByIndexOf(); },
+                (s) => s.FindJQueryDocumentReadyByIndexOf(),
+                (s) => s.FindJQueryDocumentReadyByIndexOf(),
                 (lineNumber, linePosition) =>
                 {
                     Notify(target, String.Format(this.MessageTemplate(), target.ReadableElementName),

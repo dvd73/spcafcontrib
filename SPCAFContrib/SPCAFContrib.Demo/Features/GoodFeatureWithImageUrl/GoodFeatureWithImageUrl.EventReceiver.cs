@@ -30,6 +30,8 @@ namespace SPCAF.Rules.Features.Features.GoodFeatureWithImageUrl
         private void UpdateContentType(SPWeb web, string contentTypeName)
         {
             SPContentType ct = web.ContentTypes[contentTypeName];
+            ct.Fields.Add("NewField", SPFieldType.Boolean, true);
+
             int count = 0;
 
             while (ct == null)

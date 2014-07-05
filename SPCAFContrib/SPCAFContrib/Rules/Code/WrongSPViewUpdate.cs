@@ -4,7 +4,8 @@ using Mono.Cecil;
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Rules.Code.Base;
 
 namespace SPCAFContrib.Rules.Code
@@ -13,9 +14,9 @@ namespace SPCAFContrib.Rules.Code
      CheckId = CheckIDs.Rules.Assembly.WrongSPViewUsage,
      Help = CheckIDs.Rules.Assembly.WrongSPViewUsage_HelpUrl,
 
+     Message = "Multiple SPView instances could not be updated at once.",
      DisplayName = "Multiple SPView instances could not be updated at once.",
      Description = "SPList.DefaultView and SPList.Views[] properties returns a new SPView instance with every call.",
-     Message = "Multiple SPView instances could not be updated at once.",
      Resolution = "To handle a single instance you need to retrieve the SPView object and modify it directly.",
 
      DefaultSeverity = Severity.Error,

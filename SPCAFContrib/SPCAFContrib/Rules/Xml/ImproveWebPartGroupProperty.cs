@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Rules;
-using SPCAFContrib.Consts;
-
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Xml
 {
@@ -16,14 +12,13 @@ namespace SPCAFContrib.Rules.Xml
         CheckId = CheckIDs.Rules.WebPart.WebPartModuleDefinitionMightbeImproved,
         Help = CheckIDs.Rules.WebPart.WebPartModuleDefinitionMightbeImproved_HelpUrl,
 
-        DisplayName = "Web part group property should not be 'Custom'.",
         Message = "Web part group property should not be 'Custom'.",
+        DisplayName = "Web part group property should not be 'Custom'.",
         Description = "Web part group property should not be 'Custom'.",
         Resolution = "Ensure web part group value has unique name, not 'Custom'.",
 
         DefaultSeverity = Severity.Information,
         SharePointVersion = new[] { "12", "14", "15" },
-
         Links = new[]
         {
             "Creating Web Parts for SharePoint",

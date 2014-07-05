@@ -6,20 +6,25 @@ using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
 using SPCAF.Sdk.Rules;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Experimental.Rules.Code
 {
      [RuleMetadata(typeof(ContribBestPracticesGroup),
      CheckId = CheckIDs.Rules.Assembly.AvoidSPObjectsInFields,
      Help = CheckIDs.Rules.Assembly.AvoidSPObjectsInFields_HelpUrl,
+
+     Message = "Avoid using SP-Objects In Fields and Properties In Class: {0}",
      DisplayName = "Avoid using SP-Objects In Fields and Properties",
      Description = "Having SP-Objects as a properties/fields are quite dangerous",
+     Resolution = "Pass SP-Objects as a methods parameters most of the time",
+
      DefaultSeverity = Severity.Warning,
-     SharePointVersion = new[] { "12", "14", "15" },
-     Message = "Avoid using SP-Objects In Fields and Properties In Class: {0}",
-     Resolution = "Pass SP-Objects as a methods parameters most of the time")]
+     SharePointVersion = new[] { "12", "14", "15" }
+     
+     )]
     public class AvoidSPObjectsInFields : Rule<AssemblyFileReference>
     {
         #region fields

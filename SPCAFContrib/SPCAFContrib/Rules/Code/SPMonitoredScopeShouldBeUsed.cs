@@ -7,8 +7,9 @@ using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
 using SPCAF.Sdk.Rules;
 using SPCAFContrib.Common;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 using MethodDefinition = Mono.Cecil.MethodDefinition;
 
 namespace SPCAFContrib.Rules.Code
@@ -16,12 +17,14 @@ namespace SPCAFContrib.Rules.Code
     [RuleMetadata(typeof(ContribBestPracticesGroup),
        CheckId = CheckIDs.Rules.Assembly.SPMonitoredScopeShouldBeUsed,
        Help = CheckIDs.Rules.Assembly.SPMonitoredScopeShouldBeUsed_HelpUrl,
-       DisplayName = "SPMonitoredScope should be used for web parts, pages and controls.",
+
+       Message = "You don't use SPMonitoredScope construction in the visual component [{0}].",
+       DisplayName = "SPMonitoredScope should be used for web parts and controls.",
        Description = "Some recommended practices regarding SPMonitoredScope class utilization.",
+       Resolution = "Consider to use SPMonitoredScope in visual components.",
+
        DefaultSeverity = Severity.Information,
        SharePointVersion = new[] { "12", "14", "15" },
-       Message = "You don't use SPMonitoredScope construction in the visual component [{0}].",
-       Resolution = "Consider to use SPMonitoredScope in visual components.",
        Links = new []
        {
            "Using SPMonitoredScope",

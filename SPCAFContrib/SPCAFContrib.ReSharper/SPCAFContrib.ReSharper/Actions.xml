@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<actions>
+  <insert group-id="ReSharper" position="last">
+    <action-group id="SPCAFContrib.ReSharper" text="SPCAF Contrib">
+      <action id="SPCAFContrib.ReSharper.About" text="About SPCAF Contrib ReSharper Plugin"/>
+      <!-- to break up elements use <separator/> -->
+    </action-group>
+  </insert>
+</actions>

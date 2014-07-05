@@ -13,7 +13,6 @@ using System.Threading.Tasks;
 using Mono.Cecil.Cil;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
-using SPCAFContrib.Consts;
 using MethodDefinition = Mono.Cecil.MethodDefinition;
 using ICSharpCode.Decompiler.Ast.Transforms;
 
@@ -149,6 +148,7 @@ namespace SPCAFContrib.Extensions
         {
             ElementSummary summary = assembly.GetSummary();
 
+            //If PDB is available (which should be the case in VS analysis) the property "instruction.SequencePoint.Document.Url" contains the .cs file name with the code.
             if (method.HasBody && method.Body.Instructions[0].SequencePoint != null)
             {
                 summary.WspRelativeFilename = method.Body.Instructions[0].SequencePoint.Document.Url;

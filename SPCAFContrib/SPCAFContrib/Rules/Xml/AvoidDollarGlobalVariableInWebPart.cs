@@ -1,20 +1,24 @@
 ﻿using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Rules;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Xml
 {
     [RuleMetadata(typeof(ContribCorrectnessGroup),
      CheckId = CheckIDs.Rules.WebPart.AvoidDollarGlobalVariableInWebPart,
      Help = CheckIDs.Rules.General.AvoidDollarGlobalVariable_HelpUrl,
-     DisplayName = "Avoid using $ for jQuery in web part.",
-     Description = "Avoid global $-var as it conflict with assert picker and cmssitemanager.js.",
-     DefaultSeverity = Severity.Warning,
-     SharePointVersion = new[] { "14", "15" },
+
      Message = "jQuery $ variable is used in the web part definition of file [{0}].",
-     Resolution = "Use jQuery global variable instead of $.")]
+     DisplayName = "Avoid using $ as jQuery reference in web part.",
+     Description = "Avoid global $-var as it conflict with assert picker and cmssitemanager.js.",
+     Resolution = "Use jQuery global variable instead of $.",
+     
+     DefaultSeverity = Severity.Warning,
+     SharePointVersion = new[] { "14", "15" }
+     )]
     public class AvoidDollarGlobalVariableInWebPart : Rule<WebPartDefinition>
     {
         #region methods

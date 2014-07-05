@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CodeInspectionHelpLink" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;CodeInspectionHelpLink&gt;
+	&lt;Item Id="CSC510201" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510201_ThreadSleepShouldNotBeUsed"/&gt;
+	&lt;Item Id="CSC510202" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510202_ConfigurationManagerShouldNotBeUsed"/&gt;
+	&lt;Item Id="CSC510203" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510203_AvoidUsingListFieldIterator"/&gt;
+	&lt;Item Id="CSC510204" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510204_AvoidEnumeratingAllUserProfiles"/&gt;
+	&lt;Item Id="CSC510205" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510205_SPViewScopeDoesNotDefined"/&gt;
+	&lt;Item Id="CSC510206" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510206_UseSecureStoreService"/&gt;
+	&lt;Item Id="CSC510208" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510208_SPMonitoredScopeShouldBeUsed"/&gt;
+	&lt;Item Id="CSC510209" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510209_InappropriateUsageOfSPListCollection"/&gt;
+	&lt;Item Id="CSC510210" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510210_SPQueryScopeDoesNotDefined"/&gt;
+	&lt;Item Id="CSC510211" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510211_AvoidUsingAjaxControlToolkit"/&gt;
+	&lt;Item Id="CSC510212" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510212_DoNotUseDirectorySearcher"/&gt;
+	&lt;Item Id="CSC510213" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510213_DoNotUseUnsafeTypeConversionOnSPListItem"/&gt;
+	&lt;Item Id="CSC510214" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510214_SPWebEnsureUserMethodUsage"/&gt;
+	&lt;Item Id="CSC510215" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510215_SPWebRequestAccessEmailPropertyUsage"/&gt;
+	&lt;Item Id="CSC510218" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510218_SPDataSourceScopeDoesNotDefined"/&gt;
+	&lt;Item Id="CSC510222" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510222_AvoidUsingSPContextOutsideOfWebContext"/&gt;
+	&lt;Item Id="CSC510223" Url="https://spcafcontrib.codeplex.com/wikipage?title=AvoidJQueryDocumentReady"/&gt;
+	&lt;Item Id="CSC510224" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510224_CamlexQueryDoubleWhere"/&gt;
+	&lt;Item Id="CSC510225" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510225_MagicStringShouldNotBeUsed"/&gt;
+	&lt;Item Id="CSC510226" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510226_AvoidUsingSPListItemFile"/&gt;
+	&lt;Item Id="CSC510227" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510227_InappropriateUsageOfTaxonomyGroupCollection"/&gt;
+	&lt;Item Id="CSC510228" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510228_AvoidUnsafeUrlConcatenations"/&gt;
+	&lt;Item Id="CSC510229" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510229_LoadJavaScriptWithinSandbox"/&gt;
+	&lt;Item Id="CSC510231" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510231_ListModificationFromJob"/&gt;
+	&lt;Item Id="CSC510232" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510232_GetPublishingPages"/&gt;
+	&lt;Item Id="CSC510233" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510233_AvoidSPObjectsInFields"/&gt;
+	&lt;Item Id="CSC510234" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510234_AvoidStaticSPObjectsInFields"/&gt;
+	&lt;Item Id="CSC510235" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510235_AvoidSPObjectNameStringComparison"/&gt;
+	&lt;Item Id="CSC510235-2" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510235_AvoidSPObjectNameStringComparison"/&gt;
+	&lt;Item Id="CSC510236" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510236_DoNotSuppressExceptions"/&gt;
+	&lt;Item Id="CSC510237" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510237_ULSLoggingShouldBeUsed"/&gt;
+	&lt;Item Id="CSC510238" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510238_SpecifySPZoneInSPSite"/&gt;
+	&lt;Item Id="CSC510239" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510239_NoCustomLogging"/&gt;
+	&lt;Item Id="CSC510240" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510240_DoNotUseSPWebProperties"/&gt;
+	&lt;Item Id="CSC510241" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510241_ULSLoggingInCatchBlock"/&gt;
+	&lt;Item Id="CSC510242" Url="https://spcafcontrib.codeplex.com/wikipage?title=AvoidDollarGlobalVariable"/&gt;
+	&lt;Item Id="CSC510243" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510243_DoNotChangeSPPersistedObject"/&gt;
+	&lt;Item Id="CSC510244" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510244_OutOfContextRWEP"/&gt;
+	&lt;Item Id="CSC510245" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510245_DoNotUsePortalLog"/&gt;
+	&lt;Item Id="CSC510246" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510246_DoNotDisposePersonalSiteWeb"/&gt;
+	&lt;Item Id="CSC510247" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510247_WrongSPViewUsage"/&gt;
+	&lt;Item Id="CSC512101" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC512101_SPSiteFeatureShouldNotBeActivatedFromCode"/&gt;
+	&lt;Item Id="CSC512102" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC512102_FeatureShouldHaveNotEmptyImageUrl"/&gt;
+	&lt;Item Id="CSC510401" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510401_UnresolvedTokenAssemblyFullName"/&gt;
+	&lt;Item Id="CSC512105" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC512105_MagicStringShouldNotBeUsed"/&gt;
+	&lt;Item Id="CSC512106" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC512106_FeatureAlwaysForceInstall"/&gt;
+	&lt;Item Id="CSC515101" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC515101_DeployTaxonomyFieldsCorrectly"/&gt;
+	&lt;Item Id="CSC515102" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC515102_DoNotDefineMultipleFieldGroupInOneElementFile"/&gt;
+	&lt;Item Id="CSC515103" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC515103_DeployFieldsCorrectly"/&gt;
+	&lt;Item Id="CSC515104" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC515104_ConsiderOverwriteAttributeForFields"/&gt;
+	&lt;Item Id="CSC515105" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC515105_FieldIdShouldBeUppercase"/&gt;
+	&lt;Item Id="CSC515106" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC515106_NameWithPictureForUserField"/&gt;
+	&lt;Item Id="CSC515107" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC515107_DoNotAllowDeletionForColumn"/&gt;
+	&lt;Item Id="CSC515108" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC515108_UniqueFieldID"/&gt;
+	&lt;Item Id="CSC515109" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC515109_UniqueFieldName"/&gt;
+	&lt;Item Id="CSC515110" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC515110_UniqueFieldStaticName"/&gt;
+	&lt;Item Id="CSC515201" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC515201_AvoidListContentTypes"/&gt;
+	&lt;Item Id="CSC515202" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC515202_DoNotDefineMultipleContentTypeGroupInOneElementFile"/&gt;
+	&lt;Item Id="CSC515203" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC515203_DeployContentTypesCorrectly"/&gt;
+	&lt;Item Id="CSC515204" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC515204_ConsiderOverwriteAttributeForContentType"/&gt;
+	&lt;Item Id="CSC515303" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC515303_AvoidInfoPathForms"/&gt;
+	&lt;Item Id="CSC515402" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC515402_UniqueListInstanceUrl"/&gt;
+	&lt;Item Id="CSC515404" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC515402_UniqueListInstanceTitle"/&gt;
+	&lt;Item Id="CSC515403" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC515403_DoNotUseSystemListNames"/&gt;
+	&lt;Item Id="CSC515501" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC515501_ConsiderHiddenListTemplates"/&gt;
+	&lt;Item Id="CSC515502" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC515502_DeclareEmptyFieldsElement"/&gt;
+	&lt;Item Id="CSC515503" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC515503_DoNotDeployTaxonomyFieldsInListDefinition"/&gt;
+	&lt;Item Id="CSC515504" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC515504_EnsureFolderContentTypeInListDefinition"/&gt;
+	&lt;Item Id="CSC515505" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC515505_DoNotAllowDeletionForList"/&gt;
+	&lt;Item Id="CSC516401" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC516401_WebPartDefinitionMightBeImproved"/&gt;
+	&lt;Item Id="CSC516402" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC516402_WebPartModuleDefinitionMightbeImproved"/&gt;
+	&lt;Item Id="CSC516403" Url="https://spcafcontrib.codeplex.com/wikipage?title=AvoidDollarGlobalVariable"/&gt;
+	&lt;Item Id="CSC516404" Url="https://spcafcontrib.codeplex.com/wikipage?title=AvoidJQueryDocumentReady"/&gt;
+	&lt;Item Id="CSC516801" Url="https://spcafcontrib.codeplex.com/wikipage?title=AvoidDollarGlobalVariable"/&gt;
+	&lt;Item Id="CSC516802" Url="https://spcafcontrib.codeplex.com/wikipage?title=SPDataSourceScopeDoesNotDefined"/&gt;
+	&lt;Item Id="CSC516803" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC516803_AvoidUsingRenderingTemplate"/&gt;
+	&lt;Item Id="CSC516804" Url="https://spcafcontrib.codeplex.com/wikipage?title=AvoidJQueryDocumentReady"/&gt;
+	&lt;Item Id="CSC516901" Url="https://spcafcontrib.codeplex.com/wikipage?title=AvoidDollarGlobalVariable"/&gt;
+	&lt;Item Id="CSC516902" Url="https://spcafcontrib.codeplex.com/wikipage?title=SPDataSourceScopeDoesNotDefined"/&gt;
+	&lt;Item Id="CSC516903" Url="https://spcafcontrib.codeplex.com/wikipage?title=AvoidJQueryDocumentReady"/&gt;
+	&lt;Item Id="CSC517301" Url="https://spcafcontrib.codeplex.com/wikipage?title=AvoidDollarGlobalVariable"/&gt;
+	&lt;Item Id="CSC517302" Url="https://spcafcontrib.codeplex.com/wikipage?title=SPDataSourceScopeDoesNotDefined"/&gt;
+	&lt;Item Id="CSC517303" Url="https://spcafcontrib.codeplex.com/wikipage?title=AvoidJQueryDocumentReady"/&gt;
+	&lt;Item Id="CSC518901" Url="https://spcafcontrib.codeplex.com/wikipage?title=AvoidDollarGlobalVariable"/&gt;
+	&lt;Item Id="CSC518902" Url="https://spcafcontrib.codeplex.com/wikipage?title=AvoidJQueryDocumentReady"/&gt;
+	&lt;Item Id="SPC015204" Url="http://docs.spcaf.com/v4/SPC015204_DoNotDefineDuplicateContentTypeID.html"/&gt;
+	&lt;Item Id="CSC510248" Url="https://spcafcontrib.codeplex.com/wikipage?title=AvoidUsingUpdatePanel"/&gt;
+	&lt;Item Id="CSC516805" Url="https://spcafcontrib.codeplex.com/wikipage?title=AvoidUsingUpdatePanel"/&gt;
+	&lt;Item Id="CSC516904" Url="https://spcafcontrib.codeplex.com/wikipage?title=AvoidUsingUpdatePanel"/&gt;
+	&lt;Item Id="CSC517304" Url="https://spcafcontrib.codeplex.com/wikipage?title=AvoidUsingUpdatePanel"/&gt;
+	&lt;Item Id="CSC510207" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510207_UsingSPWebGetFilePreferable"/&gt;
+	&lt;Item Id="CSC510219" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510219_DoNotDeleteUserProfile"/&gt;
+	&lt;Item Id="CSC510249" Url="https://spcafcontrib.codeplex.com/wikipage?title=CSC510249_OutOfContextSPWebPartManager"/&gt;
+&lt;/CodeInspectionHelpLink&gt;</value>
+  </data>
+</root>

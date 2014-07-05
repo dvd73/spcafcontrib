@@ -5,9 +5,9 @@ using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
 using SPCAF.Sdk.Rules;
-using SPCAFContrib.Consts;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 using MethodDefinition = Mono.Cecil.MethodDefinition;
 
 namespace SPCAFContrib.Rules.Code
@@ -15,12 +15,14 @@ namespace SPCAFContrib.Rules.Code
      [RuleMetadata(typeof(ContribCorrectnessGroup),
      CheckId = CheckIDs.Rules.Assembly.NoCustomLogging,
      Help = CheckIDs.Rules.Assembly.NoCustomLogging_HelpUrl,
+
+     Message = "Do not use custom logging [{0}].",
      DisplayName = "Do not use custom logging tools.",
      Description = "Avoid introducing 3-rd part logging like EventLog or NLog or log4net. It is required web.config changes or affects to solution security.",
+     Resolution = "Use SPDiagnosticsService class to log.",
+
      DefaultSeverity = Severity.Warning,
      SharePointVersion = new[] { "12", "14", "15" },
-     Message = "Do not use custom logging [{0}].",
-     Resolution = "Use SPDiagnosticsService class to log.",
      Links=new []
      {
          "SPDiagnosticsService class",
@@ -64,7 +66,7 @@ namespace SPCAFContrib.Rules.Code
              OnMatch(assembly, notifications, "ELMAH", TypeKeys.ELMAH_AccessErrorLog, assembly.MethodsUsingType(TypeKeys.ELMAH_AccessErrorLog));
          }
 
-         private void OnMatch(AssemblyFileReference assembly, NotificationCollection notifications, string LoggerName,string typeName, IEnumerable<MethodDefinition> customLogUsages)
+         private void OnMatch(AssemblyFileReference assembly, NotificationCollection notifications, string loggerName,string typeName, IEnumerable<MethodDefinition> customLogUsages)
          {
              foreach (MethodDefinition eventLogUsage in customLogUsages)
              {
@@ -75,7 +77,7 @@ namespace SPCAFContrib.Rules.Code
                      {
                          if (String.Equals(methodInvokation.DeclaringType.FullName, typeName, StringComparison.OrdinalIgnoreCase))
                          {
-                             Notify(eventLogUsage, String.Format(this.MessageTemplate(), LoggerName),
+                             Notify(eventLogUsage, String.Format(this.MessageTemplate(), loggerName),
                                  instruction.ImproveSummary(assembly.GetSummary()), notifications);
                          }
                      }

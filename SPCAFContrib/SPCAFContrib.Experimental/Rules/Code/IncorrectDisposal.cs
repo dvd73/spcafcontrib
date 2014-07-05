@@ -10,7 +10,6 @@ using SPCAF.Sdk.Rules;
 using SPCAF.Sdk.Utilities;
 using SPCAFContrib.Collectors;
 using SPCAFContrib.Common.Statistics;
-using SPCAFContrib.Consts;
 using SPCAFContrib.Extensions;
 using SPCAFContrib.Rules.Code.Base;
 

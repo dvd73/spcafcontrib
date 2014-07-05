@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
 using SPCAF.Sdk.Rules;
-using SPCAFContrib.Consts;
-using SPCAFContrib.Rules.Code.Base;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 using MethodDefinition = Mono.Cecil.MethodDefinition;
 
 namespace SPCAFContrib.Rules.Code
@@ -20,19 +16,17 @@ namespace SPCAFContrib.Rules.Code
         CheckId = CheckIDs.Rules.Assembly.InappropriateUsageOfTaxonomyGroupCollection,
         Help = CheckIDs.Rules.Assembly.InappropriateUsageOfTaxonomyGroupCollection_HelpUrl,
 
-        DisplayName = "Inappropriate taxonomy collection usage.",
         Message = "Inappropriate taxonomy collection usage.",
-        Description = "Avoid string based index call on term group/term set collection.",
-        Resolution = "Consider fetching term group/term set by GUID or string comporation by collection enumeration.",
+        DisplayName = "Inappropriate taxonomy collection usage.",
+        Description = "Avoid string based index call on the taxonomy collection.",
+        Resolution = "Consider fetching item by GUID or string comporation by collection enumeration.",
 
-        DefaultSeverity = Severity.Error,
+        DefaultSeverity = Severity.Warning,
         SharePointVersion = new[] { "14", "15" },
         Links = new []
         {
-            "IndexedCollection<T> class",
-            "http://msdn.microsoft.com/en-us/library/ee574147.aspx",
-            "Group class",
-            "http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.taxonomy.group.aspx"
+            "IndexedCollection<T>.Item property (Guid)",
+            "http://msdn.microsoft.com/en-us/library/office/ee569459.aspx"
         }
         )]
     public class InappropriateUsageOfTaxonomyGroupCollection : Rule<AssemblyFileReference>
@@ -50,10 +44,18 @@ namespace SPCAFContrib.Rules.Code
 
             foreach (MethodDefinition method in allMethods)
             {
+                foreach (Instruction termGroupCall in method.GetUnsafeTaxonomyTermStoreStringIndexCall())
+                {
+                    CodeInstruction instruction = new CodeInstruction(method, termGroupCall);
+                    Notify(assembly, "Avoid string based index call on term store collection.",
+                          instruction.ImproveSummary(assembly.GetSummary()),
+                          notifications);
+                }
+
                 foreach (Instruction termGroupCall in method.GetUnsafeTaxonomyGroupStringIndexCall())
                 {
                     CodeInstruction instruction = new CodeInstruction(method, termGroupCall);
-                    Notify(assembly, "Avoid string based index call on term group.",
+                    Notify(assembly, "Avoid string based index call on term group collection.",
                           instruction.ImproveSummary(assembly.GetSummary()),
                           notifications);
                 }
@@ -61,7 +63,15 @@ namespace SPCAFContrib.Rules.Code
                 foreach (Instruction termSetGroupCall in method.GetUnsafeTaxonomyTermSetCollectionStringIndexCall())
                 {
                     CodeInstruction instruction = new CodeInstruction(method, termSetGroupCall);
-                    Notify(assembly, "Avoid string based index call on term set.",
+                    Notify(assembly, "Avoid string based index call on term set collection.",
+                                instruction.ImproveSummary(assembly.GetSummary()),
+                                notifications);
+                }
+
+                foreach (Instruction termSetGroupCall in method.GetUnsafeTaxonomyTermCollectionStringIndexCall())
+                {
+                    CodeInstruction instruction = new CodeInstruction(method, termSetGroupCall);
+                    Notify(assembly, "Avoid string based index call on term collection.",
                                 instruction.ImproveSummary(assembly.GetSummary()),
                                 notifications);
                 }

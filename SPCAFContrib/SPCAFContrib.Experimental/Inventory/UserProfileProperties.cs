@@ -9,9 +9,9 @@ using SPCAF.Sdk.Model.Extensions;
 using SPCAF.Sdk.Inventory;
 using SPCAF.Sdk.Model;
 using Mono.Cecil.Cil;
-using SPCAFContrib.Consts;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Experimental.Inventory
 {

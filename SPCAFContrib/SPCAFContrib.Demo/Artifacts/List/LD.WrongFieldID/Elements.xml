@@ -10,7 +10,7 @@
         Sequence="410"
         DisplayName="WrongFieldID"
         Description="My List Definition"
-        Image="/_layouts/images/itgen.png"/>
+        Image="/_layouts/images/itgen.png"/> 
 
   <ListInstance Title="Quick Links"
                 OnQuickLaunch="FALSE"

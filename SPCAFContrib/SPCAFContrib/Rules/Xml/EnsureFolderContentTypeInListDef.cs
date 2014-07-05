@@ -3,7 +3,8 @@ using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Rules;
 using System.Linq;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Xml
 {
@@ -11,10 +12,10 @@ namespace SPCAFContrib.Rules.Xml
       CheckId = CheckIDs.Rules.ListTemplate.EnsureFolderContentTypeInListDefinition,
       Help = CheckIDs.Rules.ListTemplate.EnsureFolderContentTypeInListDefinition_HelpUrl,
 
+      Message = "List Definition [{0}] should include Folder ContentTypeRef.",
       DisplayName = "Ensure Folder ContentTypeRef in list definition.",
-      Message = "List Definition '{0}' should include Forlder ContentTypeRef.",
-      Description = "List definitions should include Folder ContentTtype to work correctly.",
-      Resolution = "Add ContentTpeRef with ID='0x0120.",
+      Description = "List definition should include Folder content type to work correctly.",
+      Resolution = "Add ContentTypeRef with ID='0x0120.",
 
       DefaultSeverity = Severity.CriticalWarning,
       SharePointVersion = new[] { "12", "14", "15" },

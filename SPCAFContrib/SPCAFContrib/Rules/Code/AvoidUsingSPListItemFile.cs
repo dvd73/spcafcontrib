@@ -1,8 +1,9 @@
 ﻿using Mono.Cecil;
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Rules.Code.Base;
 
 namespace SPCAFContrib.Rules.Code

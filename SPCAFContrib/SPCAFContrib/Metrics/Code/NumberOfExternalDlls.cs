@@ -2,7 +2,8 @@
 using SPCAF.Sdk;
 using SPCAF.Sdk.Metrics;
 using SPCAF.Sdk.Model;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Metrics.Code
 {
@@ -10,9 +11,9 @@ namespace SPCAFContrib.Metrics.Code
         CheckId = CheckIDs.Metrics.Assembly.NumberOfExternalDlls,
         Help = CheckIDs.Metrics.Assembly.NumberOfExternalDlls_HelpUrl,
 
+        Message = "Solution [{0}] contains {1} external dlls within wsp package.",
         DisplayName = "External dll count.",
         ShortName = "External dll count.",
-        Message = "Solution '{0}' contains {1} external dlls within wsp package.",
         Description = "Count external dll count in the solution.",
 
         DefaultSeverity = Severity.Information,

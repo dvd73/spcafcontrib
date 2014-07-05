@@ -5,8 +5,9 @@ using SPCAF.Sdk.Model.Extensions;
 using SPCAF.Sdk.Rules;
 using System;
 using System.Linq;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Xml
 {
@@ -14,8 +15,8 @@ namespace SPCAFContrib.Rules.Xml
        CheckId = CheckIDs.Rules.ListTemplate.ConsiderHiddenListTemplates,
        Help = CheckIDs.Rules.ListTemplate.ConsiderHiddenListTemplates_HelpUrl,
 
+       Message = "Consider making List Template [{0}] hidden.",
        DisplayName = "Consider create hidden list templates.",
-       Message = "Consider making List Template '{0}' hidden.",
        Description = "List Templates with instances in solution should not be created by end user.",
        Resolution = @"Declare Hidden=""TRUE"".",
 

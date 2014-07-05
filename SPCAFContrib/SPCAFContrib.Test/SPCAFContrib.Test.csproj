@@ -180,6 +180,7 @@
     <Compile Include="JavaScript\AvoidJQueryDocumentReadyInCodeTest.cs" />
     <Compile Include="ListDefinition\DoNotAllowDeletionForListTest.cs" />
     <Compile Include="FieldDefinition\FieldIdShouldBeUppercaseTest.cs" />
+    <Compile Include="ListDefinition\DeclareEmptyFieldsElementTest.cs" />
     <Compile Include="ListFieldIterator\AvoidUsingRenderingTemplateTest.cs" />
     <Compile Include="ListFieldIterator\AvoidUsingListFieldIteratorTest.cs" />
     <Compile Include="ListInstance\UniqueListInstanceUrlTest.cs" />
@@ -235,9 +236,13 @@
     <Compile Include="UnsafeUrlConcatinations\Tests\UnsafeUrlConcatinationsTest.cs" />
     <Compile Include="UnsafeUrlConcatinations\AvoidUnsafeUrlConcatenationsTest.cs" />
     <Compile Include="UnsafeUrlConcatinations\UnsafeUrlConcatinationsImpl.cs" />
+    <Compile Include="UpdatePanel\AvoidUsingUpdatePanelInMasterPageTest.cs" />
+    <Compile Include="UpdatePanel\AvoidUsingUpdatePanelInControlTest.cs" />
     <Compile Include="UserProfiles\AvoidEnumeratingAllUserProfilesImpl.cs" />
     <Compile Include="UserProfiles\Tests\AvoidEnumeratingAllUserProfilesTest.cs" />
+    <Compile Include="UserProfiles\Tests\DoNotDeleteUserProfileTest.cs" />
     <Compile Include="WebParts\AvoidAllUsersWebPartInModulesTest.cs" />
+    <Compile Include="WebParts\OutOfContextSPWebPartManagerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SPCAFContrib.Experimental\SPCAFContrib.Experimental.csproj">

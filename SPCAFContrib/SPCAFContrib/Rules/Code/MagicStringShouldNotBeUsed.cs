@@ -4,22 +4,26 @@ using Mono.Cecil.Cil;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Rules;
 using SPCAFContrib.Common;
-using SPCAFContrib.Consts;
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model.Extensions;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Code
 {
     [RuleMetadata(typeof(ContribCorrectnessGroup),
         CheckId = CheckIDs.Rules.Assembly.MagicStringShouldNotBeUsed,
         Help = CheckIDs.Rules.Assembly.MagicStringShouldNotBeUsed_HelpUrl,
+
+        Message = "Hardcoded {1} is detected \"{0}\".",
         DisplayName = "Do not use hardcoded urls, pathes, emails and account names in code.",
         Description = "Consider a configuration for solution.",
+        Resolution = "Consider a configuration for solution.",
+
         DefaultSeverity = Severity.Warning,
-        SharePointVersion = new[] { "12", "14", "15" },
-        Message = "Hardcoded {1} is detected \"{0}\".",
-        Resolution = "Consider a configuration for solution.")]
+        SharePointVersion = new[] { "12", "14", "15" }
+        )]
     public class MagicStringShouldNotBeUsed : Rule<AssemblyFileReference>
     {
         #region methods

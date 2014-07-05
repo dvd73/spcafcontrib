@@ -3,8 +3,8 @@ using SPCAF.Sdk;
 using SPCAF.Sdk.Rules;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
-using SPCAFContrib.Consts;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Rules.Code.Base;
 
 namespace SPCAFContrib.Rules.Code
@@ -13,8 +13,8 @@ namespace SPCAFContrib.Rules.Code
      CheckId = CheckIDs.Rules.Assembly.ConfigurationManagerShouldNotBeUsed,
      Help = CheckIDs.Rules.Assembly.ConfigurationManagerShouldNotBeUsed_HelpUrl,
 
-     DisplayName = "ConfigurationManager should not be used.",
      Message = "ConfigurationManager should not be used.",
+     DisplayName = "ConfigurationManager should not be used.",
      Description = "Due quite challenging web.config modification it might be a better choice to store config setting in SPFarm/SPWeb/SPList bag properties.",
      Resolution = "Consider SPFarm/SPWeb/SPList bag properties top store and manage configuration.",
 
@@ -37,6 +37,11 @@ namespace SPCAFContrib.Rules.Code
         protected override void PopulateTypeMap()
         {
             TargetTypeMap.Add(TypeKeys.ConfigurationManager, new List<string>{
+                    "get_AppSettings",
+                    "get_ConnectionStrings"
+                });
+
+            TargetTypeMap.Add(TypeKeys.WebConfigurationManager, new List<string>{
                     "get_AppSettings",
                     "get_ConnectionStrings"
                 });

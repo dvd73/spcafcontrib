@@ -1,21 +1,20 @@
-﻿using System;
-using System.Linq;
-using SPCAF.Sdk;
-using SPCAF.Sdk.Helpers;
+﻿using SPCAF.Sdk;
 using SPCAF.Sdk.Rules;
-using SPCAFContrib.Consts;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Xml
 {
     [RuleMetadata(typeof(ContribCorrectnessGroup),
      CheckId = CheckIDs.Rules.ContentType.DeployContentTypesCorrectly,
      Help = CheckIDs.Rules.ContentType.DeployContentTypesCorrectly_HelpUrl,
-     DisplayName = "Deploy Content Types correctly.",
+
      Message = "Deploy Content Types correctly.",
+     DisplayName = "Deploy Content Types correctly.",
      Description = "Checks Content Type definitions.",
-     Resolution = "Deploy Content Types correctly.",
+     Resolution = "Do not deploy Content Type with Overwrite=\"TRUE\" and Inherits=\"False\" or not specified.",
 
      DefaultSeverity = Severity.Error,
      SharePointVersion = new[] { "14", "15" },
@@ -39,7 +38,7 @@ namespace SPCAFContrib.Rules.Xml
 
             if (target.OverwriteSpecified && target.Overwrite.IsTrue() && (!target.InheritsSpecified || target.Inherits.IsFalse()))
             {
-                string message = string.Format("Do not deploy Content Type '{0}' with Overwrite=\"TRUE\" and Inherits=\"False\" or not specified.", target.Name);
+                string message = string.Format("Do not deploy Content Type [{0}] with Overwrite=\"TRUE\" and Inherits=\"False\" or not specified.", target.Name);
                 Notify(target, message, notifications);
             }
         }

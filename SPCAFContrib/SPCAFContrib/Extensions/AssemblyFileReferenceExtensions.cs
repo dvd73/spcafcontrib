@@ -6,7 +6,7 @@ using Mono.Cecil;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
 using SPCAFContrib.Common;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 
 namespace SPCAFContrib.Extensions
 {
@@ -73,12 +73,12 @@ namespace SPCAFContrib.Extensions
 
         public static bool AssemblyHasExcluded(this AssemblyFileReference assembly)
         {
-            return ExcludedLibraries.Assemblies.Any(s => new Wildcard(s, RegexOptions.IgnoreCase).IsMatch(assembly.ReadableElementName));
+            return ExcludedItems.Assemblies.Any(s => new Wildcard(s, RegexOptions.IgnoreCase).IsMatch(assembly.ReadableElementName));
         }
 
         public static bool AssemblyHasExcluded(this AssemblyDefinition assembly)
         {
-            return ExcludedLibraries.Assemblies.Any(s => new Wildcard(s, RegexOptions.IgnoreCase).IsMatch(assembly.MainModule.Name));
+            return ExcludedItems.Assemblies.Any(s => new Wildcard(s, RegexOptions.IgnoreCase).IsMatch(assembly.MainModule.Name));
         }
 
         public static IEnumerable<TypeDefinition> ResolveAllowedWebControls(this AssemblyFileReference assembly)
@@ -114,9 +114,16 @@ namespace SPCAFContrib.Extensions
             foreach (TypeDefinition type in assembly.ResolveTypesByBaseTypes(TypeInfo.SPEventReceivers))
             {
                 // need only async methods check like ItemAdded
-                if (type.IsDerivedFromType(TypeKeys.SPItemEventReceiver) && type.HasMethods)
+                if ((type.IsDerivedFromType(TypeKeys.SPItemEventReceiver) ||
+                     type.IsDerivedFromType(TypeKeys.SPListEventReceiver) ||
+                     type.IsDerivedFromType(TypeKeys.SPWebEventReceiver)) && type.HasMethods)
                 {
-                    if (!type.Methods.Any(method => TypeInfo.SPItemEventReceiverAsynchronousEvents.Contains(method.Name)))
+                    if (
+                        !type.Methods.Any(
+                            method =>
+                                TypeInfo.SPItemEventReceiverAsynchronousEvents.Contains(method.Name) ||
+                                TypeInfo.SPListEventReceiverAsynchronousEvents.Contains(method.Name) ||
+                                TypeInfo.SPWebEventReceiverAsynchronousEvents.Contains(method.Name)))
                         continue;
                 }
                 yield return type;

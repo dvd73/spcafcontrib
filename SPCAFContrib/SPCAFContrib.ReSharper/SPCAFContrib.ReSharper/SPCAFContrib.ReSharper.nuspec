@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>SPCAFContrib.ReSharper</id>
+    <version>1.0.0.32</version>
+    <title>SPCAF Contrib ReSharper plugin</title>
+    <authors>Open source project</authors>
+    <projectUrl>https://spcafcontrib.codeplex.com/documentation</projectUrl>
+    <iconUrl>https://download-codeplex.sec.s-msft.com/Download?ProjectName=spcafcontrib&amp;DownloadId=718791&amp;Build=20885</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Essential tool to ensure SharePoint code quality</description>
+    <copyright>Copyright &#x00A9; 2014 SPCAF Contrib team</copyright>
+    <tags>SPCAF SPCAFContrib SharePoint</tags>
+    <releaseNotes>
+Implemented rules:
+&#8226; CSC510243
+All supported rules see on the project site.
+    </releaseNotes>
+    <dependencies>
+      <dependency id="ReSharper" version="[8.2,8.3)" />
+    </dependencies>
+  </metadata>
+  <files>
+    <!-- ReSharper 8.2 -->
+    <file src="bin\Release\SPCAFContrib.ReSharper.dll" target="ReSharper\v8.2\plugins" />
+    <file src="bin\Release\SPCAFContrib.Entities.dll" target="ReSharper\v8.2\plugins" />
+  </files>
+</package>

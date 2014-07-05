@@ -6,9 +6,10 @@ using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
 using SPCAF.Sdk.Rules;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
 using ICSharpCode.NRefactory.CSharp;
+using SPCAFContrib.Groups;
 using MethodDefinition = Mono.Cecil.MethodDefinition;
 
 namespace SPCAFContrib.Rules.Code
@@ -16,12 +17,14 @@ namespace SPCAFContrib.Rules.Code
     [RuleMetadata(typeof(ContribCorrectnessGroup),
      CheckId = CheckIDs.Rules.Assembly.AvoidUnsafeUrlConcatenations,
      Help = CheckIDs.Rules.Assembly.AvoidUnsafeUrlConcatenations_HelpUrl,
+
+     Message = "Avoid unsafe Url concatinations. Method: [{0}], Class:[{1}]. Use SPUtility.ConcatUrls/SPUrlUtility.CombineUrl methods instead.",
      DisplayName = "Avoid unsafe url concatenations.",
      Description = "Url property for SPSite, SPWeb and SPFolder may return string with or without triling slash.",
+     Resolution = "Use SPUtility.ConcatUrls/SPUrlUtility.CombineUrl methods instead.",
+
      DefaultSeverity = SPCAF.Sdk.Severity.Warning,
      SharePointVersion = new[] { "12", "14", "15" },
-     Message = "Avoid unsafe Url concatinations. Method: [{0}], Class:[{1}]. Use SPUtility.ConcatUrls/SPUrlUtility.CombineUrl methods instead.",
-     Resolution = "Use SPUtility.ConcatUrls/SPUrlUtility.CombineUrl methods instead.",
      Links = new []
      {
          "SPUtility.ConcatUrls method",

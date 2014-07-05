@@ -125,7 +125,10 @@ namespace SPCAFContrib.Extensions
             if (htmlDocument != null)
             {
                 // To match elements whose nodename ends with the controlTypeName 
-                HtmlNodeCollection htmlNodeCollection = htmlDocument.DocumentNode.SelectNodes(String.Format("//*['{0}' = substring(name(), string-length(name()) - string-length('{0}') + 1)]", controlTypeName.ToLower()));
+                string xPath = String.Format(
+                    "//*['{0}' = substring(name(), string-length(name()) - string-length('{0}') + 1)]",
+                    controlTypeName.ToLower());
+                HtmlNodeCollection htmlNodeCollection = htmlDocument.DocumentNode.SelectNodes(xPath);
                 if (htmlNodeCollection != null)
                 {
                     foreach (HtmlNode scriptNode in htmlNodeCollection)

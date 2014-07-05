@@ -4,8 +4,9 @@ using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
 using SPCAF.Sdk.Rules;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Code
 {
@@ -13,8 +14,8 @@ namespace SPCAFContrib.Rules.Code
      CheckId = CheckIDs.Rules.Assembly.DoNotUsePortalLog,
      Help = CheckIDs.Rules.Assembly.DoNotUsePortalLog_HelpUrl,
 
-     DisplayName = "Do not use Microsoft.Office.Server.Diagnostics.PortalLog.",
      Message = "Do not use Microsoft.Office.Server.Diagnostics.PortalLog.",
+     DisplayName = "Do not use Microsoft.Office.Server.Diagnostics.PortalLog.",
      Description = "This class and its members are reserved for internal use and are not intended to be used in your code.",
      Resolution = "Use SPDiagnosticsServiceBase class for log.",
 

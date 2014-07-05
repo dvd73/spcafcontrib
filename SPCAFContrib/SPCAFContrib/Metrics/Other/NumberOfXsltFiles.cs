@@ -2,8 +2,9 @@
 using SPCAF.Sdk;
 using SPCAF.Sdk.Metrics;
 using SPCAF.Sdk.Model;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Metrics.Other
 {
@@ -11,9 +12,9 @@ namespace SPCAFContrib.Metrics.Other
        CheckId = CheckIDs.Metrics.Assembly.NumberOfXsltFiles,
        Help = CheckIDs.Metrics.Assembly.NumberOfXsltFiles_HelpUrl,
 
+       Message = "Solution [{0}] contains {1} xslt/xsl files.",
        DisplayName = "Xsl/Xslt files count.",
        ShortName = "Xsl/Xslt files count.",
-       Message = "Solution '{0}' contains {1} xslt/xsl files.",
        Description = "Counts the number of the xsl/xslt files wsp package.",
 
        DefaultSeverity = Severity.Information,

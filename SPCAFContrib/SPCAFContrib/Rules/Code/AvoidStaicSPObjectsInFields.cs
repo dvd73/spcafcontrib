@@ -5,20 +5,24 @@ using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
 using SPCAF.Sdk.Rules;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Rules.Code
 {
     [RuleMetadata(typeof(ContribBestPracticesGroup),
     CheckId = CheckIDs.Rules.Assembly.AvoidStaticSPObjectsInFields,
     Help = CheckIDs.Rules.Assembly.AvoidStaticSPObjectsInFields_HelpUrl,
-    DisplayName = "Avoid using static SP-Objects In Fields.",
-    Description = "Having static SP-Objects as a fields are quite dangerous.",
-    DefaultSeverity = Severity.Warning,
-    SharePointVersion = new[] { "12", "14", "15" },
+    
     Message = "Avoid using static SP-Objects in fields in class: {0}.",
-    Resolution = "Pass SP-Objects as a methods parameters most of the time.")]
+    DisplayName = "Avoid using static SharePoint type object as field.",
+    Description = "Having static SP-Objects as a fields are quite dangerous.",
+    Resolution = "Pass SP-Objects as a methods parameters most of the time.",
+
+    DefaultSeverity = Severity.Warning,
+    SharePointVersion = new[] { "12", "14", "15" }
+    )]
     public class AvoidStaicSPObjectsInFields : Rule<AssemblyFileReference>
     {
         #region fields

@@ -1,21 +1,24 @@
 ﻿using System;
 using System.Linq;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
 using SPCAF.Sdk;
 using SPCAF.Sdk.Inventory;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
 using Mono.Cecil;
+using SPCAFContrib.Groups;
 
 namespace SPCAFContrib.Inventory
 {
     [InventoryMetadata(typeof(ContribInventoryGroup),
         CheckId = CheckIDs.Inventory.Assembly.ListOfConsts,
         Help = CheckIDs.Inventory.Assembly.ListOfConsts_HelpUrl,
+
+        Message = "Added constant declaration instruction [{0}] to inventory",
         DisplayName = "Constants",
         Description = "Provides information all the \"consts\" in the solutions.",
-        Message = "Added constant declaration instruction '{0}' to inventory",
+        
         SharePointVersion = new string[] { "12", "14", "15" })]
     public class ListOfConsts : Inventory<AssemblyFileReference>
     {

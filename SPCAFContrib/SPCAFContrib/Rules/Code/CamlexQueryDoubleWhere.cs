@@ -5,7 +5,8 @@ using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
 using SPCAFContrib.Common;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Rules.Code.Base;
 
 namespace SPCAFContrib.Rules.Code
@@ -14,8 +15,8 @@ namespace SPCAFContrib.Rules.Code
      CheckId = CheckIDs.Rules.Assembly.CamlexQueryDoubleWhere,
      Help = CheckIDs.Rules.Assembly.CamlexQueryDoubleWhere_HelpUrl,
 
-     DisplayName = "Multiple WHERE clauses is not supported for Camlex.Query.",
      Message = "Multiple WHERE clauses is not supported for Camlex.Query.",
+     DisplayName = "Multiple WHERE clauses is not supported for Camlex.Query.",
      Description = "CamlexNET.Interfaces.IQuery interface is remains last WHERE clause only.",
      Resolution = "Use ExpressionHelper static class to combine set of conditions to single WHERE clause.",
 

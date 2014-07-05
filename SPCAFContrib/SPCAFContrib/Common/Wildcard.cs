@@ -4,7 +4,7 @@ namespace SPCAFContrib.Common
 {
     /// <summary>
     /// Represents a wildcard running on the
-    /// <see cref="System.Text.RegularExpressions"/> engine.
+    /// <see cref="System.Text.RegularExpressions"/> engine. Do not use it as replacement of Regex.
     /// </summary>
     public class Wildcard : Regex
     {

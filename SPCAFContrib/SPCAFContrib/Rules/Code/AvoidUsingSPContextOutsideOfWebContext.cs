@@ -5,23 +5,22 @@ using Mono.Cecil;
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
-using SPCAF.Sdk.Rules;
 using SPCAFContrib.Common;
-using SPCAFContrib.Consts;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Rules.Code.Base;
 
 namespace SPCAFContrib.Rules.Code
 {
-    [RuleMetadata(typeof(ContribBestPracticesGroup),
+    [RuleMetadata(typeof(ContribCorrectnessGroup),
      CheckId = CheckIDs.Rules.Assembly.AvoidUsingSPContextOutsideOfWebContext,
      Help = CheckIDs.Rules.Assembly.AvoidUsingSPContextOutsideOfWebContext_HelpUrl,
 
+     Message = "Avoid using SPContext.Current outside of web request context. Method: [{0}], Class:[{1}]",
      DisplayName = "Avoid using SPContext.Current outside of web request context.",
      Description = "Avoid using SPContext.Current outside of web request context. ",
-     Message = "Avoid using SPContext.Current outside of web request context. Method: [{0}], Class:[{1}]",
-     Resolution = "",
+     Resolution = "Pass SPWeb/SPSite object as parameter of method.",
 
      DefaultSeverity = Severity.Warning,
      SharePointVersion = new[] { "12", "14", "15" },

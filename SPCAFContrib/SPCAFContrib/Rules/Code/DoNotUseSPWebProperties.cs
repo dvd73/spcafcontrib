@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Mono.Cecil;
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
-using SPCAFContrib.Consts;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Rules.Code.Base;
 
 namespace SPCAFContrib.Rules.Code
@@ -16,17 +12,20 @@ namespace SPCAFContrib.Rules.Code
     [RuleMetadata(typeof(ContribCorrectnessGroup),
      CheckId = CheckIDs.Rules.Assembly.DoNotUseSPWebProperties,
      Help = CheckIDs.Rules.Assembly.DoNotUseSPWebProperties_HelpUrl,
+
+     Message = "Do not use SPWeb.Properties collection. Method: [{0}], Class:[{1}]",
      DisplayName = "Do not use SPWeb.Properties collection.",
      Description = "SPWeb.Properties is a StringDictionary, and doesn’t support casing for keys/values (everything gets converted to fully lowercase).",
+     Resolution = "The recommendation is to use the SPWeb.AllProperties collection.",
+
      DefaultSeverity = Severity.Warning,
      SharePointVersion = new[] { "14", "15" },
-     Message = "Do not use SPWeb.Properties collection. Method: [{0}], Class:[{1}]",
      Links = new[]
      {
          "SPWeb.AllProperties property",
          "http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.spweb.allproperties.aspx"
-     },
-     Resolution = "The recommendation is to use the SPWeb.AllProperties collection.")]
+     }
+     )]
     public class DoNotUseSPWebProperties : SearchPropertyRuleBase
     {
         protected override void PopulateTypeMap()

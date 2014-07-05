@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
 using SPCAF.Sdk;
 using SPCAF.Sdk.Model;
 using SPCAF.Sdk.Model.Extensions;
-using SPCAFContrib.Consts;
-using SPCAFContrib.Consts;
+using SPCAFContrib.Entities.Consts;
 using SPCAFContrib.Extensions;
+using SPCAFContrib.Groups;
 using SPCAFContrib.Inventory.Base;
 
 namespace SPCAFContrib.Inventory
@@ -18,9 +15,11 @@ namespace SPCAFContrib.Inventory
     [InventoryMetadata(typeof(ContribInventoryGroup),
         CheckId = CheckIDs.Inventory.Assembly.QueryStringUsage,
         Help = CheckIDs.Inventory.Assembly.QueryStringUsage_HelpUrl,
+
+        Message = "Added HttpRequest collection key usage [{0}] to inventory",
         DisplayName = "HttpRequest collections monitoring",
         Description = "Provides information about HttpRequest key collections usage.",
-        Message = "Added HttpRequest collection key usage '{0}' to inventory",
+        
         SharePointVersion = new string[] { "12", "14", "15" })]
     public class HttpRequestCollectionsUsage : SearchPropertyInventoryBase
     {
